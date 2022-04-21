@@ -735,7 +735,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 └───────⭓`,
                     description: "\n",
                     buttonText: "LIST MENU  >_<",
-                    footerText: "Bantu Donasi Buat Bot Kak",
+                    footerText: "Donasi Kak Buat Beli Apikey🔥",
                     listType: "SINGLE_SELECT",
                     sections: [{
 								"title": "All Fitur Bot >\\<",
@@ -868,7 +868,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 									{
 										"title": "Sertifikat Menu ✍️",
 										"description": "Menampilkan Sertifikat Menu",
-										"rowld": `${prefix}sertifikatmenu`
+										"rowld": `${prefix}menusertifikat`
 									},
 									{
 										"title": "Text Pro Menu 📝",
@@ -2223,7 +2223,7 @@ hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli
 }
 break
 //NSFW
-case 'pussy': case 'kuni': case 'lesbian': case 'cumsluts': case 'boobs': case 'bj': case 'anal': case 'avatar': case 'yuri': case 'trap': case 'tits': case 'kemonomimi': case 'kitsune': case 'keta': case 'holo': case 'hentai': case 'futanari': case 'fendom': case 'feet': case 'ero': case 'spank': case 'gasm': {
+case 'pussy': case 'kuni': case 'lesbian': case 'cumsluts': case 'boobs': case 'anal': case 'avatar': case 'yuri': case 'trap': case 'tits': case 'kemonomimi': case 'kitsune': case 'keta': case 'holo': case 'hentai': case 'futanari': case 'fendom': case 'feet': case 'ero': case 'spank': case 'gasm': {
 m.reply(mess.wait)
 let anu = await getBuffer(`https://hardianto.xyz/api/anime/random?nsfw=${command}&apikey=hardianto`)
 hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
@@ -3262,14 +3262,14 @@ break
 case 'phcomment': {
 if (!text) throw `Example : ${prefix + command} Keren Sih`
 m.reply(mess.wait)
-let anu = await getBuffer(`https://zenzapis.xyz/api/image/phcomment?image=https://i.ibb.co/XWnXG7G/Asuna.jpg&text=${text}&username=GuaAbuzz&apikey=a0270383d3ea`)
+let anu = await getBuffer(`https://zenzapis.xyz/api/image/phcomment?image=https://i.ibb.co/XWnXG7G/Asuna.jpg&text=${text}&username=${pushname}&apikey=a0270383d3ea`)
 hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
 }
 break
 case 'ytcomment': {
 if (!text) throw `Example : ${prefix + command} Keren Sih`
 m.reply(mess.wait)
-let anu = await getBuffer(`https://zenzapis.xyz/api/image/ytcomment?image=https://i.ibb.co/XWnXG7G/Asuna.jpg&text=${text}&username=GuaAbuzz&apikey=a0270383d3ea`)
+let anu = await getBuffer(`https://zenzapis.xyz/api/image/ytcomment?image=https://i.ibb.co/XWnXG7G/Asuna.jpg&text=${text}&username=${pushname}&apikey=a0270383d3ea`)
 hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
 }
 break
@@ -3992,7 +3992,6 @@ case 'nsfwmenu': case 'menunsfw': {
 │⭔ ${prefix}lesbian
 │⭔ ${prefix}cumsluts
 │⭔ ${prefix}boobs
-│⭔ ${prefix}bj
 │⭔ ${prefix}anal
 │⭔ ${prefix}avatar
 │⭔ ${prefix}yuri
@@ -5687,7 +5686,6 @@ break
 │⭔ ${prefix}lesbian
 │⭔ ${prefix}cumsluts
 │⭔ ${prefix}boobs
-│⭔ ${prefix}bj
 │⭔ ${prefix}anal
 │⭔ ${prefix}avatar
 │⭔ ${prefix}yuri
