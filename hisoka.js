@@ -137,13 +137,11 @@ const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid"
             let chats = global.db.chats[m.chat]
                 if (typeof chats !== 'object') global.db.chats[m.chat] = {}
                 if (chats) {
-                if (!('antionce' in chats)) chats.antionce = true
                 if (!('mute' in chats)) chats.mute = false
                 if (!('antilink' in chats)) chats.antilink = false
                 if (!('antiyt' in chats)) chats.antiyt = false
                 if (!('antitiktok' in chats)) chats.antilink = false
              } else global.db.chats[m.chat] = {
-                antionce: true,
                 mute: false,
                 antilink: false,
                 antiyt: false,
@@ -653,57 +651,15 @@ case 'tqtt': case 'tqto': case 'thanksto': {
                 hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
             }
             break
-case 'donasi': case 'donate': { 
-var messa = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/hisoka.jpg') }, { upload: hisoka.waUploadToServer })
-                anu = `Haii Kak ${pushname} ${ucapanWaktu}
-*•DONASI KAK BUAT BELI KUOTA/BUAT BELI APIKEY🔥*
-*•GOPAY : https://i.ibb.co/vBKTD4g/Gopay.jpg
-*•PULSA TRI : 089636827082
-*•PULSA TELKOMSEL: 082171978174
-
-*Q.S Az-Zalzalah Ayat 7 :*
-
-فَمَنْ يَّعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَّرَهٗۚ
-
-Artinya : Maka barangsiapa 
-mengerjakan kebaikan seberat
-zarrah, niscaya dia akan melihat 
-(balasan)nya.
-
-*Terima Kasih*`
-let button = [{
-                                urlButton: {
-                                    displayText: 'TikTok Creator',
-                                    url: global.myweb
-                                }
-                            }, {
-                                callButton: {
-                                    displayText: 'Number Phone Owner',
-                                    phoneNumber: global.owner[0]
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'Rules',
-                                    id: 'rules'
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'Donasi',
-                                    id: 'donasi'
-                                }  
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'List Menu',
-                                    id: 'command'
-                                }
-                            }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+case 'donasi': case 'donate': {
+                hisoka.sendMessage(m.chat, { image: { url: 'https://i.ibb.co/vBKTD4g/Gopay.jpg' }, caption: `*Haii Kak ${pushname}*\n${ucapanWaktu}\n⭔ DONASI KAK BUAT BELI APIKEY🔥\n⭔ GOPAY : Gambar Diatas\n⭔ PULSA TRI : 089636827082\n⭔ PULSA TELKOMSEL : 082171978174\n\n⭔ Q.S Az-Zalzalah Ayat 7 :\n\n⭔ فَمَنْ يَّعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَّرَهٗۚ\n\n⭔ Artinya : Maka barangsiapa\nmengerjakan kebaikan seberatzarrah,\nniscaya dia akan melihat\n(balasan)nya.\n\n*Terima Kasih*` }, { quoted: ftroli })
             }
             break
 case 'command':{
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
-                    title: `Hi ${pushname} ${ucapanWaktu}
+                    title: `Hi ${pushname}
+${ucapanWaktu}
 ┌──⭓ 「 INFO USER 」⭓
 │
 │ Name : ${pushname}
@@ -847,7 +803,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 									},
 									{
 										"title": "Random Sticker Menu 🖨️",
-										"description": "Menampilkan random Image  Menu",
+										"description": "Menampilkan random Sticker  Menu",
 										"rowId": `${prefix}randomstickermenu`
 									},
 									{
@@ -941,8 +897,8 @@ https://tiktok.com/@guaabuzz`
                 hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
             }
             break
-             case 'tes': case 'test': case 'off': {
-                m.reply('Bot Ya Lagi On Kak')
+             case 'tes': case 'test': case 'jaringan': case 'lag': {
+                m.reply('Pending Ya Kak?')
             }
             break
             case 'chat': {
@@ -2225,6 +2181,8 @@ break
 //NSFW
 case 'pussy': case 'kuni': case 'lesbian': case 'cumsluts': case 'boobs': case 'anal': case 'avatar': case 'yuri': case 'trap': case 'tits': case 'kemonomimi': case 'kitsune': case 'keta': case 'holo': case 'hentai': case 'futanari': case 'fendom': case 'feet': case 'ero': case 'spank': case 'gasm': {
 m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
 let anu = await getBuffer(`https://hardianto.xyz/api/anime/random?nsfw=${command}&apikey=hardianto`)
 hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
 }
@@ -2236,6 +2194,12 @@ let anu = await getBuffer(`https://api.lolhuman.xyz/api/random/${command}?apikey
 hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
 }
 break
+case 'darkmeme': {
+m.reply(mess.wait)
+let anu = await getBuffer(`https://hardianto.xyz/api/darkmeme?apikey=hardianto`)
+hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
+break
 // Sticker Gif/Biasa
 case 'patrick': case 'dadu': case 'amongus': case 'gawrgura': case 'anjing': case 'bucinstick':  {
 m.reply(mess.wait)
@@ -2243,7 +2207,7 @@ let anu = await getBuffer(`https://api.lolhuman.xyz/api/sticker/${command}?apike
 hisoka.sendMessage(m.chat, { sticker: anu, caption: `Nih  Kak` }, { quoted: ftroli})
 }
 break
-// Sertifikat Bapak Kau
+// Sertifikat Tanah Rumah Lu akaoakka
 case 'toloserti': 
 case 'fuckboy':
 case 'fuckgirl':
@@ -2989,7 +2953,7 @@ m.reply(txt)
 }
 break
 case 'jadwalshalat': case 'jadwalsholat': {
-if (!text) throw `Example : ${prefix + command} Pekanbaru`
+if (!text) throw `Example : ${prefix + command} Padang`
 m.reply(mess.wait)
 let anu = await fetchJson(`https://api.lolhuman.xyz/api/sholat/${text}?apikey=bf8ea889dd942ecdfb7e5c1d`)
 txt =`Wilayah : ${anu.result.wilayah}\nSahur : ${anu.result.sahur}\nImsak: ${anu.result.imsak}\nSubuh : ${anu.result.subuh}\nTerbit : ${anu.result.terbit}\nDhuha : ${anu.result.dhuha}\nDzuhur : ${anu.result.dzuhur}\nAshar : ${anu.result.ashar}\nMaghrib : ${anu.result.maghrib}\nIsya : ${anu.result.isya}\nTanggal : ${anu.result.tanggal}`
@@ -3232,17 +3196,10 @@ let buttons = [
                 hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
             }
             break
-case 'attp': {
+case 'attp': case 'ttp': {
 if (!text) throw `Example : ${prefix + command} GuaAbuzz`
 m.reply(mess.wait)
-let anu = await getBuffer(`https://api.lolhuman.xyz/api/attp?apikey=bf8ea889dd942ecdfb7e5c1d&text=${text}`)
-hisoka.sendMessage(m.chat, { sticker: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
-break
-case 'ttp': {
-if (!text) throw `Example : ${prefix + command} GuaAbuzz`
-m.reply(mess.wait)
-let anu = await getBuffer(`https://api.lolhuman.xyz/api/ttp?apikey=bf8ea889dd942ecdfb7e5c1d&text=${text}`)
+let anu = await getBuffer(`https://hardianto.xyz/api/maker/${command}?text=${text}&apikey=hardianto`)
 hisoka.sendMessage(m.chat, { sticker: anu, caption: `Nih  Kak` }, { quoted: ftroli})
 }
 break
@@ -3629,12 +3586,12 @@ case 'sewa': case 'sewabot': {
 ┃        〔 SEWA BOT  〕
 ┃ 
 ┃▰▰▰▰▰▰▰▰▰▰▰▰▰▰
-┃          ⬣ SEWA ⬣
-┃⬡ 1 MINGGU : 5K
-┃⬡ 1 BULAN : 15K
-┃⬡ PERMANEN : 25K
+┃ ⬣ SEWA ⬣
+┃⬡ 1 MINGGU : 2K
+┃⬡ 1 BULAN : 10K
+┃⬡ PERMANEN : 20K
 ┃▰▰▰▰▰▰▰▰▰▰▰▰▰▰
-┃     〔 KELEBIHAN BOT 〕
+┃〔 KELEBIHAN BOT 〕
 ┃▰▰▰▰▰▰▰▰▰▰▰▰▰▰
 ┃⬡ ON 24 JAM
 ┃⬡ RUN DI RDP
@@ -3643,15 +3600,15 @@ case 'sewa': case 'sewabot': {
 ┃⬡ WELCOME IMAGE
 ┃⬡ LEFT
 ┃▰▰▰▰▰▰▰▰▰▰▰▰▰▰
-┃      ⬣〔  SISTEM 〕⬣
+┃⬣〔  SISTEM 〕⬣
 ┃⬡ TF - SEND BUKTI - BOT JOIN
 ┃▰▰▰▰▰▰▰▰▰▰▰▰▰▰
-┃      ⬣━ *PAYMENT* :
+┃⬣━ *PAYMENT* ━⬣
 ┃ GOPAY
 ┃ PULSA
 ┃ DONASI
 ┃▰▰▰▰▰▰▰▰▰▰▰▰▰▰
-┃      ⬣〔  NOTED!! 〕⬣
+┃⬣〔  NOTED!! 〕⬣
 ┃⬡ Jika Bot Diculik Tanpa Izin/Bayar
 ┃⬡ Bot Akan Leave
 ┃▰▰▰▰▰▰▰▰▰▰▰▰▰▰
@@ -4184,6 +4141,7 @@ case 'mememenu': case 'menumeme': {
 │
 │⭔ ${prefix}meme
 │⭔ ${prefix}darkjoke
+│⭔ ${prefix}darkmeme
 │⭔ ${prefix}memeindo
 │⭔ ${prefix}memegen
 │⭔ ${prefix}memecreator
@@ -5505,7 +5463,8 @@ case 'ownermenu': case 'menuowner': {
             }
             break
             case 'list': case 'menu': case 'help': case '?': {
-                anu = `Haii Kak ${pushname} ${ucapanWaktu}
+                anu = `Haii Kak ${pushname}
+${ucapanWaktu}
 
 Saya ${global.namabot}, Bot Ini Adalah Beta Multi-Device WhatsApp.
 Jika Kamu Menemukan Semacam Bug Atau Kesalahan Mohon Dimaklumi Dulu Ya, Lapor Owner Agar Segera Di Perbaiki🙏
@@ -5652,6 +5611,7 @@ break
 │
 │⭔ ${prefix}meme
 │⭔ ${prefix}darkjoke
+│⭔ ${prefix}darkmeme
 │⭔ ${prefix}memeindo
 │⭔ ${prefix}memegen
 │⭔ ${prefix}memecreator
