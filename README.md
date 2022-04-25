@@ -11,9 +11,6 @@ This is Script of WhatsApp multi device, working with [`@adiwajshing/baileys`](h
 ## My Project
 WhatsApp Bot Multi Device [`Abuzzpoet/Asuna`](https://github.com/Abuzzpoet/Asuna)
 
-## Base Bot Yg Saya Pake
-WhatsApp Bot Multi Device [`DikaArdnt/Hisoka-Morou`](https://github.com/DikaArdnt/Hisoka-Morou)
-
 
 ## UNTUK PENGGUNA WINDOWS/RDP
 
@@ -57,8 +54,8 @@ $ node .
 WhatsApp bot is still in the development stage, so there are a few bugs
 WhatsApp Connection (BETA, not working perfectly)
 
-Editing Number Owner & session name in [`config.js`](https://github.com/Abuzzpoet/Asuna/blob/master/config.js)
-Get Apikey zenz on [`zenz`](https://zenzapis.xyz/pricing)
+Editing Number Owner & session name in [`config.js`](https://github.com/DikaArdnt/Hisoka-Morou/blob/master/config.js)
+Get Apikey zenz on [`zenz`](https://zenzapi.xyz/pricing)
 
 
 ## Thanks To
@@ -70,5 +67,4 @@ Get Apikey zenz on [`zenz`](https://zenzapis.xyz/pricing)
 License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
 
 ## Contact Me
-* [`WhatsApp`](https://wa.me/6289636827082)
-* [`TikTok`](https://tiktok.com/@guaabuzz)
+* [`Wangsap`](https://wa.me/6289636827082)

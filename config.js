@@ -14,14 +14,14 @@ global.APIs = {
 
 // Apikey Website Api
 global.APIKeys = {
-	'https://zenzapis.xyz': 'a0270383d3ea',
+	'https://zenzapis.xyz': 'GuaAbuzz17',
 }
 
 // Other
 global.namabot = 'GuaAbuzzV10-Bot'
 global.namaowner = 'GuaAbuzz'
 global.owner = ['6289636827082']
-global.premium = ['6289636827082','6282171978174']
+global.premium = ['6289636827082']
 global.myweb = 'https://tiktok.com/@guaabuzz'
 global.packname = 'GuaAbuzz'
 global.author = 'WhatsApp Bot'
