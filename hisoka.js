@@ -2535,7 +2535,7 @@ db.users[m.sender].limit -= 1 // -1 limit
 	        case 'cerpen': {
 	            if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-                let anu = await fetchJson(api('zenz', '/api/'+command, {}, 'apikey'))
+                let anu = await fetchJson(api('zenz', '/randomtext/'+command, {}, 'apikey'))
                 let buttons = [
                     {buttonId: `${command}`, buttonText: {displayText: 'Next'}, type: 1}
                 ]
