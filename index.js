@@ -15,6 +15,7 @@ const chalk = require('chalk')
 const FileType = require('file-type')
 const path = require('path')
 const _ = require('lodash')
+const axios = require('axios')
 const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
@@ -70,7 +71,7 @@ async function startHisoka() {
     const hisoka = hisokaConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
-        browser: ['Hisoka Multi Device','Safari','1.0.0'],
+        browser: ['GuaAbuzz Device','Safari','1.0.0'],
         auth: state
     })
 
@@ -242,6 +243,37 @@ async function startHisoka() {
     hisoka.ev.on('creds.update', saveState)
 
     // Add Other
+
+      /**
+      *
+      * @param {*} jid
+      * @param {*} url
+      * @param {*} caption
+      * @param {*} quoted
+      * @param {*} options
+      */
+     hisoka.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
+      let mime = '';
+      let res = await axios.head(url)
+      mime = res.headers['content-type']
+      if (mime.split("/")[1] === "gif") {
+     return hisoka.sendMessage(jid, { video: await getBuffer(url), caption: caption, gifPlayback: true, ...options}, { quoted: quoted, ...options})
+      }
+      let type = mime.split("/")[0]+"Message"
+      if(mime === "application/pdf"){
+     return hisoka.sendMessage(jid, { document: await getBuffer(url), mimetype: 'application/pdf', caption: caption, ...options}, { quoted: quoted, ...options })
+      }
+      if(mime.split("/")[0] === "image"){
+     return hisoka.sendMessage(jid, { image: await getBuffer(url), caption: caption, ...options}, { quoted: quoted, ...options})
+      }
+      if(mime.split("/")[0] === "video"){
+     return hisoka.sendMessage(jid, { video: await getBuffer(url), caption: caption, mimetype: 'video/mp4', ...options}, { quoted: quoted, ...options })
+      }
+      if(mime.split("/")[0] === "audio"){
+     return hisoka.sendMessage(jid, { audio: await getBuffer(url), caption: caption, mimetype: 'audio/mpeg', ...options}, { quoted: quoted, ...options })
+      }
+      }
+
     /** Send Button 5 Image
      *
      * @param {*} jid
@@ -254,10 +286,60 @@ async function startHisoka() {
      */
     hisoka.send5ButImg = async (jid , text = '' , footer = '', img, but = [], options = {}) =>{
         let message = await prepareWAMessageMedia({ image: img }, { upload: hisoka.waUploadToServer })
-        var template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+        var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
         templateMessage: {
         hydratedTemplate: {
         imageMessage: message.imageMessage,
+               "hydratedContentText": text,
+               "hydratedFooterText": footer,
+               "hydratedButtons": but
+            }
+            }
+            }), options)
+            hisoka.relayMessage(jid, template.message, { messageId: template.key.id })
+    }
+
+    /** Send Button 5 Video
+     *
+     * @param {*} jid
+     * @param {*} text
+     * @param {*} footer
+     * @param {*} Video
+     * @param [*] button
+     * @param {*} options
+     * @returns
+     */
+    hisoka.send5ButVid = async (jid , text = '' , footer = '', vid, but = [], options = {}) =>{
+        let message = await prepareWAMessageMedia({ video: vid }, { upload: hisoka.waUploadToServer })
+        var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
+        templateMessage: {
+        hydratedTemplate: {
+        videoMessage: message.videoMessage,
+               "hydratedContentText": text,
+               "hydratedFooterText": footer,
+               "hydratedButtons": but
+            }
+            }
+            }), options)
+            hisoka.relayMessage(jid, template.message, { messageId: template.key.id })
+    }
+
+    /** Send Button 5 Gif
+     *
+     * @param {*} jid
+     * @param {*} text
+     * @param {*} footer
+     * @param {*} Gif
+     * @param [*] button
+     * @param {*} options
+     * @returns
+     */
+    hisoka.send5ButGif = async (jid , text = '' , footer = '', gif, but = [], options = {}) =>{
+        let message = await prepareWAMessageMedia({ video: gif, gifPlayback: true }, { upload: hisoka.waUploadToServer })
+        var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
+        templateMessage: {
+        hydratedTemplate: {
+        videoMessage: message.videoMessage,
                "hydratedContentText": text,
                "hydratedFooterText": footer,
                "hydratedButtons": but

@@ -1,15 +1,19 @@
 # GuaAbuzz
 Script WhatsApp Bot Multi Device
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Abuzzpoet/Asuna)
-
 ## NOTE
-This Script is for everyone, not for Sale
+This Script is for everyone, not for Sale. Jika dijual neraka menunggumu brother !
 
 This is Script of WhatsApp multi device, working with [`@adiwajshing/baileys`](https://github.com/adiwajshing/baileys)
 
 ## My Project
 WhatsApp Bot Multi Device [`Abuzzpoet/Asuna`](https://github.com/Abuzzpoet/Asuna)
+
+## Base Project 
+* New script to replace this script [`look here`](https://github.com/zhwzein/Killua-Zoldyck) (`Support Legacy or Baileys`)
+* WhatsApp Bot normal [`DikaArdnt/Hisoka-Morrow`](https://github.com/DikaArdnt/Hisoka-Morrow)
+* WhatsApp Bot Multi Device [`DikaArdnt/Hisoka-Morou`](https://github.com/DikaArdnt/Hisoka-Morou)
+* WhatsApp Bot Using Library whatsapp-web.js [`hisoka-waweb.js`](https://github.com/Hisoka-Morrou/hisoka-waweb.js/)
 
 
 ## UNTUK PENGGUNA WINDOWS/RDP
@@ -25,6 +29,14 @@ cd Asuna
 npm install
 ```
 
+## HOW TO CONNECT TO MONGODB WHEN RUN IN HEROKU
+
+* Create account and database in mongodb atlas [`watch here`](https://youtu.be/rPqRyYJmx2g)
+* when you already have a database, you just need to take mongourl
+* Put mongourl in Procfile `web: node . --db 'mongourl'`
+* Example `web: node . -- db 'Your Mongo URI'`
+
+
 
 ## FOR TERMUX/UBUNTU/SSH USER
 
@@ -38,7 +50,7 @@ cd Asuna
 npm install
 ```
 
-## IF ERROR INSTALL MODULE FOR TERMUX
+## RECOMMENDED INSTALL ON TERMUX
 
 ```bash
 pkg install yarn
@@ -54,7 +66,7 @@ $ node .
 WhatsApp bot is still in the development stage, so there are a few bugs
 WhatsApp Connection (BETA, not working perfectly)
 
-Editing Number Owner & session name in [`config.js`](https://github.com/DikaArdnt/Hisoka-Morou/blob/master/config.js)
+Editing Number Owner & session name in [`config.js`](https://github.com/Abuzzpoet/Asuna/blob/master/config.js)
 Get Apikey zenz on [`zenz`](https://zenzapi.xyz/pricing)
 
 
@@ -63,8 +75,10 @@ Get Apikey zenz on [`zenz`](https://zenzapi.xyz/pricing)
 * [`Nurutomo`](https://github.com/Nurutomo)
 * [`Mhankbarbar`](https://github.com/MhankBarBar)
 * [`DikaArdnt`](https://github.com/DikaArdnt)
+* [`Fatih Arridho`](https://github.com/FatihArridho)
+* [`zhwzein`](https://github.com/zhwzein)
+* [`CAF-ID`](https://github.com/CAF-ID)
+* [`Hisoka775`](https://github.com/Hisoka775)
+
 
 License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
-
-## Contact Me
-* [`Wangsap`](https://wa.me/6289636827082)
