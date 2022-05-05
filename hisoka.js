@@ -2764,216 +2764,104 @@ db.users[m.sender].limit -= 2 // -2 limit
             break
 // Anime/Wibu
 case 'anime': case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': {
+m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: 'https://zenzapis.xyz/api/random/${command}?apikey=GuaAbuzz17' },
-                    caption: `Random Image`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
+let anu = await getBuffer(`https://zenzapis.xyz/api/random/${command}?apikey=GuaAbuzz17`) 
+hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
+break
 case 'cosplay': {
+m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: 'https://api.zacros.my.id/randomimg/cosplay' },
-                    caption: `Random Image`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
+let anu = await getBuffer(`https://api.zacros.my.id/randomimg/cosplay`) 
+hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
+break
 case 'loli': {
+m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: 'https://api.zacros.my.id/randomimg/loli' },
-                    caption: `Random Image`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
+let anu = await getBuffer(`https://api.zacros.my.id/randomimg/loli`) 
+hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
+break
 case 'elf': {
+m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: 'https://api.lolhuman.xyz/api/random/elf?apikey=GuaAbuzz17' },
-                    caption: `Random Image`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
+let anu = await getBuffer(`https://api.lolhuman.xyz/api/random/elf?apikey=GuaAbuzz17`) 
+hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
+break
 case 'sagiri': {
+m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: 'https://api.lolhuman.xyz/api/random/sagiri?apikey=GuaAbuzz17' },
-                    caption: `Random Image`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
+let anu = await getBuffer(`https://api.lolhuman.xyz/api/random/sagiri?apikey=GuaAbuzz17`) 
+hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
+break
 case 'elaina': {
+m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: 'https://api.lolhuman.xyz/api/random/elaina?apikey=GuaAbuzz17' },
-                    caption: `Random Image`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
+let anu = await getBuffer(`https://api.lolhuman.xyz/api/random/elaina?apikey=GuaAbuzz17`) 
+hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
+break
 case 'kanna': {
+m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: 'https://api.lolhuman.xyz/api/random/kanna?apikey=GuaAbuzz1' },
-                    caption: `Random Image`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
+let anu = await getBuffer(`https://api.lolhuman.xyz/api/random/kanna?apikey=GuaAbuzz17`) 
+hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
+break
 //NSFW
 case 'ahegao': case 'ass': case 'bdsm': case 'blowjob': case 'cuckold': case 'cum': case 'ero': case 'fendom': case 'foot': case 'gangbang': case 'glasses': case 'hentai': case 'jahy': case 'maid': case 'masturbation': case 'orgy': case 'panties': case 'pussy': case 'tentacles': case 'thighs': case 'yuri': case 'zettairyouiki': {
-if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
-db.users[m.sender].limit -= 2 // -2 limit
-                let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: 'https://zenzapis.xyz/api/morensfw/${command}?apikey=GuaAbuzz17' },
-                    caption: `Astaghfirullah Tobat Kak`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 5) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 5 // -5 limit
+let anu = await getBuffer(`https://zenzapis.xyz/api/morensfw/${command}?apikey=GuaAbuzz17`)
+hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
+break
 // Meme
 case 'meme': {
-if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-db.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: 'https://api.zacros.my.id/randomimg/meme' },
-                    caption: `Random Image`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
+m.reply(mess.wait)
+let anu = await getBuffer(`https://api.zacros.my.id/randomimg/meme`)
+hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
+break
 case 'darkjoke': {
-if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-db.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: 'https://api.zacros.my.id/randomimg/darkjokes' },
-                    caption: `Random Image`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
+m.reply(mess.wait)
+let anu = await getBuffer(`https://api.zacros.my.id/randomimg/darkjokes`)
+hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
+break
 case 'darkmeme': {
-if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-db.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: 'https://hardianto.xyz/api/darkmeme?apikey=hardianto' },
-                    caption: `Random Image`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
+m.reply(mess.wait)
+let anu = await getBuffer(`https://hardianto.xyz/api/darkmeme?apikey=hardianto`)
+hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
+break
 case 'memeindo': {
-if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-db.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: 'https://api.lolhuman.xyz/api/meme/memeindo?apikey=GuaAbuzz17' },
-                    caption: `Random Image`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
+m.reply(mess.wait)
+let anu = await getBuffer(`https://api.lolhuman.xyz/api/meme/memeindo?apikey=GuaAbuzz17`)
+hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
+break
 // Sticker Gif/Biasa
 case 'patrick': case 'dadu': case 'amongus': case 'gawrgura': case 'anjing': case 'bucinstick':  {
+m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Sticker'}, type: 1}
-                ]
-                let buttonMessage = {
-                    sticker: { url: 'https://api.lolhuman.xyz/api/sticker/${command}?apikey=GuaAbuzz17' },
-                    caption: `Random Sticker`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
+let anu = await getBuffer(`https://api.lolhuman.xyz/api/sticker/${command}?apikey=GuaAbuzz17`)
+hisoka.sendMessage(m.chat, { sticker: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
+break
 // Sertifikat Tanah Rumah Lu akaoakka
 case 'toloserti': 
 case 'fuckboy':
@@ -3848,21 +3736,13 @@ hisoka.sendMessage(m.chat, { audio: anu, mimetype: 'audio/mpeg'}, { quoted: ftro
 }
 break
 case 'hijaber': case 'cecan': case 'indonesia': case 'vietnam': case 'thailand': case 'korea': case 'china': case 'japan': case 'malaysia': {
+m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: 'https://api.zacros.my.id/asupan/${command}' },
-                    caption: `Random Image`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
+let anu = await getBuffer(`https://api.zacros.my.id/asupan/${command}`)
+hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
+break
 case 'santuy': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
@@ -3901,19 +3781,9 @@ case 'random': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    video: { url: 'https://api.zacros.my.id/asupan/random' },
-                    caption: `Random Image`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
+let anu = await getBuffer(`https://api.zacros.my.id/asupan/random`)
+hisoka.sendMessage(m.chat, { video: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+}
 case 'lolivid': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
