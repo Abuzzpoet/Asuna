@@ -475,7 +475,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
          //Anti Link YouTube
         if (db.chats[m.chat].antiyt) {
         if (budy.match(`https://youtu.be`)) {
-        m.reply(`「 ANTI LINK YOUTUBE 」\n\nKamu terdeteksi mengirim link group, maaf kamu akan di kick !`)
+        m.reply(`「 ANTI LINK YOUTUBE 」\n\nKamu terdeteksi mengirim link YouTube, maaf kamu akan di kick !`)
         if (!isBotAdmins) return m.reply(`Ehh bot gak admin T_T`)
         if (isAdmins) return m.reply(`Ehh maaf kamu admin`)
         if (isCreator) return m.reply(`Ehh maaf kamu owner bot ku`)
@@ -485,7 +485,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
         //Anti Link Tiktok
         if (db.chats[m.chat].antitiktok) {
         if (budy.match(`https://vt.tiktok.com`)) {
-        m.reply(`「 ANTI LINK TIKTOK 」\n\nKamu terdeteksi mengirim link group, maaf kamu akan di kick !`)
+        m.reply(`「 ANTI LINK TIKTOK 」\n\nKamu terdeteksi mengirim link TikTok, maaf kamu akan di kick !`)
         if (!isBotAdmins) return m.reply(`Ehh bot gak admin T_T`)
         if (isAdmins) return m.reply(`Ehh maaf kamu admin`)
         if (isCreator) return m.reply(`Ehh maaf kamu owner bot ku`)
@@ -496,9 +496,6 @@ ${Array.from(room.jawaban, (jawaban, index) => {
         if (db.chats[m.chat].mute && !isAdmins && !isCreator) {
         return
         }
-	
-	//simsimi
-
         //TicTacToe
 	    this.game = this.game ? this.game : {}
 	    let room = Object.values(this.game).find(room => room.id && room.game && room.state && room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING')
@@ -740,7 +737,7 @@ if (q.includes('--help')) return m.reply(examkosong)
    
    }, 7000)  
   setTimeout( () => {
-  m.reply(`@${m.sender.split("@")[0]} Mulai menambang🎣`)     
+  m.reply(`@${m.sender.split("@")[0]} Mulai menambang⛏️`)     
   }, 1500)
   kurangDarah(m.sender, 10)
   addBesi(m.sender, besinya)
@@ -1132,7 +1129,7 @@ case 'tqtt': case 'tqto': case 'thanksto': {
                                     id: 'command'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.tqtt, button)
             }
             break
 case 'gopay': {
@@ -1187,7 +1184,7 @@ ${ucapanWaktu}
 								"title": "All Fitur Bot >_<",
 								"rows": [
 									{
-										"title": "All Menu 🗃️",
+										"title": "All Menu",
 										"description": "Menampilkan All Menu",
 										"rowId": `${prefix}allmenu`
 									}
@@ -1197,147 +1194,147 @@ ${ucapanWaktu}
 								"title": "List menu Bot >_<",
 								"rows": [
 									{
-										"title": "Anonymous Menu 🗣️",
+										"title": "Anonymous Menu",
 										"description": "Menampilkan Anonymous Menu",
 										"rowId": `${prefix}anonymousmenu`
 									},
 									{
-									    "title": "Anime Menu ⛩️",
+									    "title": "Anime Menu",
 										"description": "Menampilkan Anime Menu",
 										"rowId": `${prefix}animemenu`
 									},
 									{
-									    "title": "Asupan Menu 🎥",
+									    "title": "Asupan Menu",
 										"description": "Menampilkan Asupan Menu",
 										"rowId": `${prefix}asupanmenu`
 									},
 									{
-									    "title": "Convert Menu 🎫",
+									    "title": "Convert Menu",
 										"description": "Menampilkan Convert Menu",
 										"rowId": `${prefix}convertmenu`
 									},
 									{
-									    "title": "Download Menu 💾",
+									    "title": "Download Menu",
 										"description": "Menampilkan Download Menu",
 										"rowId": `${prefix}downloadmenu`
 									},
 									{
-									    "title": "Database Menu 📂",
+									    "title": "Database Menu",
 										"description": "Menampilkan Database Menu",
 										"rowId": `${prefix}databasemenu`
 									},
 									{
-									    "title": "Ephoto Menu 🖼️",
+									    "title": "Ephoto Menu",
 										"description": "Menampilkan Ephoto Menu",
 										"rowId": `${prefix}ephotomenu`
 									},
 									{
-									    "title": "Group Menu 🗣️",
+									    "title": "Group Menu",
 										"description": "Menampilkan Group Menu",
 										"rowId": `${prefix}groupmenu`
 									},
 									{
-									    "title": "Game Menu 🎯",
+									    "title": "Game Menu",
 										"description": "Menampilkan Game Menu",
-										"rowId": `${prefix}funmenu`
+										"rowId": `${prefix}gamemenu`
 									},
 									{
-										"title": "Islamic Menu 🕌",
+										"title": "Islamic Menu",
 										"description": "Menampilkan Islamic Menu",
 										"rowId": `${prefix}islamicmenu`
 									},
 									{
-										"title": "Kerang Menu 🐚",
+										"title": "Kerang Menu",
 										"description": "Menampilkan Kerang Menu",
 										"rowId": `${prefix}kerangmenu`
 									},
 									{
-										"title": "Meme Image Menu 🔖",
+										"title": "Meme Menu",
 										"description": "Menampilkan Meme Image Menu",
 										"rowId": `${prefix}mememenu`
 									},
 									{
-										"title": "Main Menu 🪀",
+										"title": "Main Menu",
 										"description": "Menampilkan Main Menu",
 										"rowId": `${prefix}mainmenu`
 									},
 									{
-										"title": "Nsfw Menu 🔞",
+										"title": "Nsfw Menu",
 										"description": "Menampilkan Nsfw Menu",
 										"rowId": `${prefix}nsfwmenu`
 									},
 									{
-										"title": "Owner Menu 👤",
+										"title": "Owner Menu",
 										"description": "Menampilkan Owner Menu",
 										"rowId": `${prefix}ownermenu`
 									},
 									{
-										"title": "Primbon Menu 🎉",
+										"title": "Primbon Menu",
 										"description": "Menampilkan Primbon Menu",
 										"rowId": `${prefix}primbonmenu`
 									},
 									{
-										"title": "Photo Maker Menu 🖼️",
+										"title": "Photo Maker Menu",
 										"description": "Menampilkan Photo Maker Menu",
 										"rowId": `${prefix}photomakermenu`
 									},
 									{
-										"title": "Photo Oxy Menu 🖼️",
+										"title": "Photo Oxy Menu️",
 										"description": "Menampilkan Photo Oxy Menu",
 										"rowId": `${prefix}photooxymenu`
 									},
 									{
-										"title": "Quotes Menu 💬",
+										"title": "Quotes Menu",
 										"description": "Menampilkan Quotes Menu",
-										"rowId": `${prefix} quotesmenu`
+										"rowId": `${prefix}quotesmenu`
 									},
 									{
-										"title": "Rpg Menu 🏹️",
+										"title": "Rpg Menu️",
 										"description": "Menampilkan Rpg Menu",
 										"rowId": `${prefix}rpgmenu`
 									},
 									{
-										"title": "Random Menu 🎟️",
+										"title": "Random Menu",
 										"description": "Menampilkan Random Menu",
 										"rowId": `${prefix}randommenu`
 									},
 									{
-										"title": "Random Sticker Menu 🖨️",
+										"title": "Sticker Menu️",
 										"description": "Menampilkan random Sticker  Menu",
-										"rowId": `${prefix}randomstickermenu`
+										"rowId": `${prefix}stickermenu`
 									},
 									{
-										"title": "Search Menu 🔎",
+										"title": "Search Menu",
 										"description": "Menampilkan Search Menu",
 										"rowId": `${prefix}searchmenu`
 									},
 									{
-										"title": "Stalk Menu 🛑",
+										"title": "Stalk Menu",
 										"description": "Menampilkan Stalk Menu",
 										"rowId": `${prefix}stalkmenu`
 									},
 									{
-										"title": "Sticker Efek Menu 🖼️",
+										"title": "Sticker Efek Menu️",
 										"description": "Menampilkan Sticker Efek Menu",
 										"rowId": `${prefix}stickerefekmenu`
 									},
 									{
-										"title": "Sertifikat Menu ✍️",
+										"title": "Sertifikat Menu️",
 										"description": "Menampilkan Sertifikat Menu",
 										"rowld": `${prefix}sertifikatmenu`
 									},
 									{
-										"title": "Text Pro Menu 📝",
+										"title": "Text Pro Menu",
 										"description": "Menampilkan Text Pro menu",
 										"rowId": `${prefix}textpromenu`
 									},
 									{
-									    "title": "Voice Changer Menu 🎙️",
+									    "title": "Voice Changer Menu️",
 										"description": "Menampilkan Voice Changer Menu",
 										"rowId": `${prefix}voicemenu`
 									},
 									{
-									    "title": "Webzone Menu 🏟️️",
+									    "title": "Webzone Menu",
 										"description": "Menampilkan Webzone Menu",
 										"rowId": `${prefix}webzonemenu`
 									}
@@ -1348,7 +1345,7 @@ ${ucapanWaktu}
 								"title": "Open Jasa Sewabot >_<",
 								"rows": [
 									{
-										"title": "Sewa Bot 🤖",
+										"title": "Sewa Bot",
 										"description": "Klik Untuk Melihat Daftar Sewabot",
 										"rowId": `${prefix}sewabot`
 									}
@@ -1358,7 +1355,7 @@ ${ucapanWaktu}
 								"title": "Info Tentang Owner? >_<",
 								"rows": [
 									{
-										"title": "Chat Ownet 💬",
+										"title": "Chat Owner",
 										"description": "menampilkan Nomor Owner",
 										"rowId": `${prefix}owner`
 									}
@@ -1368,7 +1365,7 @@ ${ucapanWaktu}
 								"title": "Thanks To >_<",
 								"rows": [
 									{
-										"title": "Contributor 🏆",
+										"title": "Contributor",
 										"description": "menampilkan Nama Teman - Teman Saya Yang Sudah Membantu Merakit Bot Ini !!",
 										"rowId": `${prefix}tqtt`
 									}
@@ -1384,19 +1381,36 @@ ${ucapanWaktu}
             case 'sc': case 'script': {
                 anu = `
                 *Info Script*     
-
 📚 *Base : Dika Ardnt* 
-
 https://github.com/DikaArdnt/Hisoka-Morou
 
-
 🌱 Recode By : GuaAbuzz
-
-https://tiktok.com/@guaabuzz`
+Mau Sc/Script Gua?
+Ya Beli Lah Cuma 35k No Enc`
                 let button = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
+                                }
+                            }, {
+                                callButton: {
+                                    displayText: 'Number Phone Owner',
+                                    phoneNumber: global.owner[0]
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Gopay',
+                                    id: 'gopay'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Dana',
+                                    id: 'dana'
+                                }  
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Chat Owner Disini',
+                                    id: 'owner'
                                 }
                             }]
                 hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
@@ -1819,7 +1833,7 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
                         { buttonId: 'antilink on', buttonText: { displayText: 'On' }, type: 1 },
                         { buttonId: 'antilink off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, `Mode Antilink`, hisoka.user.name, m)
+                    await hisoka.sendButtonText(m.chat, buttons, `Mode Antilink`, hisoka.user.name, ftroli)
                 }
              }
              break
@@ -1840,7 +1854,7 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
                         { buttonId: 'antiyt on', buttonText: { displayText: 'On' }, type: 1 },
                         { buttonId: 'antiyt off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, `Mode Antilink YouTube`, hisoka.user.name, m)
+                    await hisoka.sendButtonText(m.chat, buttons, `Mode Antilink YouTube`, hisoka.user.name, ftroli)
                 }
              }
              break
@@ -1861,7 +1875,7 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
                         { buttonId: 'antilinktt on', buttonText: { displayText: 'On' }, type: 1 },
                         { buttonId: 'antilinktt off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, `Mode Antilink TikTok`, hisoka.user.name, m)
+                    await hisoka.sendButtonText(m.chat, buttons, `Mode Antilink TikTok`, hisoka.user.name, ftroli)
                 }
              }
              break
@@ -1882,7 +1896,7 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
                         { buttonId: 'mute on', buttonText: { displayText: 'On' }, type: 1 },
                         { buttonId: 'mute off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, `Mute Bot`, hisoka.user.name, m)
+                    await hisoka.sendButtonText(m.chat, buttons, `Mute Bot`, hisoka.user.name, ftroli)
                 }
              }
              break
@@ -2763,98 +2777,737 @@ db.users[m.sender].limit -= 2 // -2 limit
             }
             break
 // Anime/Wibu
-case 'anime': case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': {
+case 'anime': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-let anu = await getBuffer(`https://zenzapis.xyz/api/random/${command}?apikey=GuaAbuzz17`) 
-hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
-break
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/random/anime?apikey=GuaAbuzz17' },
+                    caption: `Random Image Anime`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'waifu': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/random/waifu?apikey=GuaAbuzz17' },
+                    caption: `Random Image Waifu`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'husbu': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/random/husbu?apikey=GuaAbuzz17' },
+                    caption: `Random Image Husbu`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'neko': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/random/neko?apikey=GuaAbuzz17' },
+                    caption: `Random Image Neko`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'shinobu': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/random/shinobu?apikey=GuaAbuzz17' },
+                    caption: `Random Image Shinobu`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'megumin': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/random/megumin?apikey=GuaAbuzz17' },
+                    caption: `Random Image Megumin`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'uniform': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/random/uniform?apikey=GuaAbuzz17' },
+                    caption: `Random Image Uniform`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'maid': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/random/maid?apikey=GuaAbuzz17' },
+                    caption: `Random Image Maid`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'kitagawa': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/random/marin-kitagawa?apikey=GuaAbuzz17' },
+                    caption: `Random Image Marin Kitagawa`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'calliope': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/random/mori-calliope?apikey=GuaAbuzz17' },
+                    caption: `Random Image Mori Calliope`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'raiden': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/random/raiden-shogun?apikey=GuaAbuzz17' },
+                    caption: `Random Image Raiden Shogun`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'oppai': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/random/oppai?apikey=GuaAbuzz17' },
+                    caption: `Random Image Oppai`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'selfies': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/random/selfies?apikey=GuaAbuzz17' },
+                    caption: `Random Image Selfies`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
 case 'cosplay': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-let anu = await getBuffer(`https://api.zacros.my.id/randomimg/cosplay`) 
-hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
-break
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.zacros.my.id/randomimg/cosplay' },
+                    caption: `Random Image Cosplay`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
 case 'loli': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-let anu = await getBuffer(`https://api.zacros.my.id/randomimg/loli`) 
-hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
-break
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.zacros.my.id/randomimg/loli' },
+                    caption: `Random Image Loli`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
 case 'elf': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-let anu = await getBuffer(`https://api.lolhuman.xyz/api/random/elf?apikey=GuaAbuzz17`) 
-hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
-break
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.lolhuman.xyz/api/random/elf?apikey=GuaAbuzz17' },
+                    caption: `Random Image Elf`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
 case 'sagiri': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-let anu = await getBuffer(`https://api.lolhuman.xyz/api/random/sagiri?apikey=GuaAbuzz17`) 
-hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
-break
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.lolhuman.xyz/api/random/sagiri?apikey=GuaAbuzz17' },
+                    caption: `Random Image Sagiri`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
 case 'elaina': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-let anu = await getBuffer(`https://api.lolhuman.xyz/api/random/elaina?apikey=GuaAbuzz17`) 
-hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
-break
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.lolhuman.xyz/api/random/elaina?apikey=GuaAbuzz17' },
+                    caption: `Random Image Elaina`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
 case 'kanna': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-let anu = await getBuffer(`https://api.lolhuman.xyz/api/random/kanna?apikey=GuaAbuzz17`) 
-hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
-break
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.lolhuman.xyz/api/random/kanna?apikey=GuaAbuzz17' },
+                    caption: `Random Image Kanna`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
 //NSFW
-case 'ahegao': case 'ass': case 'bdsm': case 'blowjob': case 'cuckold': case 'cum': case 'ero': case 'fendom': case 'foot': case 'gangbang': case 'glasses': case 'hentai': case 'jahy': case 'maid': case 'masturbation': case 'orgy': case 'panties': case 'pussy': case 'tentacles': case 'thighs': case 'yuri': case 'zettairyouiki': {
-m.reply(mess.wait)
-if (!isPremium && global.db.users[m.sender].limit < 5) return m.reply(mess.endLimit) // respon ketika limit habis
-db.users[m.sender].limit -= 5 // -5 limit
-let anu = await getBuffer(`https://zenzapis.xyz/api/morensfw/${command}?apikey=GuaAbuzz17`)
-hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
-break
+case 'ahegao': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/ahegao?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'ass': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/ass?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'bdsm': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/bdsm?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'blowjob': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/blowjob?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'cuckold': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/cuckold?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'cum': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/cum?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'ero': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/ero?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'fendom': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/fendom?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'foot': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/foot?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'gangbang': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/gangbang?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'glasses': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/glasses?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'hentai': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/hentai?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'jahy': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/jahy?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'masturbation': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/masturbation?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'orgy': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/orgy?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'panties': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/panties?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'pussy': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/pussy?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'tentacles': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/tentacles?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'thighs': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/thighs?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'yuri': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/yuri?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'zettairyouiki': {
+if (!isPremium && global.db.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 2 // -2 limit
+                let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://zenzapis.xyz/api/morensfw/zettairyouiki?apikey=GuaAbuzz17' },
+                    caption: `Astaghfirullah Tobat Kak`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
 // Meme
 case 'meme': {
 m.reply(mess.wait)
-let anu = await getBuffer(`https://api.zacros.my.id/randomimg/meme`)
-hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
-break
-case 'darkjoke': {
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.zacros.my.id/randomimg/meme' },
+                    caption: `Random Image Meme`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'darkjokes': {
 m.reply(mess.wait)
-let anu = await getBuffer(`https://api.zacros.my.id/randomimg/darkjokes`)
-hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
-break
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.zacros.my.id/randomimg/darkjokes' },
+                    caption: `Random Image Darkjokes`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
 case 'darkmeme': {
 m.reply(mess.wait)
-let anu = await getBuffer(`https://hardianto.xyz/api/darkmeme?apikey=hardianto`)
-hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
-break
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://hardianto.xyz/api/darkmeme?apikey=hardianto' },
+                    caption: `Random Image Darkmeme`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
 case 'memeindo': {
 m.reply(mess.wait)
-let anu = await getBuffer(`https://api.lolhuman.xyz/api/meme/memeindo?apikey=GuaAbuzz17`)
-hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
-break
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+            let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.lolhuman.xyz/api/meme/memeindo?apikey=GuaAbuzz17' },
+                    caption: `Random Image Memeindo`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
 // Sticker Gif/Biasa
-case 'patrick': case 'dadu': case 'amongus': case 'gawrgura': case 'anjing': case 'bucinstick':  {
+case 'patrick': case 'dadu': case 'amongus': case 'gawrgura': case 'anjing': case 'bucinstick': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
@@ -2900,6 +3553,9 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
 	    break
             case 'coffe': case 'kopi': {
+            m.reply(mess.wait)
+            if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
                     {buttonId: `coffe`, buttonText: {displayText: 'Next Image'}, type: 1}
                 ]
@@ -3735,14 +4391,159 @@ let anu = await getBuffer(`https://api.lolhuman.xyz/api/quran/audio/10?apikey=Gu
 hisoka.sendMessage(m.chat, { audio: anu, mimetype: 'audio/mpeg'}, { quoted: ftroli })
 }
 break
-case 'hijaber': case 'cecan': case 'indonesia': case 'vietnam': case 'thailand': case 'korea': case 'china': case 'japan': case 'malaysia': {
+case 'hijaber': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-let anu = await getBuffer(`https://api.zacros.my.id/asupan/${command}`)
-hisoka.sendMessage(m.chat, { image: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
-break
+let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next..'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.zacros.my.id/asupan/hijaber' },
+                    caption: `Random ${command}`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'cecan': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next..'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.zacros.my.id/asupan/cecan' },
+                    caption: `Random ${command}`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'indonesia': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next..'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.zacros.my.id/asupan/indonesia' },
+                    caption: `Random ${command}`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'vietnam': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next..'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.zacros.my.id/asupan/vietnam' },
+                    caption: `Random ${command}`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'thailand': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next..'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.zacros.my.id/asupan/thailand' },
+                    caption: `Random ${command}`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'korea': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next..'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.zacros.my.id/asupan/korea' },
+                    caption: `Random ${command}`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'china': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next..'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.zacros.my.id/asupan/china' },
+                    caption: `Random ${command}`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'jepang': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next..'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.zacros.my.id/asupan/japan' },
+                    caption: `Random ${command}`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
+case 'malaysia': {
+m.reply(mess.wait)
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+db.users[m.sender].limit -= 1 // -1 limit
+let buttons = [
+                    {buttonId: `${command}`, buttonText: {displayText: 'Next..'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: 'https://api.zacros.my.id/asupan/malaysia' },
+                    caption: `Random ${command}`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
 case 'santuy': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
@@ -3781,9 +4582,19 @@ case 'random': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-let anu = await getBuffer(`https://api.zacros.my.id/asupan/random`)
-hisoka.sendMessage(m.chat, { video: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
+let buttons = [
+                    {buttonId: `${prefix}random`, buttonText: {displayText: 'Next..'}, type: 1}
+                ]
+                let buttonMessage = {
+                    video: { url: 'https://api.zacros.my.id/asupan/random' },
+                    caption: `Random Video Asupan`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
 case 'lolivid': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
@@ -3820,10 +4631,19 @@ case 'asupan': {
 m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
-let anu = await getBuffer(`https://api.lolhuman.xyz/api/asupan?apikey=GuaAbuzz17`)
-hisoka.sendMessage(m.chat, { video: anu, caption: `Nih  Kak` }, { quoted: ftroli})
-}
-break
+let buttons = [
+                    {buttonId: `${prefix}asupan`, buttonText: {displayText: 'Next..'}, type: 1}
+                ]
+                let buttonMessage = {
+                    video: { url: 'https://api.lolhuman.xyz/api/asupan?apikey=GuaAbuzz17' },
+                    caption: `Random ${command}`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
+            }
+            break
 		   case 'bass': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat': case 'nightcore': case 'reverse': case 'robot': case 'slow': case 'smooth': case 'tupai':
                 try {
                 let set
@@ -3847,7 +4667,7 @@ break
                 fs.unlinkSync(media)
                 if (err) return m.reply(err)
                 let buff = fs.readFileSync(ran)
-                hisoka.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
+                hisoka.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : ftroli })
                 fs.unlinkSync(ran)
                 })
                 } else m.reply(`Balas audio yang ingin diubah dengan caption *${prefix + command}*`)
@@ -4060,7 +4880,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
             break
             case 'apikey':
-            m.reply(`Apikey Yang Dipake Oleh Bot GuaAbuzz\n⬣ https://zenzapis.xyz\n⬣ https://api.lolhuman.xyz\n⬣ https://api.caliph71.xyz\n⬣ https://hardianto.xyz\n⬣ https://api.zacros.my.id`)
+            m.reply(`Apikey Yang Dipake Oleh Bot ${global.namabot}\n⬣ https://zenzapis.xyz [Sewa]\n⬣ https://api.lolhuman.xyz [Sewa]\n⬣ https://hardianto.xyz [Gratis]\n⬣ https://api.zacros.my.id [Gratis]`)
             break
             case 'ping': case 'botstatus': case 'statusbot': {
                 const used = process.memoryUsage()
@@ -4109,7 +4929,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 m.reply(respon)
             }
             break
-            case 'speedtest': {
+            case 'speed': case 'speedtest': {
             m.reply('Testing Speed...')
             let cp = require('child_process')
             let { promisify } = require('util')
@@ -4278,8 +5098,8 @@ case 'sewa': case 'sewabot': {
 ~@${global.namaowner}
 
 ┌──⭓ *Sewa Bot*
-│⭔ 1 Minggu 2k
-│⭔ 1 Bulan 10k
+│⭔ 1 Minggu 4k
+│⭔ 1 Bulan 15k
 └───────⭓
 
 ┌──⭓ *Pembayaran Via*
@@ -4327,17 +5147,17 @@ case 'sewa': case 'sewabot': {
                                     id: 'owner'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.sewabot, button)
             }
             break
 case 'donasi': case 'donate': {
                 anu = `Haii Kak *${pushname}*
 ${ucapanWaktu}
 ⭔ DONASI KAK BUAT BELI APIKEY🔥
-⭔ GOPAY : Button Sebelah Kiri
-⭔ DANA : Button Sebelah Kanan
 ⭔ PULSA TRI : 089636827082
 ⭔ PULSA TELKOMSEL : 082171978174
+⭔ GOPAY
+⭔ DANA
 ⭔ Q.S Az-Zalzalah Ayat 7 :
 
 ⭔ فَمَنْ يَّعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَّرَه
@@ -4374,7 +5194,7 @@ niscaya dia akan melihat
                                     id: 'owner'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.donasimenu, button)
             }
             break
 case 'groupmenu': case 'menugroup': {
@@ -4448,7 +5268,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.groupmenu, button)
             }
             break
 case 'downloadmenu': case 'menudownload': {
@@ -4514,7 +5334,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.downloadmenu, button)
             }
             break
 case 'searchmenu': case 'menusearch': {
@@ -4575,10 +5395,10 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.searchmenu, button)
             }
             break
-case 'randomstickermenu': case 'menurandomsticker': {
+case 'stickermenu': case 'menusticker': {
                 anu = `Haii Kak ${pushname}
 ${ucapanWaktu}
 
@@ -4596,8 +5416,13 @@ ${ucapanWaktu}
 └───────⭓
 
 
-┌──⭓ *Random Sticker Menu*
+┌──⭓ *Sticker Menu*
 │
+│⭔ ${prefix}sticker
+│⭔ ${prefix}attp
+│⭔ ${prefix}ttp
+│⭔ ${prefix}emojimix
+│⭔ ${prefix}emojimix2
 │⭔ ${prefix}patrick
 │⭔ ${prefix}dadu
 │⭔ ${prefix}amongus
@@ -4632,7 +5457,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.stickermenu, button)
             }
             break
 case 'animemenu': case 'menuanime': {
@@ -4661,13 +5486,20 @@ ${ucapanWaktu}
 │⭔ ${prefix}husbu
 │⭔ ${prefix}neko
 │⭔ ${prefix}loli
+│⭔ ${prefix}elf
+│⭔ ${prefix}uniform
 │⭔ ${prefix}cosplay
+│⭔ ${prefix}maid
+│⭔ ${prefix}oppai
+│⭔ ${prefix}selfies
 │⭔ ${prefix}shinobu
 │⭔ ${prefix}megumin
-│⭔ ${prefix}elf
 │⭔ ${prefix}sagiri
 │⭔ ${prefix}elaina
 │⭔ ${prefix}kanna
+│⭔ ${prefix}raiden
+│⭔ ${prefix}calliope
+│⭔ ${prefix}kitagawa
 │
 └───────⭓`
                 let button = [{
@@ -4696,7 +5528,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.animemenu, button)
             }
             break
 case 'nsfwmenu': case 'menunsfw': {
@@ -4731,7 +5563,6 @@ ${ucapanWaktu}
 │⭔ ${prefix}glasses
 │⭔ ${prefix}hentai
 │⭔ ${prefix}jahy
-│⭔ ${prefix}maid
 │⭔ ${prefix}masturbation
 │⭔ ${prefix}orgy
 │⭔ ${prefix}panties
@@ -4769,7 +5600,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.nsfwmenu, button)
             }
             break
 case 'asupanmenu': case 'menuasupan': {
@@ -4804,7 +5635,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}vietnam
 │⭔ ${prefix}china
 │⭔ ${prefix}korea
-│⭔ ${prefix}japan
+│⭔ ${prefix}jepang
 │
 └───────⭓`
                 let button = [{
@@ -4833,7 +5664,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.asupanmenu, button)
             }
             break
 case 'quotesmenu': case 'menuquotes': {
@@ -4901,7 +5732,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.quotesmenu, button)
             }
             break
 case 'mememenu': case 'menumeme': {
@@ -4921,7 +5752,7 @@ ${ucapanWaktu}
 │
 └───────⭓
 
-┌──⭓ *Meme Image Menu*
+┌──⭓ *Meme Menu*
 │
 │⭔ ${prefix}meme
 │⭔ ${prefix}memeindo
@@ -4955,7 +5786,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.mememenu, button)
             }
             break
 case 'randommenu': case 'menurandom': {
@@ -5013,7 +5844,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.randommenu, button)
             }
             break
 case 'rpgmenu': case 'menurpg': {
@@ -5074,7 +5905,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.rpgmenu, button)
             }
             break
 case 'sertifikatmenu': case 'menusertifikat': {
@@ -5134,7 +5965,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.sertifikatmenu, button)
             }
             break
 case 'textpromenu': case 'menutextpro': {
@@ -5264,7 +6095,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.textpromenu, button)
             }
             break
 case 'photooxymenu': case 'menuphotooxy': {
@@ -5330,7 +6161,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.photooxymenu, button)
             }
             break
 case 'photomakermenu': case 'menuphotomaker': {
@@ -5430,7 +6261,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.photomakermenu, button)
             }
             break
 case 'stickerefekmenu': case 'menustickerefek': {
@@ -5518,7 +6349,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.stickerefekmenu, button)
             }
             break
 case 'ephotomenu': case 'menuephoto': {
@@ -5620,10 +6451,10 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.ephotomenu, button)
             }
             break
-case 'funmenu': case 'menufun': {
+case 'gamemenu': case 'menugame': {
                 anu = `Haii Kak ${pushname}
 ${ucapanWaktu}
 
@@ -5677,7 +6508,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.gamemenu, button)
             }
             break
 case 'primbonmenu': case 'menuprimbon': {
@@ -5758,7 +6589,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.primbonmenu, button)
             }
             break
 case 'convertmenu': case 'menuconvert': {
@@ -5781,21 +6612,16 @@ ${ucapanWaktu}
 
 ┌──⭓ *Convert Menu*
 │
-│⭔ ${prefix}toimage
+│⭔ ${prefix}ssweb
 │⭔ ${prefix}removebg
-│⭔ ${prefix}sticker
-│⭔ ${prefix}attp
-│⭔ ${prefix}ttp
 │⭔ ${prefix}nulis
-│⭔ ${prefix}emojimix
-│⭔ ${prefix}emojimix2
+│⭔ ${prefix}toimage
 │⭔ ${prefix}tovideo
 │⭔ ${prefix}togif
 │⭔ ${prefix}tourl
 │⭔ ${prefix}tovn
 │⭔ ${prefix}tomp3
 │⭔ ${prefix}toaudio
-│⭔ ${prefix}styletext
 │
 └───────⭓`
                 let button = [{
@@ -5824,7 +6650,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.convertmenu, button)
             }
             break
 case 'mainmenu': case 'menumain': {
@@ -5887,7 +6713,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.mainmenu, button)
             }
             break
 
@@ -5947,7 +6773,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.databasemenu, button)
             }
             break
 
@@ -6004,7 +6830,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.anonymousmenu, button)
             }
             break
 
@@ -6072,7 +6898,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.islamicmenu, button)
             }
             break
 
@@ -6143,7 +6969,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.kerangmenu, button)
             }
             break
 
@@ -6206,7 +7032,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.voicemenu, button)
             }
             break
 
@@ -6263,7 +7089,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.stalkmenu, button)
             }
             break
 
@@ -6326,7 +7152,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.ownermenu, button)
             }
             break
 case 'webzonemenu': case 'menuwebzone': {
@@ -6385,7 +7211,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.webzonemenu, button)
             }
             break
             case 'list': case 'menu': case 'help': case '?': {
@@ -6480,13 +7306,20 @@ ${ucapanWaktu}
 │⭔ ${prefix}husbu
 │⭔ ${prefix}neko
 │⭔ ${prefix}loli
+│⭔ ${prefix}elf
+│⭔ ${prefix}uniform
 │⭔ ${prefix}cosplay
+│⭔ ${prefix}maid
+│⭔ ${prefix}oppai
+│⭔ ${prefix}selfies
 │⭔ ${prefix}shinobu
 │⭔ ${prefix}megumin
-│⭔ ${prefix}elf
 │⭔ ${prefix}sagiri
 │⭔ ${prefix}elaina
 │⭔ ${prefix}kanna
+│⭔ ${prefix}raiden
+│⭔ ${prefix}calliope
+│⭔ ${prefix}kitagawa
 │
 └───────⭓
 
@@ -6504,19 +7337,16 @@ ${ucapanWaktu}
 │⭔ ${prefix}vietnam
 │⭔ ${prefix}china
 │⭔ ${prefix}korea
-│⭔ ${prefix}japan
+│⭔ ${prefix}jepang
 │
 └───────⭓
 
 ┌──⭓ *Convert Menu*
 │
 │⭔ ${prefix}ssweb
-│⭔ ${prefix}toimage
 │⭔ ${prefix}removebg
-│⭔ ${prefix}smeme
-│⭔ ${prefix}sticker
-│⭔ ${prefix}emojimix
-│⭔ ${prefix}emojimix2
+│⭔ ${prefix}nulis
+│⭔ ${prefix}toimage
 │⭔ ${prefix}tovideo
 │⭔ ${prefix}togif
 │⭔ ${prefix}tourl
@@ -6698,7 +7528,7 @@ ${ucapanWaktu}
 │
 └───────⭓
 
-┌──⭓ *Meme Image Menu*
+┌──⭓ *Meme Menu*
 │
 │⭔ ${prefix}meme
 │⭔ ${prefix}memeindo
@@ -6740,7 +7570,6 @@ ${ucapanWaktu}
 │⭔ ${prefix}glasses
 │⭔ ${prefix}hentai
 │⭔ ${prefix}jahy
-│⭔ ${prefix}maid
 │⭔ ${prefix}masturbation
 │⭔ ${prefix}orgy
 │⭔ ${prefix}panties
@@ -6927,8 +7756,13 @@ ${ucapanWaktu}
 │
 └───────⭓
 
-┌──⭓ *Random Sticker Menu*
+┌──⭓ *Sticker Menu*
 │
+│⭔ ${prefix}sticker
+│⭔ ${prefix}attp
+│⭔ ${prefix}ttp
+│⭔ ${prefix}emojimix
+│⭔ ${prefix}emojimix2
 │⭔ ${prefix}patrick
 │⭔ ${prefix}dadu
 │⭔ ${prefix}amongus
@@ -7157,7 +7991,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
+                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.allmenu, button)
             }
             break
             default:
