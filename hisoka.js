@@ -1081,6 +1081,18 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
   case 'makasih': case 'thx': case 'tq': case 'mksh': case 'terimakasih':
   m.reply(`Sama Sama Kak ${pushname} ☺`)
   break
+  case 'p':
+  m.reply(`Bisa Sopan Dikit Gak Kak?`)
+  break
+  case 'sayang':
+  m.reply(`Cwek/Cwok`)
+  break
+  case 'cwek': case 'cewek':
+  m.reply(`Ya Knp Sayang?`)
+  break
+  case 'cwok': case 'cowok':
+  m.reply(`Owh Cwok, Ada Apa Bang?`)
+  break
 case 'tqtt': case 'tqto': case 'thanksto': {
                 anu = `
 ⭔ Allah SWT
@@ -1300,7 +1312,7 @@ ${ucapanWaktu}
 									},
 									{
 										"title": "Sticker Menu️",
-										"description": "Menampilkan random Sticker  Menu",
+										"description": "Menampilkan Sticker  Menu",
 										"rowId": `${prefix}stickermenu`
 									},
 									{
@@ -2344,7 +2356,6 @@ break
 	        let respond = `Kirim/reply image/sticker dengan caption ${prefix + command} text1|text2`
 	        if (!/image/.test(mime)) throw respond
             if (!text) throw respond
-	        m.reply(mess.wait)
             atas = text.split('|')[0] ? text.split('|')[0] : '-'
             bawah = text.split('|')[1] ? text.split('|')[1] : '-'
 	        let dwnld = await quoted.download()
@@ -2388,21 +2399,18 @@ break
           break
 case 'igstalk': case 'stalkig': {
 if (!text) throw `Kirim perintah ${prefix + command} *username*\n\nContoh : ${prefix + command} Jokowi`
-m.reply(mess.wait)
 let anu = await fetchJson(`https://api.lolhuman.xyz/api/stalkig/${text}?apikey=GuaAbuzz17`)
 hisoka.sendMessage(m.chat, { image: { url: anu.result.photo_profile }, caption: `Username : ${anu.result.username}\nFull Name : ${anu.result.fullname}\nFollowers : ${anu.result.followers}\nFollowing : ${anu.result.following}\nBio : ${anu.result.bio}`}, { quoted: ftroli })
 }
 break
 case 'tiktokstalk': case 'ttstalk': case 'stalktiktok': {
 if (!text) throw `Kirim perintah ${prefix + command} *username*\n\nContoh : ${prefix + command} Jes No Limit`
-m.reply(mess.wait)
 let anu = await fetchJson(`https://api.lolhuman.xyz/api/stalktiktok/${text}?apikey=GuaAbuzz17`)
 hisoka.sendMessage(m.chat, { image: { url: anu.result.user_picture }, caption: `Username : ${anu.result.username}\nNick Name : ${anu.result.nickname}\nBio : ${anu.result.bio}\nFollowers : ${anu.result.followers}\nFollowings : ${anu.result.followings}\nLikes : ${anu.result.likes}\nVideo : ${anu.result.video}`}, { quoted: ftroli })
 }
 break
 case 'stalktwit': case 'stalktwitter': case 'twitterstalk': {
 if (!text) throw `Kirim perintah ${prefix + command} *username*\n\nContoh : ${prefix + command} Jokowi`
-m.reply(mess.wait)
 let anu = await fetchJson(`https://api.lolhuman.xyz/api/twitter/${text}?apikey=GuaAbuzz17`)
 hisoka.sendMessage(m.chat, { image: { url: anu.result.profile_picture }, caption: `Name : ${anu.result.name}\nScreen Name : ${anu.result.screen_name}\nFollowers : ${anu.result.followers}\nFollowing : ${anu.result.following}\nBio : ${anu.result.bio}\nTweet : ${anu.result.tweet}\nDeskripsi : ${anu.result.description}\nJoined : ${anu.result.joined}`}, { quoted: ftroli })
 }
@@ -2461,7 +2469,6 @@ break
             break
 case 'ssweb': case 'sswebfull': {
 if (!text) throw 'Masukkan Query Link!'
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let anu = await getBuffer(`https://api.lolhuman.xyz/api/${command}?apikey=GuaAbuzz17&url=${text}`)
@@ -2778,7 +2785,6 @@ db.users[m.sender].limit -= 2 // -2 limit
             break
 // Anime/Wibu
 case 'anime': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -2795,7 +2801,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'waifu': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -2812,7 +2817,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'husbu': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -2829,7 +2833,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'neko': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -2846,7 +2849,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'shinobu': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -2863,7 +2865,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'megumin': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -2880,7 +2881,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'uniform': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -2897,7 +2897,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'maid': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -2914,7 +2913,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'kitagawa': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -2931,7 +2929,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'calliope': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -2948,7 +2945,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'raiden': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -2965,7 +2961,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'oppai': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -2982,7 +2977,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'selfies': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -2999,7 +2993,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'cosplay': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -3016,7 +3009,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'loli': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -3033,7 +3025,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'elf': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -3050,7 +3041,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'sagiri': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -3067,7 +3057,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'elaina': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -3084,7 +3073,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'kanna': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -3439,7 +3427,6 @@ db.users[m.sender].limit -= 2 // -2 limit
             break
 // Meme
 case 'meme': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -3456,7 +3443,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'darkjokes': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -3473,7 +3459,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'darkmeme': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -3490,7 +3475,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 case 'memeindo': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
@@ -3508,7 +3492,6 @@ db.users[m.sender].limit -= 1 // -1 limit
             break
 // Sticker Gif/Biasa
 case 'patrick': case 'dadu': case 'amongus': case 'gawrgura': case 'anjing': case 'bucinstick': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let anu = await getBuffer(`https://api.lolhuman.xyz/api/sticker/${command}?apikey=GuaAbuzz17`)
@@ -4392,7 +4375,6 @@ hisoka.sendMessage(m.chat, { audio: anu, mimetype: 'audio/mpeg'}, { quoted: ftro
 }
 break
 case 'hijaber': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let buttons = [
@@ -4409,7 +4391,6 @@ let buttons = [
             }
             break
 case 'cecan': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let buttons = [
@@ -4426,7 +4407,6 @@ let buttons = [
             }
             break
 case 'indonesia': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let buttons = [
@@ -4443,7 +4423,6 @@ let buttons = [
             }
             break
 case 'vietnam': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let buttons = [
@@ -4460,7 +4439,6 @@ let buttons = [
             }
             break
 case 'thailand': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let buttons = [
@@ -4477,7 +4455,6 @@ let buttons = [
             }
             break
 case 'korea': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let buttons = [
@@ -4494,7 +4471,6 @@ let buttons = [
             }
             break
 case 'china': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let buttons = [
@@ -4511,7 +4487,6 @@ let buttons = [
             }
             break
 case 'jepang': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let buttons = [
@@ -4528,7 +4503,6 @@ let buttons = [
             }
             break
 case 'malaysia': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let buttons = [
@@ -4545,7 +4519,6 @@ let buttons = [
             }
             break
 case 'santuy': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let buttons = [
@@ -4562,7 +4535,6 @@ let buttons = [
             }
             break
 case 'ukhty': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let buttons = [
@@ -4579,7 +4551,6 @@ let buttons = [
             }
             break
 case 'random': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let buttons = [
@@ -4596,7 +4567,6 @@ let buttons = [
             }
             break
 case 'lolivid': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let buttons = [
@@ -4628,7 +4598,6 @@ db.users[m.sender].limit -= 1 // -1 limit
 }
 break
 case 'asupan': {
-m.reply(mess.wait)
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let buttons = [
@@ -5756,7 +5725,7 @@ ${ucapanWaktu}
 │
 │⭔ ${prefix}meme
 │⭔ ${prefix}memeindo
-│⭔ ${prefix}darkjoke
+│⭔ ${prefix}darkjokes
 │⭔ ${prefix}darkmeme
 │
 └───────⭓`
@@ -7532,7 +7501,7 @@ ${ucapanWaktu}
 │
 │⭔ ${prefix}meme
 │⭔ ${prefix}memeindo
-│⭔ ${prefix}darkjoke
+│⭔ ${prefix}darkjokes
 │⭔ ${prefix}darkmeme
 │
 └───────⭓
