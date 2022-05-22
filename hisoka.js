@@ -8057,7 +8057,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                         let setbot = dbsettings[botNumber]
+                         let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
                         hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.allmenu, btn)
                         } else if (setbot.templateGif) {
