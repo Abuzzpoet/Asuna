@@ -656,7 +656,7 @@ if (q.includes('--help')) return m.reply(examkosong)
       {
        buttonId: `${prefix}mining`, 
        buttonText: {
-        displayText: 'Mining'
+        displayText: 'Mining ⛏️'
       }, type: 1}
     ]
     let buttonMessage = {
@@ -670,7 +670,7 @@ if (q.includes('--help')) return m.reply(examkosong)
    
    }, 7000)  
   setTimeout( () => {
-  m.reply(`@${m.sender.split("@")[0]} Mulai Mining`)     
+  m.reply(`@${m.sender.split("@")[0]} Mulai Mining ⛏️`)     
   }, 1500)
   kurangDarah(m.sender, 10)
   addBesi(m.sender, besinya)
@@ -827,7 +827,7 @@ if (q.includes('--help')) return m.reply(examkosong)
  if (isCekDarah < 1) return m.reply('Darahmu Habis, Coba Sembuhkan Menggunakan Potion') 
  if (!isInventoriBuruan){ addInventoriBuruan(m.sender) } 
   let luka = ["Ditusuk duri saat berburu","Tergelincir ke dalam jurang saat berburu","Digores oleh binatang buas","Kurang teliti","Terjerat dalam akar","Jatuh saat berburu"]
-  let location = ["Hutan","Hutan Amazon","Hutan Tropis","Padang rumput","Hutan Afrika","Pegunungan"]
+  let location = ["Hutan","Hutan Amazon","Hutan Tropis","Padang Rumput","Hutan Afrika","Pegunungan"]
    var ikanmu = Math.ceil(Math.random() * 10)
    var ayam = Math.ceil(Math.random() * 8)
    var kelinci = Math.ceil(Math.random() * 7)
@@ -873,7 +873,7 @@ if (q.includes('--help')) return m.reply(examkosong)
       {
        buttonId: `${prefix + command}`, 
        buttonText: {
-        displayText: 'Berburu'
+        displayText: 'Berburu 🏹'
       }, type: 1},
     ]
     let buttonMessage = {
@@ -886,7 +886,7 @@ if (q.includes('--help')) return m.reply(examkosong)
      hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })      
   }, 5000)  
  setTimeout( () => {
-  m.reply(`@${m.sender.split("@")[0]} Mulai Berburu Di ${lokasinya}`)     
+  m.reply(`@${m.sender.split("@")[0]} Mulai Berburu 🏹 Di ${lokasinya}`)     
   }, 1000) 
  addIkan(m.sender, ikanmu) 
    addAyam(m.sender, ayam) 
