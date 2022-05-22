@@ -55,8 +55,8 @@ global.mess = {
    umpanawal: 5,
    potionawal: 1
 }
-global.thumb = fs.readFileSync('./lib/hisoka.jpg')
-global.visoka = { url: 'https://a.uguu.se/PvVGOAlH.mp4' }
+global.thumb = fs.readFileSync('./storage/menu/hisoka.jpg')
+global.visoka = fs.readFileSync{'./storage/menu/visoka.mp4' }
 
 //Ambil dr chika
 global.flaming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
