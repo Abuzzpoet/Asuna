@@ -8031,7 +8031,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}drakor
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
