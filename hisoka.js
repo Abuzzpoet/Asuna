@@ -21,141 +21,35 @@ const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 let { TelegraPh } = require('./lib/uploader')
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
-const xfar = require('xfarr-api')
-let { addLevelingId, addLevelingLevel, addLevelingXp, getLevelingId, getLevelingLevel, getLevelingXp } = require("./lib/lvlfunction")
+const xfarr = require('xfarr-api')
+const { addInventoriDarah, cekDuluJoinAdaApaKagaDiJson, addDarah, kurangDarah, getDarah }  = require('./storage/user/darah.js')
+const { cekInventoryAdaAtauGak, addInventori, addBesi, addEmas, addEmerald, addUmpan, addPotion, kurangBesi, kurangEmas, kurangEmerald, kurangUmpan, kurangPotion, getBesi, getEmas, getEmerald, getUmpan, getPotion } = require('./storage/user/alat_tukar.js')
+const { addInventoriMonay, cekDuluJoinAdaApaKagaMonaynyaDiJson, addMonay, kurangMonay, getMonay } = require('./storage/user/monay.js')
+const { addInventoriLimit, cekDuluJoinAdaApaKagaLimitnyaDiJson, addLimit, kurangLimit, getLimit } = require('./storage/user/limit.js')
+const { cekDuluHasilBuruanNya, addInventoriBuruan, addIkan, addAyam, addKelinci, addDomba, addSapi, addGajah, kurangIkan, kurangAyam, kurangKelinci, kurangDomba, kurangSapi, kurangGajah, getIkan, getAyam, getKelinci, getDomba, getSapi, getGajah } = require('./storage/user/buruan.js')
+let DarahAwal =  global.rpg.darahawal
+const isDarah = cekDuluJoinAdaApaKagaDiJson(m.sender)   
+const isCekDarah = getDarah(m.sender)
+const isUmpan = getUmpan(m.sender)
+const isPotion = getPotion(m.sender)
+const isIkan = getIkan(m.sender)
+const isAyam = getAyam(m.sender)
+const isKelinci = getKelinci(m.sender)
+const isDomba = getDomba(m.sender)
+const isSapi = getSapi(m.sender)
+const isGajah = getGajah(m.sender)
+const isMonay = getMonay(m.sender)
+const isLimit = getLimit(m.sender)
+const isBesi = getBesi(m.sender)
+const isEmas = getEmas(m.sender)
+const isEmerald = getEmerald(m.sender)
+const isInventory = cekInventoryAdaAtauGak(m.sender)
+const isInventoriBuruan = cekDuluHasilBuruanNya(m.sender)
+const isInventoryLimit = cekDuluJoinAdaApaKagaLimitnyaDiJson(m.sender)
+const isInventoryMonay = cekDuluJoinAdaApaKagaMonaynyaDiJson(m.sender)
+const ikan = ['🐟','🐠','🐡']   
 
-//function rpg
-   const { 
-     addInventoriDarah, 
-      cekDuluJoinAdaApaKagaDiJson, 
-      addDarah, 
-      kurangDarah, 
-     getDarah 
-   }  = require('./storage/user/darah.js')
-   const { 
-     cekInventoryAdaAtauGak, 
-      addInventori,  
-       addBesi, 
-       addEmas, 
-       addEmerald,
-       addUmpan,
-       addPotion,
-       kurangBesi, 
-       kurangEmas, 
-       kurangEmerald, 
-       kurangUmpan,
-       kurangPotion,
-       getBesi, 
-      getEmas, 
-     getEmerald,
-     getUmpan,
-    getPotion
-   } = require('./storage/user/alat_tukar.js')
-   const { 
-    addInventoriMonay, 
-    cekDuluJoinAdaApaKagaMonaynyaDiJson, 
-    addMonay, 
-    kurangMonay, 
-   getMonay 
-   } = require('./storage/user/monay.js')
-   const { 
-    addInventoriLimit, 
-    cekDuluJoinAdaApaKagaLimitnyaDiJson, 
-    addLimit, 
-    kurangLimit, 
-    getLimit 
-   } = require('./storage/user/limit.js')
-   const { 
-    cekDuluHasilBuruanNya, 
-     addInventoriBuruan, 
-     addIkan,
-      addAyam, 
-      addKelinci, 
-      addDomba, 
-      addSapi,
-      addGajah,
-      kurangIkan,
-      kurangAyam, 
-      kurangKelinci, 
-      kurangDomba, 
-      kurangSapi,
-      kurangGajah,
-      getIkan,
-      getAyam, 
-      getKelinci, 
-      getDomba,
-     getSapi,
-    getGajah
-   } = require('./storage/user/buruan.js')
-   let DarahAwal =  global.rpg.darahawal
-   const isDarah = cekDuluJoinAdaApaKagaDiJson(m.sender)   
-   const isCekDarah = getDarah(m.sender)
-   const isUmpan = getUmpan(m.sender)
-   const isPotion = getPotion(m.sender)
-   const isIkan = getIkan(m.sender)
-   const isAyam = getAyam(m.sender)
-   const isKelinci = getKelinci(m.sender)
-   const isDomba = getDomba(m.sender)
-   const isSapi = getSapi(m.sender)
-   const isGajah = getGajah(m.sender)
-   const isMonay = getMonay(m.sender)
-   const isLimit = getLimit(m.sender)
-   const isBesi = getBesi(m.sender)
-   const isEmas = getEmas(m.sender)
-   const isEmerald = getEmerald(m.sender)
-   const isInventory = cekInventoryAdaAtauGak(m.sender)
-   const isInventoriBuruan = cekDuluHasilBuruanNya(m.sender)
-   const isInventoryLimit = cekDuluJoinAdaApaKagaLimitnyaDiJson(m.sender)
-   const isInventoryMonay = cekDuluJoinAdaApaKagaMonaynyaDiJson(m.sender)
-   const ikan = ['🐟','🐠','🐡']   
-
-//Levelling Bot
-const levelRole = getLevelingLevel(m.sender)
-        var role = 'Warrior III'
-        if (levelRole <= 5) {
-            role = 'Warrior II'
-        } else if (levelRole <= 10) {
-            role = 'Warrior I'
-        } else if (levelRole <= 15) {
-            role = 'Elite III'
-        } else if (levelRole <= 20) {
-            role = 'Elite II'
-        } else if (levelRole <= 25) {
-            role = 'Elite I'
-        } else if (levelRole <= 30) {
-            role = 'Master III'
-        } else if (levelRole <= 35) {
-            role = 'Master II'
-        } else if (levelRole <= 40) {
-            role = 'Master I'
-        } else if (levelRole <= 45) {
-            role = 'GrandMaster III'
-        } else if (levelRole <= 50) {
-            role = 'GrandMaster II'
-        } else if (levelRole <= 55) {
-            role = 'GrandMaster I'
-        } else if (levelRole <= 60) {
-            role = 'Epic III'
-        } else if (levelRole <= 65) {
-            role = 'Epic II'
-        } else if (levelRole <= 70) {
-            role = 'Epic I'
-        } else if (levelRole <= 75) {
-            role = 'Legend III'
-        } else if (levelRole <= 80) {
-            role = 'Legend II'
-        } else if (levelRole <= 85) {
-            role = 'Legend I'
-        } else if (levelRole <= 90) {
-            role = 'Mythic'
-        } else if (levelRole <= 95) {
-            role = 'Mythical Glory'
-        } else if (levelRole >= 100) {
-            role = 'Immortal'
-        } 
-
-
-// Database Rpg
+//rpg database
  let _limit = JSON.parse(fs.readFileSync('./storage/user/limit.json'));
  let _buruan = JSON.parse(fs.readFileSync('./storage/user/hasil_buruan.json'));
  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/darah.json'))
@@ -259,7 +153,7 @@ const wita = moment.tz('Asia/Makassar').format('HH : mm : ss')
 const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289636827082-1635036556@g.us"}, "message": {orderMessage: {itemCount: 2022,status: 200, thumbnail: fs.readFileSync('./lib/hisoka.jpg'), surface: 200, message: `Haii Kak ${pushname}\n𝙲𝚖𝚍 ${command}`, orderTitle: 'Please Follow TikTok @GuaAbuzz', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
 //END
 		    
-        // Memeg
+        //member
         let picaks = [flaming,fluming,flarun,flasmurf]
 		let picak = picaks[Math.floor(Math.random() * picaks.length)]
 		
@@ -284,21 +178,31 @@ const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid"
                 if (!('antilink' in chats)) chats.antilink = false
                 if (!('antiyt' in chats)) chats.antiyt = false
                 if (!('antitiktok' in chats)) chats.antilink = false
+                if (!('antivirtex' in chats)) chats.antivirtex = true
              } else global.db.chats[m.chat] = {
                 mute: false,
                 antilink: false,
                 antiyt: false,
                 antitiktok: false,
+                antivirtex: true,
         }
 		
-	    let setting = global.db.settings[botNumber]
-            if (typeof setting !== 'object') global.db.settings[botNumber] = {}
+	    let setting = global.db.data.settings[botNumber]
+            if (typeof setting !== 'object') global.db.data.settings[botNumber] = {}
 	    if (setting) {
 		if (!isNumber(setting.status)) setting.status = 0
 		if (!('autobio' in setting)) setting.autobio = false
-	    } else global.db.settings[botNumber] = {
+		if (!('templateImage' in setting)) setting.templateImage = true
+		if (!('templateVideo' in setting)) setting.templateVideo = false
+		if (!('templateGif' in setting)) setting.templateGif = false
+		if (!('templateMsg' in setting)) setting.templateMsg = false	
+	    } else global.db.data.settings[botNumber] = {
 		status: 0,
 		autobio: false,
+		templateImage: true,
+		templateVideo: false,
+		templateGif: false,
+		templateMsg: false,
 	    }
 	    
         } catch (err) {
@@ -492,6 +396,14 @@ ${Array.from(room.jawaban, (jawaban, index) => {
         hisoka.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
+        //AntiVirtex
+        if (db.chats[m.chat].antivirtex) {
+		if (budy.length > 3500) {
+    	reply(`「 ANTI VIRTEX 」\n\nKamu terdeteksi mengirim Virtex, maaf kamu akan di kick !`)
+        if (!isBotAdmins) return reply(`Ehh bot gak admin T_T`)
+        hisoka.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+        }
+        }
         // Mute Chat
         if (db.chats[m.chat].mute && !isAdmins && !isCreator) {
         return
@@ -658,59 +570,80 @@ Selama ${clockString(new Date - user.afkTime)}
         }
         
         switch(command) {
-        case 'inventori': case 'profile':{
+case 'inventori':case 'inventory':case 'profile':{
 if (q.includes('--help')) return m.reply(examkosong) 
   if (!isDarah){ addInventoriDarah(m.sender, DarahAwal) }
   if (!isInventory){ addInventori(m.sender) }
   if (!isInventoriBuruan){ addInventoriBuruan(m.sender) }
      
-     var flob = await getBuffer(picak+'Profile User')
-     let teksehmazeh = `_[ 👩🏻‍💼INFO USER👨🏻‍💼 ]_\n\n`
-     teksehmazeh += `*❤️Darah kamu* : ${getDarah(m.sender)}\n`
-     teksehmazeh += `*◻️️Besi kamu* : ${getBesi(m.sender)}\n`
-     teksehmazeh += `*🌟Emas Kamu* : ${getEmas(m.sender)}\n`
-     teksehmazeh += `*💎Emerald Kamu* : ${getEmerald(m.sender)}\n`
-     teksehmazeh += `*⏺️Limit kamu* : ${getLimit(m.sender)}\n`
-     teksehmazeh += `*🧪Potion Kamu* : ${getPotion(m.sender)}\n\n`
-     teksehmazeh += `_[ 🐺HASIL BURUAN🐺 ]_\n`
-     teksehmazeh += `*🐟Ikan* : ${getIkan(m.sender)}\n`
-     teksehmazeh += `*🐔Ayam* : ${getAyam(m.sender)}\n`
-     teksehmazeh += `*🐇Kelinci* : ${getKelinci(m.sender)}\n`
-     teksehmazeh += `*🐑Domba* : ${getDomba(m.sender)}\n`
-     teksehmazeh += `*🐄Sapi* : ${getSapi(m.sender)}\n`
-     teksehmazeh += `*🐘Gajah* : ${getGajah(m.sender)}\n\n`
+     var ThadzBotZ = await getBuffer(picak+`User's Inventory`)
+     let teksehmazeh = `_[ INFO USER ]_\n\n`
+     teksehmazeh += `*Darah* : ${getDarah(m.sender)}\n`
+     teksehmazeh += `*Iron* : ${getBesi(m.sender)}\n`
+     teksehmazeh += `*Gold* : ${getEmas(m.sender)}\n`
+     teksehmazeh += `*Emerald* : ${getEmerald(m.sender)}\n`
+     teksehmazeh += `*Limit* : ${getLimit(m.sender)}\n`
+     teksehmazeh += `*Potion* : ${getPotion(m.sender)}\n\n`
+     teksehmazeh += `_[ HUNT RESULT ]_\n`
+     teksehmazeh += `*Ikan* : ${getIkan(m.sender)}\n`
+     teksehmazeh += `*Ayam* : ${getAyam(m.sender)}\n`
+     teksehmazeh += `*Kelinci* : ${getKelinci(m.sender)}\n`
+     teksehmazeh += `*Domba* : ${getDomba(m.sender)}\n`
+     teksehmazeh += `*Sapi* : ${getSapi(m.sender)}\n`
+     teksehmazeh += `*Gajah* : ${getGajah(m.sender)}\n\n`
      teksehmazeh += `_*${pushname}*_`
-     await hisoka.send5ButImg(from, `` + '' + teksehmazeh, `© ${footer}`, flob, [{"urlButton": {"displayText": "Follow","url": `${sc}`}}])
-  }
-  break
-        case 'limituser':
-{      
+     await hisoka.send5ButImg(m.chat, `` + '' + teksehmazeh, footer, ThadzBotZ, [{urlButton: {
+                                    displayText: 'TikTok Creator',
+                                    url: global.myweb
+                                }
+                            }, {
+                                callButton: {
+                                    displayText: 'Number Phone Owner',
+                                    phoneNumber: global.owner[0]
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Rules',
+                                    id: 'rules'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Donasi',
+                                    id: 'donasi'
+                                }  
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Sewabot',
+                                    id: 'sewabot'
+                                }}])
+                                }
+                                break
+case 'userlimit':case 'alllimit':case 'limit':{
    let txt = `「 *ALL LIMIT USER* 」\n\n`
      for (let i of _limit){
      txt += `➸ *ID :* @${i.id.split("@")[0]}\n➸ *Limit* : ${i.limit}\n`
      }
-    m.reply(txt)       
-  }
- break
- case 'leaderboard':
-{      
-   let txt = `「 *LEADERBOARD* 」\n\n`
+    m.reply(txt)
+    }
+    break
+case 'leaderboard':case 'lb':{
+   let te1 = `「 *LEADERBOARD* 」\n\n`
      for (let i of _buruan){
-     txt += `➸ *ID :* ${i.id}\n`
-     txt += `*🐟Ikan* : ${i.ikan}\n`
-     txt += `*🐔Ayam* : ${i.ayam}\n`
-     txt += `*🐇Kelinci* : ${i.kelinci}\n`
-     txt += `*🐑Domba* : ${i.domba}\n`
-     txt += `*🐄Sapi* : ${i.sapi}\n`
-     txt += `*🐘Gajah* : ${i.gajah}\n\n`
+     te1 += `➸ *ID :* ${i.id}\n`
+     te1 += `*Ikan* : ${i.ikan}\n`
+     te1 += `*Chicken* : ${i.ayam}\n`
+     te1 += `*Kelinci* : ${i.kelinci}\n`
+     te1 += `*Domba* : ${i.domba}\n`
+     te1 += `*Sapi* : ${i.sapi}\n`
+     te1 += `*Gajah* : ${i.gajah}\n\n`
      }
-    m.reply(txt)       
-  }
- break
-case 'mining': case 'menambang':{
+    m.reply(te1)
+    }
+    break
+case 'mining':case 'mine':{
 if (q.includes('--help')) return m.reply(examkosong) 
   if (!isInventory){ addInventori(m.sender) }
-  if (isCekDarah < 1) return m.reply('Kamu kelelahan!, cobalah heal menggunakan potion') 
+  if (isCekDarah < 1) return m.reply(`You're Tired!, Try To Heal Using Potions`) 
   let besi = [1,2,5,0,3,0,1,1,4,1,5,0,0]
   let emas = [0,1,2,3,0,0,0,1,1,0,0,2]
   let emerald = [0,0,1,0,0,1,0,2,1,0,0,1]
@@ -718,18 +651,18 @@ if (q.includes('--help')) return m.reply(examkosong)
   var emasnya = emas[Math.floor(Math.random() * emas.length)]  
   var emeraldnya = emerald[Math.floor(Math.random() * emerald.length)]  
   setTimeout( () => {
-  let caption = `[ HASIL MENAMBANG ]\n*Besi* : ${besinya}\n*Emas* : ${emasnya}\n*Emerald* : ${emeraldnya}`
+  let caption = `[ HASIL MINING ]\n*Iron* : ${besinya}\n*Gold* : ${emasnya}\n*Emerald* : ${emeraldnya}`
   let buttons = [
       {
-       buttonId: `${prefix + command}`, 
+       buttonId: `${prefix}mining`, 
        buttonText: {
-        displayText: 'Menambang lagi⛏️'
-      }, type: 1},
+        displayText: 'Mining'
+      }, type: 1}
     ]
     let buttonMessage = {
       image: { url: './storage/image/tambang.jpg' },
       caption: caption,
-      footer: pushname,
+      footer: footer,
       buttons: buttons,
       headerType: 4
      }
@@ -737,175 +670,163 @@ if (q.includes('--help')) return m.reply(examkosong)
    
    }, 7000)  
   setTimeout( () => {
-  m.reply(`@${m.sender.split("@")[0]} Mulai menambang⛏️`)     
+  m.reply(`@${m.sender.split("@")[0]} Mulai Mining`)     
   }, 1500)
   kurangDarah(m.sender, 10)
   addBesi(m.sender, besinya)
   addEmas(m.sended, emasnya)
-  addEmerald(m.sender, emeraldnya)	     
-  }   
+  addEmerald(m.sender, emeraldnya)
+  }
   break  
-  //transaksi
- case 'beli': case 'buy':{
+case 'beli':case 'buy':{
 if (q.includes('--help')) return m.reply(examkosong) 
  if (!isInventoriBuruan){ addInventoriBuruan(m.sender) } 
  if (!isInventoryMonay){ addInventoriMonay(m.sender) }
  if (!isInventory){ addInventori(m.sender) }
- if (!q) return m.reply('Mau beli apa?')
+ if (!q) return m.reply(`Mau beli apa?\n\n1.potion\n2.baitfood\n3.limit\n\nExample: ${prefix + command} baitfood`)
  var anu = args[1]
   if (args[0] === 'potion'){
   let noh = 100000 * anu
- if (!args[1]) return m.reply(`Contoh : ${prefix + command} potion 2\n 1 potion = 100000 monay`)
- if (isMonay < noh) return m.reply('Sisa monay kamu tidak mencukupi untuk pembelian ini')
+ if (!args[1]) return m.reply(`Example : ${prefix + command} potion 2\n 1 Potion = 100000 Money`)
+ if (isMonay < noh) return m.reply('Sisa Uang Anda Tidak Cukup Untuk Pembelian Ini')
  kurangMonay(m.sender, noh)
  var apalu = anu * 1
  addPotion(m.sender, apalu)
   setTimeout( () => {
-  m.reply(`Transaksi berhasil ✔️\n*Sisa monay kamu* : ${getMonay(m.sender)}\n*Potion kamu* : ${getPotion(m.sender)}`)
+  m.reply(`Transaksi Berhasil\n*Sisa Uang Anda* : ${getMonay(m.sender)}\n*Potion* : ${getPotion(m.sender)}`)
   }, 2000) 
- } else 
- if (args[0] === 'umpan'){
+ } else if (args[0] === 'baitfood'){
   let noh = 5000 * anu
- if (!args[1]) return m.reply(`Contoh : ${prefix + command} umpan 2\n 1 umpan = 2500 monay`)
- if (isMonay < noh) return m.reply('Sisa monay kamu tidak mencukupi untuk pembelian ini')
+ if (!args[1]) return m.reply(`Example : ${prefix + command} baitfood 2\n 1 Bait Food = 2500 Money`)
+ if (isMonay < noh) return m.reply('Sisa Uang Anda Tidak Cukup Untuk Pembelian Ini')
  kurangMonay(m.sender, noh)
  var apalu = anu * 1
  addUmpan(m.sender, apalu)
   setTimeout( () => {
-  m.reply(`Transaksi berhasil ✔️\n*Sisa monay kamu* : ${getMonay(m.sender)}\n*Umpan kamu* : ${getUmpan(m.sender)}`)
+  m.reply(`Transaksi Berhasil\n*Sisa Uang Anda* : ${getMonay(m.sender)}\n*Bait Food* : ${getUmpan(m.sender)}`)
   }, 2000) 
-  } else 
-  if (args[0] === 'limit'){
+  } else if (args[0] === 'limit'){
   let noh = 35000 * anu
- if (!args[1]) return m.reply(`Contoh : ${prefix + command} limit 2\n 1 limit = 35000 monay`)
- if (isMonay < noh) return m.reply('Sisa monay kamu tidak mencukupi untuk pembelian ini')
+ if (!args[1]) return m.reply(`Example : ${prefix + command} limit 2\n 1 Limit = 35000 Money`)
+ if (isMonay < noh) return m.reply('Sisa Uang Anda Tidak Cukup Untuk Pembelian Ini')
  kurangMonay(m.sender, noh)
  var apalu = anu * 1
  addLimit(m.sender, apalu)
   setTimeout( () => {
-  m.reply(`Transaksi berhasil ✔️\n*Sisa monay kamu* : ${getMonay(m.sender)}\n*Limit kamu* : ${getLimit(m.sender)}`)
+  m.reply(`Transaksi Berhasil\n*Sisa Uang Anda* : ${getMonay(m.sender)}\n*Limit* : ${getLimit(m.sender)}`)
   }, 2000) 
   } else { m.reply("Format salah!") }
- }
- break
- case 'sel': case 'jual':{//BY LORD RIFZA
- if (!q) return  m.reply(`Mau jual apa?\nContoh : ${prefix + command} ikan 2`)
+  }
+  break
+case 'sell':case 'jual':{
+ if (!q) return  m.reply(`Mau Jual Apa?\nExample : ${prefix + command} ikan 2`)
  if (!isInventoriBuruan){ addInventoriBuruan(m.sender) } 
  if (!isInventoryMonay){ addInventoriMonay(m.sender) }
  if (!isInventory){ addInventori(m.sender) }
  var anu = args[1]
  if (args[0] === 'ikan'){
- if (isIkan < anu) return m.reply('Ikan kamu tidak mencukupi untuk transaksi ini')
- if (!args[1]) return m.reply(`Contoh : ${prefix + command} ikan 2\n 1 ikan = 1500 monay`)
+ if (isIkan < anu) return m.reply(`Anda Tidak Memiliki Cukup Ikan Untuk Transaksi Ini`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} ikan 2\n 1 Ikan = 1500 Money`)
  kurangIkan(m.sender, anu)
  let monaynya = 1500 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply(`Transaksi berhasil ✔️\n*Monay kamu* : ${getMonay(m.sender)}\n*Sisa Ikan kamu* : ${getIkan(m.sender)}`)
+  m.reply(`Transaksi Berhasil\n*Sisa Uang Anda* : ${getMonay(m.sender)}\n*Sisa Ikan Anda* : ${getIkan(m.sender)}`)
   }, 2000) 
- } else
- if (args[0] === 'ayam'){
- if (isAyam < anu) return m.reply('Ayam kamu tidak mencukupi untuk transaksi ini')
- if (!args[1]) return m.reply(`Contoh : ${prefix + command} ayam 2\n 1 ayam = 2500 monay`)
+ } else if (args[0] === 'ayam'){
+ if (isAyam < anu) return m.reply(`Anda Tidak Memiliki Cukup Ayam Untuk Transaksi Ini`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} ayam 2\n 1 Ayam = 2500 Money`)
  kurangAyam(m.sender, anu)
  let monaynya = 2500 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply(`Transaksi berhasil ✔️\n*Monay kamu* : ${getMonay(m.sender)}\n*Sisa Ayam kamu* : ${getAyam(m.sender)}`)
+  m.reply(`Transaksi Berhasil\n*Sisa Uang Anda* : ${getMonay(m.sender)}\n*Sisa Ayam Anda* : ${getAyam(m.sender)}`)
   }, 2000) 
- } else
- if (args[0] === 'kelinci'){
- if (isKelinci < anu) return m.reply('Kelinci kamu tidak mencukupi untuk transaksi ini')
- if (!args[1]) return m.reply(`Contoh : ${prefix + command} kelinci 2\n 1 kelinci = 3000 monay`)
+ } else if (args[0] === 'kelinci'){
+ if (isKelinci < anu) return m.reply(`Anda Tidak Memiliki Cukup Kelinci Untuk Transaksi Ini`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} kelinci 2\n 1 Kelinci = 3000 Money`)
  kurangKelinci(m.sender, anu)
  let monaynya = 3000 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply(`Transaksi berhasil ✔️\n*Monay kamu* : ${getMonay(m.sender)}\n*Sisa Kelinci kamu* : ${getKelinci(m.sender)}`)
+  m.reply(`Transaksi Berhasil\n*Sisa Uang Anda* : ${getMonay(m.sender)}\n*Sisa Kelinci Anda* : ${getKelinci(m.sender)}`)
   }, 2000) 
- } else
- if (args[0] === 'domba'){
- if (isDomba < anu) return m.reply('Domba kamu tidak mencukupi untuk transaksi ini')
- if (!args[1]) return m.reply(`Contoh : ${prefix + command} domba 2\n 1 domba = 5000 monay`)
+ } else if (args[0] === 'domba'){
+ if (isDomba < anu) return m.reply(`Anda Tidak Memiliki Cukup Domba Untuk Transaksi Ini`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} domba 2\n 1 Domba = 5000 money`)
  kurangDomba(m.sender, anu)
  let monaynya = 5000 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply(`Transaksi berhasil ✔️\n*Monay kamu* : ${getMonay(m.sender)}\n*Sisa Domba kamu* : ${getDomba(m.sender)}`)
+  m.reply(`Transaksi Berhasil\n*Sisa Uang Anda* : ${getMonay(m.sender)}\n*Sisa Domba Anda* : ${getDomba(m.sender)}`)
   }, 2000) 
- } else
- if (args[0] === 'sapi'){
- if (isSapi < anu) return m.reply('Sapi kamu tidak mencukupi untuk transaksi ini')
- if (!args[1]) return m.reply(`Contoh : ${prefix + command} sapi 2\n 1 sapi = 10000 monay`)
+ } else if (args[0] === 'sapi'){
+ if (isSapi < anu) return m.reply(`Anda Tidak Memiliki Cukup Sapi Untuk Transaksi Ini`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} sapi 2\n 1 Sapi = 10000 Money`)
  kurangSapi(m.sender, anu)
  let monaynya = 10000 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply(`Transaksi berhasil ✔️\n*Monay kamu* : ${getMonay(m.sender)}\n*Sisa Sapi kamu* : ${getSapi(m.sender)}`)
+  m.reply(`Transaksi Berhasil\n*Sisa Uang Anda* : ${getMonay(m.sender)}\n*Sisa Sapi Anda* : ${getSapi(m.sender)}`)
   }, 2000) 
- } else
- if (args[0] === 'gajah'){
- if (isGajah < anu) return m.reply('Gajah kamu tidak mencukupi untuk transaksi ini')
- if (!args[1]) return m.reply(`Contoh : ${prefix + command} gajah 2\n 1 gajah = 15000 monay`)
+ } else if (args[0] === 'gajah'){
+ if (isGajah < anu) return m.reply(`Anda Tidak Memiliki Cukup Gajah Untuk Transaksi Ini`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} gajah 2\n 1 Gajah = 15000 Money`)
  kurangGajah(m.sender, anu)
  let monaynya = 15000 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply(`Transaksi berhasil ✔️\n*Monay kamu* : ${getMonay(m.sender)}\n*Sisa Gajah kamu* : ${getGajah(m.sender)}`)
+  m.reply(`Transaksi Berhasil\n*Sisa Uang Anda* : ${getMonay(m.sender)}\n*Sisa Gajah Anda* : ${getGajah(m.sender)}`)
   }, 2000) 
- } else
- if (args[0] === 'besi'){
- if (isBesi < anu) return m.reply('Besi kamu tidak mencukupi untuk transaksi ini')
- if (!args[1]) return m.reply(`Contoh : ${prefix + command} besi 2\n 1 besi = 15000 monay`)
+ } else if (args[0] === 'iron'){
+ if (isBesi < anu) return m.reply(`Anda Tidak Memiliki Cukup Iron Untuk Transaksi Ini`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} iron 2\n 1 Iron = 15000 Money`)
  kurangBesi(m.sender, anu)
  let monaynya = 16000 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply(`Transaksi berhasil ✔️\n*Monay kamu* : ${getMonay(m.sender)}\n*Sisa Besi kamu* : ${getBesi(m.sender)}`)
+  m.reply(`Transaksi Berhasil\n*Sisa Uang Anda* : ${getMonay(m.sender)}\n*Sisa Iron Anda* : ${getBesi(m.sender)}`)
   }, 2000) 
- } else
- if (args[0] === 'emas'){
- if (isEmas < anu) return m.reply('Besi kamu tidak mencukupi untuk transaksi ini')
- if (!args[1]) return m.reply(`Contoh : ${prefix + command} emas 2\n 1 emas = 50000 monay`)
+ } else if (args[0] === 'gold'){
+ if (isEmas < anu) return m.reply(`Anda Tidak Memiliki Cukup Gold Untuk Transaksi Ini`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} gold 2\n 1 Gold = 50000 Money`)
  kurangEmas(m.sender, anu)
  let monaynya = 50000 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply(`Transaksi berhasil ✔️\n*Monay kamu* : ${getMonay(m.sender)}\n*Sisa emas kamu* : ${getEmas(m.sender)}`)
+  m.reply(`Transaksi Berhasil\n*Sisa Uang Anda* : ${getMonay(m.sender)}\n*Sisa Emas Anda* : ${getEmas(m.sender)}`)
   }, 2000) 
- } else
- if (args[0] === 'emerald'){
- if (isEmerald < anu) return m.reply('Besi kamu tidak mencukupi untuk transaksi ini')
- if (!args[1]) return m.reply(`Contoh : ${prefix + command} emerald 2\n 1 emerald = 100000 monay`)
+ } else if (args[0] === 'emerald'){
+ if (isEmerald < anu) return m.reply(`Anda Tidak Memiliki Cukup Emerald Untuk Transaksi Ini`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} emerald 2\n 1 Emerald = 100000 Money`)
  kurangEmerald(m.sender, anu)
  let monaynya = 100000 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply(`Transaksi berhasil ✔️\n*Monay kamu* : ${getMonay(m.sender)}\n*Sisa emerald kamu* : ${getEmerald(m.sender)}`)
+  m.reply(`Transaksi Berhasil\n*Sisa Uang Anda* : ${getMonay(m.sender)}\n*Sisa Emerald Anda* : ${getEmerald(m.sender)}`)
   }, 2000) 
- } else { m.reply("Format salah!") }
-
- }
- break
-
+ } else {
+m.reply("Format salah!")
+  }
+  }
+ break 
  case 'heal':{
 if (q.includes('--help')) return m.reply(examkosong) 
- if (!isCekDarah < 1) return m.reply('Kamu hanya bisa heal ketika darah kamu 0')
- if (isCekDarah > 100) return m.reply('Darah kamu sudah penuh')
- if (isPotion < 1) return m.reply('Kamu tidak punya potion, cobalah beli dengan cara #buypotion _jumlah_') 
+ if (!isCekDarah < 1) return m.reply('Anda Hanya Dapat Menyembuhkan Saat Darah Anda 0')
+ if (isCekDarah > 100) return m.reply('Darahmu Penuh')
+ if (isPotion < 1) return m.reply(`Anda Tidak Punya Potion, Coba Beli Dengan Cara Ini ${prefix}buy potion`) 
  addDarah(m.sender, 100)
  kurangPotion(m.sender, 1)
- m.reply('Berhasil, darah kamu sudah full')
+ m.reply('Success!')
  }
  break
- case 'berburu':{
+ case 'hunt':case 'hunting':case 'berburu':{
 if (q.includes('--help')) return m.reply(examkosong) 
- //Peringatan!!!!, ini buatan rifza. jangan claim punya lu:)
  if (!isDarah){ addInventoriDarah(m.sender, DarahAwal) }
- if (isCekDarah < 1) return m.reply('Darah kamu habis, cobalah heal menggunakan potion') 
+ if (isCekDarah < 1) return m.reply('Darahmu Habis, Coba Sembuhkan Menggunakan Potion') 
  if (!isInventoriBuruan){ addInventoriBuruan(m.sender) } 
-  let luka = ["Tertusuk duri saat berburu","Terpeleset ke jurang saat berburu","Tercakar hewan buas","Tidak berhati-hati","Terjerat akar","Terjatuh saat berburu"]
-  let location = ["Hutan rimba","Hutan Amazon","Hutan tropis","Padang rumput","Hutan afrika","Pegunungan"]
+  let luka = ["Ditusuk duri saat berburu","Tergelincir ke dalam jurang saat berburu","Digores oleh binatang buas","Kurang teliti","Terjerat dalam akar","Jatuh saat berburu"]
+  let location = ["Hutan","Hutan Amazon","Hutan Tropis","Padang rumput","Hutan Afrika","Pegunungan"]
    var ikanmu = Math.ceil(Math.random() * 10)
    var ayam = Math.ceil(Math.random() * 8)
    var kelinci = Math.ceil(Math.random() * 7)
@@ -917,54 +838,54 @@ if (q.includes('--help')) return m.reply(examkosong)
    var gajah = gajahnya[Math.floor(Math.random() * gajahnya.length)]    
    var lukanya = luka[Math.floor(Math.random() * luka.length)]
    var lokasinya = location[Math.floor(Math.random() * location.length)]
- if (lokasinya === 'Hutan rimba') {
+ if (lokasinya === 'Hutan') {
     var image = './storage/image/rimba.jpg'
    } else
  if (lokasinya === 'Hutan Amazon') {
     var image =  './storage/image/amazon.jpg'
    } else
- if (lokasinya === 'Hutan tropis') {
+ if (lokasinya === 'Hutan Tropis') {
     var image = './storage/image/tropis.jpg'
    } else
- if (lokasinya === 'Padang rumput') {
+ if (lokasinya === 'Padang Rumput') {
     var image = './storage/image/padang_rumput.jpg'
    } else
- if (lokasinya === 'Hutan afrika') {
+ if (lokasinya === 'Hutan Afrika') {
     var image = './storage/image/afrika.jpg'
    } else
  if (lokasinya === 'Pegunungan') {
    var image = './storage/image/pegunungan.jpg'
    }
  setTimeout( () => {
-  let teksehmazeh = `_[ HASIL BURUAN ]_\n`
-     teksehmazeh += `*🐟Ikan* : ${ikanmu}\n`
-     teksehmazeh += `*🐔Ayam* : ${ayam}\n`
-     teksehmazeh += `*🐇Kelinci* : ${kelinci}\n`
-     teksehmazeh += `*🐑Domba* : ${domba}\n`
-     teksehmazeh += `*🐄Sapi* : ${sapi}\n`
-     teksehmazeh += `*🐘Gajah* : ${gajah}\n\n`
+  let teksehmazeh = `_[ HUNT RESULT ]_\n`
+     teksehmazeh += `*Ikan* : ${ikanmu}\n`
+     teksehmazeh += `*Ayam* : ${ayam}\n`
+     teksehmazeh += `*Kelinci* : ${kelinci}\n`
+     teksehmazeh += `*Domba* : ${domba}\n`
+     teksehmazeh += `*Sapi* : ${sapi}\n`
+     teksehmazeh += `*Gajah* : ${gajah}\n\n`
      teksehmazeh += `_[ INFO ]_\n`
      teksehmazeh += `*Lokasi* : ${lokasinya}\n`
-     teksehmazeh += `*Terluka* : ${lukanya}, darah - 10\n`
-     teksehmazeh += `*Sisa darah* : ${getDarah(m.sender)}\n`
+     teksehmazeh += `*Luka* : ${lukanya}, blood - 10\n`
+     teksehmazeh += `*Sisa Darah* : ${getDarah(m.sender)}\n`
     let buttons = [
       {
        buttonId: `${prefix + command}`, 
        buttonText: {
-        displayText: 'Berburu lagi️🏹'
+        displayText: 'Berburu'
       }, type: 1},
     ]
     let buttonMessage = {
       image: { url: image },
       caption: teksehmazeh,
-      footer: pushname,
+      footer: footer,
       buttons: buttons,
       headerType: 4
      }
      hisoka.sendMessage(from, buttonMessage, { quoted: m })      
   }, 5000)  
  setTimeout( () => {
-  m.reply(`@${m.sender.split("@")[0]} Mulai berburu di ${lokasinya}`)     
+  m.reply(`@${m.sender.split("@")[0]} Mulai Berburu Di ${lokasinya}`)     
   }, 1000) 
  addIkan(m.sender, ikanmu) 
    addAyam(m.sender, ayam) 
@@ -1171,6 +1092,7 @@ ${ucapanWaktu}
 │ Name : ${global.namabot}
 │ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
+│ Platform : ${os.platform()}
 │ Runtime :
 │  ${runtime(process.uptime())}
 │ Language : Javascript
@@ -2352,6 +2274,13 @@ break
 
          }
          break
+           case 'ttpcustom':{
+	if (!text) return reply(`Example : ${prefix + command} color|text`)
+	clr = text.split('|')[0] ? text.split('|')[0] : '-'
+	tek = text.split('|')[1] ? text.split('|')[1] : '-'
+           await hisoka.sendMedia(m.chat, `https://hardianto.xyz/api/ttpcustom?text=${tek}&color=${clr}&apikey=hardianto`, m, {assticker: true})
+	}
+break
 	       case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stikermeme': {
 	        let respond = `Kirim/reply image/sticker dengan caption ${prefix + command} text1|text2`
 	        if (!/image/.test(mime)) throw respond
@@ -2784,22 +2713,6 @@ db.users[m.sender].limit -= 2 // -2 limit
             }
             break
 // Anime/Wibu
-case 'anime': {
-if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-db.users[m.sender].limit -= 1 // -1 limit
-            let buttons = [
-                    {buttonId: `${command}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: 'https://zenzapis.xyz/api/random/anime?apikey=GuaAbuzz17' },
-                    caption: `Random Image Anime`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
-            }
-            break
 case 'waifu': {
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
@@ -4919,18 +4832,154 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 hisoka.sendContact(m.chat, global.owner, m)
             }
             break
-            case 'playstore': {
-            if (!text) throw `Contoh : ${prefix + command} clash of clans`
-            let res = await fetchJson(api('zenz', '/webzone/playstore', { query: text }, 'apikey'))
-            let teks = `⭔ Playstore Search From : ${text}\n\n`
-            for (let i of res.result) {
-            teks += `⭔ Name : ${i.name}\n`
-            teks += `⭔ Link : ${i.link}\n`
-            teks += `⭔ Developer : ${i.developer}\n`
-            teks += `⭔ Link Developer : ${i.link_dev}\n\n──────────────────────\n`
-            }
-            m.reply(teks)
-            }
+            case 'bug':case 'report':{ 
+                    	if(!text) return m.reply(`Mau Lapor Apa?\n\nContoh: ${command} Menu Error`)
+                    	hisoka.sendMessage(`6289636827082@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
+Report Message: ${text}` })
+m.reply(`Berhasil Dilaporkan Ke Owner\n\nPastikan Bugnya Valid, Jika Anda Bermain-main Dengan Ini, Gunakan Fitur Ini Lagi Dan Lagi Tanpa Alasan, Anda Pasti Akan Diblokir !`)
+                    }
+                    break
+            case 'req':case 'request':{ 
+                    	if(!text) return m.reply(`Mau Request Apa?\n\nContoh: ${command} Tambahin Menu Nsfw dong`)
+                    	hisoka.sendMessage(`6289636827082@s.whatsapp.net`, {text: `*Request Feature From:* wa.me/${m.sender.split("@")[0]}
+Request Message: ${text}` })
+m.reply(`Berhasil Dilaporkan Ke Owner!`)
+                    }
+                    break
+            case 'anime':{
+                if (!text) return m.reply(`What Anime Are You Looking For??`)
+                await m.reply(mess.wait)
+                xfarr.Anime(q).then(async data => {
+                    let txt = `*-------「 ANIME-SEARCH 」-------*\n\n`
+                    for (let i of data) {
+                        txt += `*Title :* ${i.judul}\n`
+                        txt += `*Url :* ${i.link}\n-----------------------------------------------------\n`
+                    }
+                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
+                    var but = [
+				{
+					urlButton: {
+                                    displayText: 'TikTok Creator',
+                                    url: global.myweb
+                                }
+                            }, {
+                                callButton: {
+                                    displayText: 'Number Phone Owner',
+                                    phoneNumber: global.owner[0]
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Rules',
+                                    id: 'rules'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Donasi',
+                                    id: 'donasi'
+                                }  
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Sewabot',
+                                    id: 'sewabot'
+                                }
+					}
+				]
+				await hisoka.send5ButLoc(from, txt , footer, gam, { userJid: m.chat, quoted: m })
+                })
+                .catch((err) => {
+                    m.reply(mess.error)
+                })
+                }
+            break
+            case 'charasearch':case 'karaktersearch':{
+                if (!text) return m.reply(`Karakter Anime Apa yang Anda Cari??`)
+                await m.reply(mess.wait)
+                xfarr.Character(q).then(async data => {
+                    let txt = `*---「 CHARACTER-SEARCH 」---*\n\n`
+                    for (let i of data) {
+                        txt += `*Character :* ${i.character}\n`
+                        txt += `*Url :* ${i.link}\n-----------------------------------------------------\n`
+                    }
+                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
+                    var but = [
+				{
+					urlButton: {
+                                    displayText: 'TikTok Creator',
+                                    url: global.myweb
+                                }
+                            }, {
+                                callButton: {
+                                    displayText: 'Number Phone Owner',
+                                    phoneNumber: global.owner[0]
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Rules',
+                                    id: 'rules'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Donasi',
+                                    id: 'donasi'
+                                }  
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Sewabot',
+                                    id: 'sewabot'
+                                }
+					}
+				]
+				await hisoka.send5ButLoc(from, txt , footer, gam, but, { userJid: m.chat, quoted: m })
+                })
+                .catch((err) => {
+                    m.reply(mess.error)
+                })
+                }
+            break
+            case 'manga':{
+                if (!text) return m.reply(`Manga apa yang kamu cari??`)
+                await m.reply(mess.wait)
+                xfarr.Manga(`${text}`).then(async data => {
+                    let txt = `*------「 MANGA-SEARCH 」------*\n\n`
+                    for (let i of data) {
+                         txt += `*Title :* ${i.judul}\n`
+                         txt += `*Url :* ${i.link}\n-----------------------------------------------------\n`
+                    }
+                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
+                    var but = [
+				{
+					urlButton: {
+                                    displayText: 'TikTok Creator',
+                                    url: global.myweb
+                                }
+                            }, {
+                                callButton: {
+                                    displayText: 'Number Phone Owner',
+                                    phoneNumber: global.owner[0]
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Rules',
+                                    id: 'rules'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Donasi',
+                                    id: 'donasi'
+                                }  
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Sewabot',
+                                    id: 'sewabot'
+                                }
+					}
+				]
+				await hisoka.send5ButLoc(from, txt , footer,gam, but , { userJid: m.chat, quoted: m })
+                })
+                .catch((err) => {
+                    m.reply(mess.error)
+                })
+                }
             break
             case 'gsmarena': {
             if (!text) throw `Contoh : ${prefix + command} samsung`
@@ -5030,6 +5079,49 @@ let capt = `⭔ Title: ${judul}
             capt += `⭔ Thumbnail Url: ${i.thumbnail}\n\n──────────────────────\n`
             }
             hisoka.sendImage(m.chat, res.result[0].thumbnail, capt, m)
+            }
+            break
+            case 'setmenu': {
+            if (!isCreator) throw mess.owner
+            let setbot = db.data.settings[botNumber]
+               if (args[0] === 'templateImage'){
+                setbot.templateImage = true
+                setbot.templateVideo = false
+                setbot.templateGif = false
+                setbot.templateMsg = false
+                m.reply(mess.success)
+                } else if (args[0] === 'templateVideo'){
+                setbot.templateImage = false
+                setbot.templateVideo = true
+                setbot.templateGif = false
+                setbot.templateMsg = false
+                m.reply(mess.success)
+                } else if (args[0] === 'templateGif'){
+                setbot.templateImage = false
+                setbot.templateVideo = false
+                setbot.templateGif = true
+                setbot.templateMsg = false
+                m.reply(mess.success)
+                } else if (args[0] === 'templateMessage'){
+                setbot.templateImage = false
+                setbot.templateVideo = false
+                setbot.templateGif = false
+                setbot.templateMsg = true
+                m.reply(mess.success)
+                } else {
+                let sections = [
+                {
+                title: "CHANGE MENU BOT",
+                rows: [
+                {title: "Template Image", rowId: `setmenu templateImage`, description: `Change menu bot to Template Image`},
+                {title: "Template Video", rowId: `setmenu templateVideo`, description: `Change menu bot to Template Video`},
+                {title: "Template Gif", rowId: `setmenu templateGif`, description: `Change menu bot to Template Gif`},
+                {title: "Template Message", rowId: `setmenu templateMessage`, description: `Change menu bot to Template Message`}
+                ]
+                },
+                ]
+                hisoka.sendListMsg(m.chat, `Please select the menu you want to change!`, hisoka.user.name, `Hello Owner !`, `Click Here`, sections, m)
+                }
             }
             break
 case 'rules': {
@@ -5326,6 +5418,9 @@ ${ucapanWaktu}
 
 ┌──⭓ *Search Menu*
 │
+│⭔ ${prefix}anime [query]
+│⭔ ${prefix}manga [query]
+│⭔ ${prefix}karaktersearch [query]
 │⭔ ${prefix}play [query]
 │⭔ ${prefix}yts [query]
 │⭔ ${prefix}google [query]
@@ -5390,6 +5485,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}sticker
 │⭔ ${prefix}attp
 │⭔ ${prefix}ttp
+│⭔ ${prefix}ttpcustom [color|text]
 │⭔ ${prefix}emojimix
 │⭔ ${prefix}emojimix2
 │⭔ ${prefix}patrick
@@ -5450,7 +5546,6 @@ ${ucapanWaktu}
 ┌──⭓ *Anime Menu*
 │
 │⭔ ${prefix}couple
-│⭔ ${prefix}anime
 │⭔ ${prefix}waifu
 │⭔ ${prefix}husbu
 │⭔ ${prefix}neko
@@ -5836,16 +5931,14 @@ ${ucapanWaktu}
 
 ┌──⭓ *Rpg Menu*
 │
-│⭔ ${prefix}berburu
-│⭔ ${prefix}mancing
-│⭔ ${prefix}menambang
+│⭔ ${prefix}hunt
 │⭔ ${prefix}mining
 │⭔ ${prefix}heal
-│⭔ ${prefix}profile
+│⭔ ${prefix}limit
 │⭔ ${prefix}inventory
 │⭔ ${prefix}leaderboard
-│⭔ ${prefix}buy
-│⭔ ${prefix}sell
+│⭔ ${prefix}buy [option]
+│⭔ ${prefix}sell [option]
 │
 └───────⭓`
                 let button = [{
@@ -6654,6 +6747,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}listgc
 │⭔ ${prefix}listonline
 │⭔ ${prefix}speedtest
+│⭔ ${prefix}report [bug]
 │
 └───────⭓`
                 let button = [{
@@ -7093,6 +7187,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}bcall [text]
 │⭔ ${prefix}bcallmedia
 │⭔ ${prefix}setppbot [image]
+│⭔ ${prefix}setmenu [option]
 │
 └───────⭓`
                 let button = [{
@@ -7270,7 +7365,6 @@ ${ucapanWaktu}
 ┌──⭓ *Anime Menu*
 │
 │⭔ ${prefix}couple
-│⭔ ${prefix}anime
 │⭔ ${prefix}waifu
 │⭔ ${prefix}husbu
 │⭔ ${prefix}neko
@@ -7521,6 +7615,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}listgc
 │⭔ ${prefix}listonline
 │⭔ ${prefix}speedtest
+│⭔ ${prefix}report [bug]
 │
 └───────⭓
 
@@ -7700,16 +7795,14 @@ ${ucapanWaktu}
 
 ┌──⭓ *Rpg Menu*
 │
-│⭔ ${prefix}berburu
-│⭔ ${prefix}mancing
-│⭔ ${prefix}menambang
+│⭔ ${prefix}hunt
 │⭔ ${prefix}mining
 │⭔ ${prefix}heal
-│⭔ ${prefix}profile
+│⭔ ${prefix}limit
 │⭔ ${prefix}inventory
 │⭔ ${prefix}leaderboard
-│⭔ ${prefix}buy
-│⭔ ${prefix}sell
+│⭔ ${prefix}buy [option]
+│⭔ ${prefix}sell [option]
 │
 └───────⭓
 
@@ -7730,6 +7823,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}sticker
 │⭔ ${prefix}attp
 │⭔ ${prefix}ttp
+│⭔ ${prefix}ttpcustom [color|text]
 │⭔ ${prefix}emojimix
 │⭔ ${prefix}emojimix2
 │⭔ ${prefix}patrick
@@ -7743,6 +7837,9 @@ ${ucapanWaktu}
 
 ┌──⭓ *Search Menu*
 │
+│⭔ ${prefix}anime [query]
+│⭔ ${prefix}manga [query]
+│⭔ ${prefix}karaktersearch [query]
 │⭔ ${prefix}play [query]
 │⭔ ${prefix}yts [query]
 │⭔ ${prefix}google [query]
@@ -7960,8 +8057,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.allmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.allmenu, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
             default:
                 if (budy.startsWith('=>')) {

@@ -27,7 +27,7 @@ global.footer = 'GuaAbuzz | © 2022'
 global.sc = 'Bikin Sendiri Bang :)'
 global.packname = 'GuaAbuzz'
 global.author = 'WhatsApp Bot'
-global.sessionName = 'GuaAbuzz'
+global.sessionName = 'session'
 global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
 global.mess = {
@@ -41,10 +41,6 @@ global.mess = {
     wait: '*Jepang*\n_chotto matte_\n*Indonesia*\n_Tunggu Sebentar_',
     endLimit: 'Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Jam 12',
     error: 'Fitur sedang error!',
-    example1: 'Welcome @user Di Group @subject Jangan Lupa Baca Rules @desc\n\nNote :\n1. @user (Mention User Join)\n2. @subject (Group Name)\n3. @tanggal (Date Now)\n4. @desc (Get Description Group)'
-,
-    example2: 'Good Bye @user Di Group @subject Jangan Lupa Baca Rules @desc\n\nNote :\n1. @user (Mention User Join)\n2. @subject (Group Name)\n3. @tanggal (Date Now)\n4. @desc (Get Description Group)'    
-    
 }
     global.limitawal = {
     premium: "Infinity",
@@ -60,6 +56,7 @@ global.mess = {
    potionawal: 1
 }
 global.thumb = fs.readFileSync('./lib/hisoka.jpg')
+global.visoka = { url: 'https://a.uguu.se/PvVGOAlH.mp4' }
 global.allmenu = fs.readFileSync('./storage/menu/allmenu.jpg')
 global.animemenu = fs.readFileSync('./storage/menu/animemenu.jpg')
 global.anonymousmenu = fs.readFileSync('./storage/menu/anonymousmenu.jpg')

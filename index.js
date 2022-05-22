@@ -148,9 +148,9 @@ async function startHisoka() {
                 }
 
                 if (anu.action == 'add') {
-                    hisoka.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Welcome To ${metadata.subject} @${num.split("@")[0]}` })
+                    hisoka.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Hi, @${num.split("@")[0]}👋\nWelcome To *${metadata.subject}*\n\n*Description:*\n${metadata.desc}`})
                 } else if (anu.action == 'remove') {
-                    hisoka.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `@${num.split("@")[0]} Leaving To ${metadata.subject}` })
+                    hisoka.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Selamat Tinggal @${num.split("@")[0]}, Semoga Tenang DiAlam Sana!` })
                 }
             }
         } catch (err) {
