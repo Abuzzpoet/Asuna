@@ -399,7 +399,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
         //AntiVirtex
         if (db.chats[m.chat].antivirtex) {
 		if (budy.length > 3500) {
-    	reply(`「 ANTI VIRTEX 」\n\nKamu terdeteksi mengirim Virtex, maaf kamu akan di kick !`)
+    	m.reply(`「 ANTI VIRTEX 」\n\nKamu terdeteksi mengirim Virtex, maaf kamu akan di kick !`)
         if (!isBotAdmins) return reply(`Ehh bot gak admin T_T`)
         hisoka.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
