@@ -16,13 +16,15 @@
       "mute": false,
       "antilink": false,
       "antiyt": false,
-      "antitiktok": false
+      "antitiktok": false,
+      "antivirtex": true
     },
     "6281374208316@s.whatsapp.net": {
       "mute": false,
       "antilink": false,
       "antiyt": false,
-      "antitiktok": false
+      "antitiktok": false,
+      "antivirtex": true
     }
   },
   "database": {},
