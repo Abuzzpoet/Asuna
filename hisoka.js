@@ -1036,7 +1036,7 @@ case 'tqtt': case 'tqto': case 'thanksto': {
 • Wib : ${wib}
 • Wita : ${wita}
 • Wit : ${wit}`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -1058,12 +1058,21 @@ case 'tqtt': case 'tqto': case 'thanksto': {
                                 }  
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'List Menu',
-                                    id: 'command'
+                                    displayText: 'Sewabot',
+                                    id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.tqtt, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'gopay': {
                 hisoka.sendMessage(m.chat, { image: { url: 'https://i.ibb.co/dGwfqRT/Gopay.jpg' }, caption: `🔥` }, { quoted: ftroli })
@@ -5145,14 +5154,23 @@ case 'rules': {
 - Anda Tidak Akan Bisa Mengakses Bot Lagi.
 - Mengeksploitasi Terhadap bot.
 Sanksi: *PERMANENT BLOCK*`
-                let button = [{
+                let btn = [{
                                 quickReplyButton: {
                                     displayText: 'Sewabot',
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'sewa': case 'sewabot': {
                 anu = `Open Jasa Sewa Bot
@@ -5171,8 +5189,8 @@ case 'sewa': case 'sewabot': {
 └───────⭓
 
 ┌──⭓ *Keuntungan Sewa Bot*
-│⭔ On 24 Jam (Kadang² Mati Sendiri)
-│⭔ Run Dirpd/Heroku
+│⭔ On 24 Jam
+│⭔ Run Dirpd/Heroku/Oktote
 │⭔ Anti Delay
 │⭔ Antilink WA/TT/YT
 │⭔ Welcome Image
@@ -5182,7 +5200,7 @@ case 'sewa': case 'sewabot': {
 ┌──⭓ *Sistem Pembayaran*
 │⭔ Kirim » Bukti Pembayaran » Bot Join
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -5208,8 +5226,17 @@ case 'sewa': case 'sewabot': {
                                     id: 'owner'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.sewabot, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'donasi': case 'donate': {
                 anu = `Haii Kak *${pushname}*
@@ -5229,7 +5256,7 @@ niscaya dia akan melihat
 (balasan)nya.
 
 *Terima Kasih*`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -5255,8 +5282,17 @@ niscaya dia akan melihat
                                     id: 'owner'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.donasimenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'groupmenu': case 'menugroup': {
                 anu = `Haii Kak ${pushname}
@@ -5303,7 +5339,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}hapusvote
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -5329,8 +5365,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.groupmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'downloadmenu': case 'menudownload': {
                 anu = `Haii Kak ${pushname}
@@ -5369,7 +5414,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}soundcloud [url]
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -5395,8 +5440,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.downloadmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'searchmenu': case 'menusearch': {
                 anu = `Haii Kak ${pushname}
@@ -5433,7 +5487,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}groupwhatsapp 
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -5459,8 +5513,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.searchmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'stickermenu': case 'menusticker': {
                 anu = `Haii Kak ${pushname}
@@ -5496,7 +5559,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}bucinstick
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -5522,8 +5585,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.stickermenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'animemenu': case 'menuanime': {
                 anu = `Haii Kak ${pushname}
@@ -5566,7 +5638,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}kitagawa
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -5592,8 +5664,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.animemenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'nsfwmenu': case 'menunsfw': {
                 anu = `Haii Kak ${pushname}
@@ -5638,7 +5719,7 @@ ${ucapanWaktu}
 │⭔ Noted : Stay Halal Brother >_<
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -5664,8 +5745,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.nsfwmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'asupanmenu': case 'menuasupan': {
                 anu = `Haii Kak ${pushname}
@@ -5702,7 +5792,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}jepang
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -5728,8 +5818,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.asupanmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'quotesmenu': case 'menuquotes': {
                 anu = `Haii Kak ${pushname}
@@ -5770,7 +5869,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}cerpen
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -5796,8 +5895,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.quotesmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'mememenu': case 'menumeme': {
                 anu = `Haii Kak ${pushname}
@@ -5824,7 +5932,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}darkmeme
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -5850,8 +5958,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.mememenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'randommenu': case 'menurandom': {
                 anu = `Haii Kak ${pushname}
@@ -5882,7 +5999,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}styletext
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -5908,8 +6025,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.randommenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'rpgmenu': case 'menurpg': {
                 anu = `Haii Kak ${pushname}
@@ -5941,7 +6067,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}sell [option]
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -5967,8 +6093,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.rpgmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'sertifikatmenu': case 'menusertifikat': {
                 anu = `Haii Kak ${pushname}
@@ -6001,7 +6136,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}pacarserti
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -6027,8 +6162,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.sertifikatmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'textpromenu': case 'menutextpro': {
                 anu = `Haii Kak ${pushname}
@@ -6131,7 +6275,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}bubble-effect 
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -6157,8 +6301,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.textpromenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'photooxymenu': case 'menuphotooxy': {
                 anu = `Haii Kak ${pushname}
@@ -6197,7 +6350,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}harrypotter
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -6223,8 +6376,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.photooxymenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'photomakermenu': case 'menuphotomaker': {
                 anu = `Haii Kak ${pushname}
@@ -6297,7 +6459,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}bats-halloween
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -6323,8 +6485,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.photomakermenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'stickerefekmenu': case 'menustickerefek': {
 	anu = `Haii Kak ${pushname}
@@ -6385,7 +6556,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}wanted
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -6411,8 +6582,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.stickerefekmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'ephotomenu': case 'menuephoto': {
                 anu = `Haii Kak ${pushname}
@@ -6487,7 +6667,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}valorantbanner
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -6513,8 +6693,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.ephotomenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'gamemenu': case 'menugame': {
                 anu = `Haii Kak ${pushname}
@@ -6544,7 +6733,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}suitpvp [@tag]
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -6570,8 +6759,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.gamemenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'primbonmenu': case 'menuprimbon': {
                 anu = `Haii Kak ${pushname}
@@ -6625,7 +6823,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}shio
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -6651,8 +6849,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.primbonmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'convertmenu': case 'menuconvert': {
                 anu = `Haii Kak ${pushname}
@@ -6686,7 +6893,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}toaudio
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -6712,8 +6919,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.convertmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'mainmenu': case 'menumain': {
                 anu = `Haii Kak ${pushname}
@@ -6750,7 +6966,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}report [bug]
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -6776,10 +6992,18 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.mainmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
-
 case 'databasemenu': case 'menudatabase': {
                 anu = `Haii Kak ${pushname}
 ${ucapanWaktu}
@@ -6810,7 +7034,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}delmsg
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -6836,10 +7060,18 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.databasemenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
-
 case 'anonymousmenu': case 'menuanonymous': {
                 anu = `Haii Kak ${pushname}
 ${ucapanWaktu}
@@ -6867,7 +7099,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}sendkontak
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -6893,10 +7125,18 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.anonymousmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
-
 case 'islamicmenu': case 'menuislamic': {
                 anu = `Haii Kak ${pushname}
 ${ucapanWaktu}
@@ -6935,7 +7175,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}audio10
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -6961,10 +7201,18 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.islamicmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
-
 case 'kerangmenu': case 'menukerang': {
                 anu = `Haii Kak ${pushname}
 ${ucapanWaktu}
@@ -7006,7 +7254,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}jodohku
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -7032,10 +7280,18 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.kerangmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
-
 case 'voicemenu': case 'menuvoice': {
                 anu = `Haii Kak ${pushname}
 ${ucapanWaktu}
@@ -7069,7 +7325,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}tupai
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -7095,10 +7351,18 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.voicemenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
-
 case 'stalkmenu': case 'menustalk': {
                 anu = `Haii Kak ${pushname}
 ${ucapanWaktu}
@@ -7126,7 +7390,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}stalk [option] [query]
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -7152,10 +7416,18 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.stalkmenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
-
 case 'ownermenu': case 'menuowner': {
                 anu = `Haii Kak ${pushname}
 ${ucapanWaktu}
@@ -7190,7 +7462,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}setmenu [option]
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -7216,8 +7488,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.ownermenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
 case 'webzonemenu': case 'menuwebzone': {
                 anu = `Haii Kak ${pushname}
@@ -7249,7 +7530,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}drakor
 │
 └───────⭓`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -7275,8 +7556,17 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.webzonemenu, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
             case 'list': case 'menu': case 'help': case '?': {
                 anu = `Haii Kak ${pushname}
@@ -8059,7 +8349,7 @@ ${ucapanWaktu}
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.allmenu, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
                         hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
