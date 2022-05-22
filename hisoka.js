@@ -1085,18 +1085,19 @@ case 'dana': {
 case 'command': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
-                    title: `Hi ${pushname}
-${ucapanWaktu}
-┌──⭓ 「 INFO USER 」⭓
-│
+                    title: `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
 │ Name : ${pushname}
 │ Number : ${m.sender.split('@')[0]}
 │ Status : ${isCreator ? 'Owner' : 'User'}
 │ User : ${Object.keys(global.db.users).length}
-│
-└───────⭓
-┌──⭓ 「 INFO BOT 」⭓
-│
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}
 │ Owner : ${global.namaowner}
@@ -1106,10 +1107,9 @@ ${ucapanWaktu}
 │  ${runtime(process.uptime())}
 │ Language : Javascript
 │ Lib : Baileys-md
-│
-└───────⭓
-┌──⭓ 「 INFO TIME 」⭓
-│
+└┬─────────────┈❖
+┌┤「 INFO TIME 」
+│└─────────────┈❖
 │ Tanggal Server : ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}
 │ Waktu Server : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}
 │ Menuju idul Adha :
@@ -1117,8 +1117,7 @@ ${ucapanWaktu}
 │ WIB : ${wib}
 │ WITA : ${wita}
 │ WIT : ${wit}
-│
-└───────⭓`,
+└──────────────┈❖`,
                     description: "\n",
                     buttonText: "LIST MENU  >_<",
                     footerText: "Donasi Kak Buat Beli Apikey🔥",
@@ -1127,7 +1126,7 @@ ${ucapanWaktu}
 								"title": "All Fitur Bot >_<",
 								"rows": [
 									{
-										"title": "All Menu",
+										"title": "「 All Menu 」",
 										"description": "Menampilkan All Menu",
 										"rowId": `${prefix}allmenu`
 									}
@@ -1137,147 +1136,147 @@ ${ucapanWaktu}
 								"title": "List menu Bot >_<",
 								"rows": [
 									{
-										"title": "Anonymous Menu",
+										"title": "「 Anonymous Menu 」",
 										"description": "Menampilkan Anonymous Menu",
 										"rowId": `${prefix}anonymousmenu`
 									},
 									{
-									    "title": "Anime Menu",
+									    "title": "「 Anime Menu 」",
 										"description": "Menampilkan Anime Menu",
 										"rowId": `${prefix}animemenu`
 									},
 									{
-									    "title": "Asupan Menu",
+									    "title": "「 Asupan Menu 」",
 										"description": "Menampilkan Asupan Menu",
 										"rowId": `${prefix}asupanmenu`
 									},
 									{
-									    "title": "Convert Menu",
+									    "title": "「 Convert Menu 」",
 										"description": "Menampilkan Convert Menu",
 										"rowId": `${prefix}convertmenu`
 									},
 									{
-									    "title": "Download Menu",
+									    "title": "「 Download Menu 」",
 										"description": "Menampilkan Download Menu",
 										"rowId": `${prefix}downloadmenu`
 									},
 									{
-									    "title": "Database Menu",
+									    "title": "「 Database Menu 」",
 										"description": "Menampilkan Database Menu",
 										"rowId": `${prefix}databasemenu`
 									},
 									{
-									    "title": "Ephoto Menu",
+									    "title": "「 Ephoto Menu 」",
 										"description": "Menampilkan Ephoto Menu",
 										"rowId": `${prefix}ephotomenu`
 									},
 									{
-									    "title": "Group Menu",
+									    "title": "「 Group Menu 」",
 										"description": "Menampilkan Group Menu",
 										"rowId": `${prefix}groupmenu`
 									},
 									{
-									    "title": "Game Menu",
+									    "title": "「 Game Menu 」",
 										"description": "Menampilkan Game Menu",
 										"rowId": `${prefix}gamemenu`
 									},
 									{
-										"title": "Islamic Menu",
+										"title": "「 Islamic Menu 」",
 										"description": "Menampilkan Islamic Menu",
 										"rowId": `${prefix}islamicmenu`
 									},
 									{
-										"title": "Kerang Menu",
+										"title": "「 Kerang Menu 」",
 										"description": "Menampilkan Kerang Menu",
 										"rowId": `${prefix}kerangmenu`
 									},
 									{
-										"title": "Meme Menu",
+										"title": "「 Meme Menu 」",
 										"description": "Menampilkan Meme Image Menu",
 										"rowId": `${prefix}mememenu`
 									},
 									{
-										"title": "Main Menu",
+										"title": "「 Main Menu 」",
 										"description": "Menampilkan Main Menu",
 										"rowId": `${prefix}mainmenu`
 									},
 									{
-										"title": "Nsfw Menu",
+										"title": "「 Nsfw Menu 」",
 										"description": "Menampilkan Nsfw Menu",
 										"rowId": `${prefix}nsfwmenu`
 									},
 									{
-										"title": "Owner Menu",
+										"title": "「 Owner Menu 」",
 										"description": "Menampilkan Owner Menu",
 										"rowId": `${prefix}ownermenu`
 									},
 									{
-										"title": "Primbon Menu",
+										"title": "「 Primbon Menu 」",
 										"description": "Menampilkan Primbon Menu",
 										"rowId": `${prefix}primbonmenu`
 									},
 									{
-										"title": "Photo Maker Menu",
+										"title": "「 Photo Maker Menu 」",
 										"description": "Menampilkan Photo Maker Menu",
 										"rowId": `${prefix}photomakermenu`
 									},
 									{
-										"title": "Photo Oxy Menu️",
+										"title": "「 Photo Oxy Menu 」️",
 										"description": "Menampilkan Photo Oxy Menu",
 										"rowId": `${prefix}photooxymenu`
 									},
 									{
-										"title": "Quotes Menu",
+										"title": "「 Quotes Menu 」",
 										"description": "Menampilkan Quotes Menu",
 										"rowId": `${prefix}quotesmenu`
 									},
 									{
-										"title": "Rpg Menu️",
+										"title": "「 Rpg Menu 」️",
 										"description": "Menampilkan Rpg Menu",
 										"rowId": `${prefix}rpgmenu`
 									},
 									{
-										"title": "Random Menu",
+										"title": "「 Random Menu 」",
 										"description": "Menampilkan Random Menu",
 										"rowId": `${prefix}randommenu`
 									},
 									{
-										"title": "Sticker Menu️",
+										"title": "「 Sticker Menu 」️",
 										"description": "Menampilkan Sticker  Menu",
 										"rowId": `${prefix}stickermenu`
 									},
 									{
-										"title": "Search Menu",
+										"title": "「 Search Menu 」",
 										"description": "Menampilkan Search Menu",
 										"rowId": `${prefix}searchmenu`
 									},
 									{
-										"title": "Stalk Menu",
+										"title": "「 Stalk Menu 」",
 										"description": "Menampilkan Stalk Menu",
 										"rowId": `${prefix}stalkmenu`
 									},
 									{
-										"title": "Sticker Efek Menu️",
+										"title": "「 Sticker Efek Menu 」️",
 										"description": "Menampilkan Sticker Efek Menu",
 										"rowId": `${prefix}stickerefekmenu`
 									},
 									{
-										"title": "Sertifikat Menu️",
+										"title": "「 Sertifikat Menu 」️",
 										"description": "Menampilkan Sertifikat Menu",
 										"rowld": `${prefix}sertifikatmenu`
 									},
 									{
-										"title": "Text Pro Menu",
+										"title": "「 Text Pro Menu 」",
 										"description": "Menampilkan Text Pro menu",
 										"rowId": `${prefix}textpromenu`
 									},
 									{
-									    "title": "Voice Changer Menu️",
+									    "title": "「 Voice Changer Menu 」️",
 										"description": "Menampilkan Voice Changer Menu",
 										"rowId": `${prefix}voicemenu`
 									},
 									{
-									    "title": "Webzone Menu",
+									    "title": "「 Webzone Menu 」",
 										"description": "Menampilkan Webzone Menu",
 										"rowId": `${prefix}webzonemenu`
 									}
@@ -1288,7 +1287,7 @@ ${ucapanWaktu}
 								"title": "Open Jasa Sewabot >_<",
 								"rows": [
 									{
-										"title": "Sewa Bot",
+										"title": "「 Sewa Bot 」",
 										"description": "Klik Untuk Melihat Daftar Sewabot",
 										"rowId": `${prefix}sewabot`
 									}
@@ -1298,7 +1297,7 @@ ${ucapanWaktu}
 								"title": "Info Tentang Owner? >_<",
 								"rows": [
 									{
-										"title": "Chat Owner",
+										"title": "「 Chat Owner 」",
 										"description": "menampilkan Nomor Owner",
 										"rowId": `${prefix}owner`
 									}
@@ -1308,7 +1307,7 @@ ${ucapanWaktu}
 								"title": "Thanks To >_<",
 								"rows": [
 									{
-										"title": "Contributor",
+										"title": "「 Contributor 」",
 										"description": "menampilkan Nama Teman - Teman Saya Yang Sudah Membantu Merakit Bot Ini !!",
 										"rowId": `${prefix}tqtt`
 									}
@@ -3413,47 +3412,11 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 // Sticker Gif/Biasa
-case 'dadu': case 'amongus': {
+case 'patrick': case 'dadu': case 'amongus': case 'gawrgura': case 'anjing': case 'bucinstick': {
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let anu = await getBuffer(`https://api.lolhuman.xyz/api/sticker/${command}?apikey=GuaAbuzz17`)
 hisoka.sendMessage(m.chat, { sticker: anu, caption: `Nih  Kak` }, { quoted: m})
-}
-break
-case 'gura':
-case 'gawrgura': {
-var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/gura')
-var wifegerak = ano.split('\n')
-var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await hisoka.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
-await fs.unlinkSync(encmedia)
-}
-break
-case 'doge':
-case 'dogestick': {
-var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/anjing')
-var wifegerak = ano.split('\n')
-var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await hisoka.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
-await fs.unlinkSync(encmedia)
-}
-break
-case 'bucinstick':
-case 'bucin' : {
-var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/bucin')
-var wifegerak = ano.split('\n')
-var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await hisoka.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
-await fs.unlinkSync(encmedia)
-}
-break
-case 'patrik':
-case 'patrick': {
-var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/patrik')
-var wifegerak = ano.split('\n')
-var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await hisoka.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
-await fs.unlinkSync(encmedia)
 }
 break
 // Sertifikat Tanah Rumah Lu akaoakka
@@ -5170,26 +5133,33 @@ let capt = `⭔ Title: ${judul}
             }
             break
 case 'rules': {
-                anu = `◈───〖 *RULES* 〗───◈
-1. Tolong Gunakan Delay 5 Detik Untuk Menggukan BOT
-2. Gunakan Dengan Bijak.
-3. Don't Call Bot 
-4. Don't Spam Bot
-
-◈───〖 *SNK* 〗───◈
-1. Data Whatsapp Anda Akan Kami Simpan Di Server Kami Selama BOT Aktif.
-2. Data Anda Akan Di Hapus Ketika BOT OFFLINE
-3. Kami Tidak Menyimpan Gambar, Video, File, Audio, Dan Dokumen Yang Anda Kirim
-4. Kami Tidak Akan Pernah Meminta Anda Untuk Memberikan Informasi Pribadi
-5. Jika Menemukan BUG/ERROR Silahkan Langsung Lapor Ke OWNER BOT!
-
-
-◈───〖 *ATTENTION* 〗───◈
-*KONSEKUENSI BILA MELANGGAR RULES*
-- Bot Akan Memblokir Nomor Anda.
-- Anda Tidak Akan Bisa Mengakses Bot Lagi.
-- Mengeksploitasi Terhadap bot.
-Sanksi: *PERMANENT BLOCK*`
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 RULES BOT 」
+│└─────────────┈❖
+│1. Tolong Gunakan Delay 5 Detik Untuk Menggukan BOT
+│2. Gunakan Dengan Bijak.
+│3. Don't Call Bot 
+│4. Don't Spam Bot
+└┬─────────────┈❖
+┌┤「 SNK 」
+│└─────────────┈❖
+│1. Data Whatsapp Anda Akan Kami Simpan Di Server Kami Selama BOT Aktif
+│2. Data Anda Akan Di Hapus Ketika BOT OFF
+│3. Kami Tidak Menyimpan Gambar/Video/File/Audio/Dokumen Yang Anda Kirim
+│4. Kami Tidak Pernah Meminta Anda Untuk Memberikan Informasi Pribadi
+│5. Jika Menemukan BUG/ERROR Silahkan REPORT!
+└┬─────────────┈❖
+┌┤「 ATTENTION 」
+│└─────────────┈❖
+│*KONSEKUENSI BILA MELANGGAR RULES*
+│- Bot Akan Memblokir Nomor Anda.
+│- Anda Tidak Akan Bisa Mengakses Bot Lagi.
+│- Mengeksploitasi Terhadap bot.
+│Sanksi: *PERMANENT BLOCK*
+└──────────────┈❖`
                 let btn = [{
                                 quickReplyButton: {
                                     displayText: 'Sewabot',
@@ -5209,22 +5179,24 @@ Sanksi: *PERMANENT BLOCK*`
                      }
             break
 case 'sewa': case 'sewabot': {
-                anu = `Open Jasa Sewa Bot
-~@${global.namaowner}
-
-┌──⭓ *Sewa Bot*
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 SEWA BOT 」
+│└─────────────┈❖
 │⭔ 1 Minggu 4k
 │⭔ 1 Bulan 15k
-└───────⭓
-
-┌──⭓ *Pembayaran Via*
+└┬─────────────┈❖
+┌┤「 PEMBAYARAN 」
+│└─────────────┈❖
 │⭔ Pulsa Tri : 089636827082
 │⭔ Pulsa Telkomsel : 082171978174
 │⭔ Gopay
 │⭔ Dana
-└───────⭓
-
-┌──⭓ *Keuntungan Sewa Bot*
+└┬─────────────┈❖
+┌┤「 KEUNTUNGAN 」
+│└─────────────┈❖
 │⭔ On 24 Jam
 │⭔ Run Dirpd/Heroku/Oktote
 │⭔ Anti Delay
@@ -5232,11 +5204,11 @@ case 'sewa': case 'sewabot': {
 │⭔ Antilink WA/TT/YT
 │⭔ Welcome Image
 │⭔ Left
-└───────⭓
-
-┌──⭓ *Sistem Pembayaran*
+└┬─────────────┈❖
+┌┤「 KEUNTUNGAN 」
+│└─────────────┈❖
 │⭔ Kirim » Bukti Pembayaran » Bot Join
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -5276,23 +5248,28 @@ case 'sewa': case 'sewabot': {
                      }
             break
 case 'donasi': case 'donate': {
-                anu = `Haii Kak *${pushname}*
-${ucapanWaktu}
-⭔ DONASI KAK BUAT BELI APIKEY🔥
-⭔ PULSA TRI : 089636827082
-⭔ PULSA TELKOMSEL : 082171978174
-⭔ GOPAY
-⭔ DANA
-⭔ Q.S Az-Zalzalah Ayat 7 :
-
-⭔ فَمَنْ يَّعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَّرَه
-
-⭔ Artinya : Maka barangsiapa
-mengerjakan kebaikan seberatzarrah,
-niscaya dia akan melihat
-(balasan)nya.
-
-*Terima Kasih*`
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 DONASI 」
+│└─────────────┈❖
+│⭔ DONASI KAK BUAT BELI APIKEY🔥
+│⭔ PULSA TRI : 089636827082
+│⭔ PULSA TELKOMSEL : 082171978174
+│⭔ GOPAY
+│⭔ DANA
+│⭔ Q.S Az-Zalzalah Ayat 7 :
+│
+│⭔ فَمَنْ يَّعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَّرَه
+│
+│⭔ Artinya : Maka barangsiapa
+│mengerjakan kebaikan seberatzarrah,
+│niscaya dia akan melihat
+│(balasan)nya.
+│
+│*Terima Kasih*
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -5332,11 +5309,12 @@ niscaya dia akan melihat
                      }
             break
 case 'groupmenu': case 'menugroup': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -5345,12 +5323,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│     
-└───────⭓
-
-
-┌──⭓ *Group Menu*
-│
+└┬─────────────┈❖
+┌┤「 GROUP 」
+│└─────────────┈❖
 │⭔ ${prefix}groupbot
 │⭔ ${prefix}linkgroup
 │⭔ ${prefix}ephemeral [option]
@@ -5374,8 +5349,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}upvote
 │⭔ ${prefix}cekvote
 │⭔ ${prefix}hapusvote
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -5415,11 +5389,12 @@ ${ucapanWaktu}
                      }
             break
 case 'downloadmenu': case 'menudownload': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -5428,12 +5403,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Downloader Menu*
-│
+└┬─────────────┈❖
+┌┤「 DOWNLOADER 」
+│└─────────────┈❖
 │⭔ ${prefix}tiktoknowm [url]
 │⭔ ${prefix}tiktokwm [url]
 │⭔ ${prefix}tiktokmp3 [url]
@@ -5449,8 +5421,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}umma [url]
 │⭔ ${prefix}joox [query]
 │⭔ ${prefix}soundcloud [url]
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -5490,11 +5461,12 @@ ${ucapanWaktu}
                      }
             break
 case 'searchmenu': case 'menusearch': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -5503,12 +5475,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Search Menu*
-│
+└┬─────────────┈❖
+┌┤「 SEARCH 」
+│└─────────────┈❖
 │⭔ ${prefix}anime [query]
 │⭔ ${prefix}manga [query]
 │⭔ ${prefix}karaktersearch [query]
@@ -5522,8 +5491,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}ytsearch [query]
 │⭔ ${prefix}ringtone [query]
 │⭔ ${prefix}groupwhatsapp 
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -5563,11 +5531,12 @@ ${ucapanWaktu}
                      }
             break
 case 'stickermenu': case 'menusticker': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -5576,12 +5545,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Sticker Menu*
-│
+└┬─────────────┈❖
+┌┤「 STICKER 」
+│└─────────────┈❖
 │⭔ ${prefix}sticker
 │⭔ ${prefix}attp
 │⭔ ${prefix}ttp
@@ -5592,10 +5558,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}dadu
 │⭔ ${prefix}amongus
 │⭔ ${prefix}gawrgura
-│⭔ ${prefix}dogestick
+│⭔ ${prefix}anjing
 │⭔ ${prefix}bucinstick
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -5635,11 +5600,12 @@ ${ucapanWaktu}
                      }
             break
 case 'animemenu': case 'menuanime': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -5648,12 +5614,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Anime Menu*
-│
+└┬─────────────┈❖
+┌┤「 ANIME 」
+│└─────────────┈❖
 │⭔ ${prefix}couple
 │⭔ ${prefix}waifu
 │⭔ ${prefix}husbu
@@ -5673,8 +5636,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}raiden
 │⭔ ${prefix}calliope
 │⭔ ${prefix}kitagawa
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -5714,11 +5676,12 @@ ${ucapanWaktu}
                      }
             break
 case 'nsfwmenu': case 'menunsfw': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -5727,11 +5690,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-┌──⭓ *Nsfw Menu*
-│
+└┬─────────────┈❖
+┌┤「 NSFW 」
+│└─────────────┈❖
 │⭔ ${prefix}ahegao
 │⭔ ${prefix}ass
 │⭔ ${prefix}bdsm
@@ -5754,8 +5715,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}yuri
 │⭔ ${prefix}zettairyouiki
 │⭔ Noted : Stay Halal Brother >_<
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -5795,11 +5755,12 @@ ${ucapanWaktu}
                      }
             break
 case 'asupanmenu': case 'menuasupan': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -5808,12 +5769,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Asupan Menu*
-│
+└┬─────────────┈❖
+┌┤「 ASUPAN 」
+│└─────────────┈❖
 │⭔ ${prefix}random
 │⭔ ${prefix}santuy
 │⭔ ${prefix}ukhty
@@ -5827,8 +5785,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}china
 │⭔ ${prefix}korea
 │⭔ ${prefix}jepang
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -5868,11 +5825,12 @@ ${ucapanWaktu}
                      }
             break
 case 'quotesmenu': case 'menuquotes': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -5881,12 +5839,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Quotes Menu*
-│
+└┬─────────────┈❖
+┌┤「 QUOTES 」
+│└─────────────┈❖
 │⭔ ${prefix}quotesanime
 │⭔ ${prefix}animequotes
 │⭔ ${prefix}motivasi
@@ -5904,8 +5859,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}puisi
 │⭔ ${prefix}pantun
 │⭔ ${prefix}cerpen
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -5945,11 +5899,12 @@ ${ucapanWaktu}
                      }
             break
 case 'mememenu': case 'menumeme': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -5958,17 +5913,14 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-┌──⭓ *Meme Menu*
-│
+└┬─────────────┈❖
+┌┤「 MEME 」
+│└─────────────┈❖
 │⭔ ${prefix}meme
 │⭔ ${prefix}memeindo
 │⭔ ${prefix}darkjokes
 │⭔ ${prefix}darkmeme
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -6008,11 +5960,12 @@ ${ucapanWaktu}
                      }
             break
 case 'randommenu': case 'menurandom': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -6021,12 +5974,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Random Menu*
-│
+└┬─────────────┈❖
+┌┤「 RANDOM 」
+│└─────────────┈❖
 │⭔ ${prefix}simih
 │⭔ ${prefix}apikey
 │⭔ ${prefix}coffe
@@ -6034,8 +5984,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}ebinary
 │⭔ ${prefix}dbinary
 │⭔ ${prefix}styletext
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -6075,11 +6024,12 @@ ${ucapanWaktu}
                      }
             break
 case 'rpgmenu': case 'menurpg': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -6088,12 +6038,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Rpg Menu*
-│
+└┬─────────────┈❖
+┌┤「 RPG 」
+│└─────────────┈❖
 │⭔ ${prefix}hunt
 │⭔ ${prefix}mining
 │⭔ ${prefix}heal
@@ -6102,8 +6049,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}leaderboard
 │⭔ ${prefix}buy [option]
 │⭔ ${prefix}sell [option]
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -6143,11 +6089,12 @@ ${ucapanWaktu}
                      }
             break
 case 'sertifikatmenu': case 'menusertifikat': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -6156,12 +6103,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Sertifikat Menu*
-│
+└┬─────────────┈❖
+┌┤「 SERTIFIKAT 」
+│└─────────────┈❖
 │⭔ ${prefix}toloserti 
 │⭔ ${prefix}fuckboy
 │⭔ ${prefix}fuckgirl
@@ -6171,8 +6115,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}badboy
 │⭔ ${prefix}badgirl
 │⭔ ${prefix}pacarserti
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -6212,11 +6155,12 @@ ${ucapanWaktu}
                      }
             break
 case 'textpromenu': case 'menutextpro': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -6225,12 +6169,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Text Pro Menu*
-│
+└┬─────────────┈❖
+┌┤「 TEXT PRO 」
+│└─────────────┈❖
 │⭔ ${prefix}3dchristmas
 │⭔ ${prefix}3ddeepsea
 │⭔ ${prefix}americanflag
@@ -6310,8 +6251,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}brokentext 
 │⭔ ${prefix}bulb-effect 
 │⭔ ${prefix}bubble-effect 
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -6351,11 +6291,12 @@ ${ucapanWaktu}
                      }
             break
 case 'photooxymenu': case 'menuphotooxy': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -6364,12 +6305,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Photo Oxy Menu*
-│
+└┬─────────────┈❖
+┌┤「 PHOTO OXY 」
+│└─────────────┈❖
 │⭔ ${prefix}shadow
 │⭔ ${prefix}cup 
 │⭔ ${prefix}cup1 
@@ -6385,8 +6323,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}fallleaves 
 │⭔ ${prefix}flamming 
 │⭔ ${prefix}harrypotter
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -6426,11 +6363,12 @@ ${ucapanWaktu}
                      }
             break
 case 'photomakermenu': case 'menuphotomaker': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -6439,12 +6377,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Photo Maker Menu*
-│
+└┬─────────────┈❖
+┌┤「 PHOTO MAKER 」
+│└─────────────┈❖
 │⭔ ${prefix}1917 
 │⭔ ${prefix}3d-crack-text-effect-online 
 │⭔ ${prefix}3d-underwater 
@@ -6494,8 +6429,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}balloons-cards
 │⭔ ${prefix}balloons-love
 │⭔ ${prefix}bats-halloween
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -6535,11 +6469,12 @@ ${ucapanWaktu}
                      }
             break
 case 'stickerefekmenu': case 'menustickerefek': {
-	anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+	anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -6548,12 +6483,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Sticker Efek Menu*
-│
+└┬─────────────┈❖
+┌┤「 STICKER EFEK 」
+│└─────────────┈❖
 │⭔ ${prefix}wasted
 │⭔ ${prefix}fisheye
 │⭔ ${prefix}pixelate
@@ -6591,8 +6523,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}rip
 │⭔ ${prefix}sepia
 │⭔ ${prefix}wanted
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -6632,11 +6563,12 @@ ${ucapanWaktu}
                      }
             break
 case 'ephotomenu': case 'menuephoto': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -6645,12 +6577,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Ephoto Menu*
-│
+└┬─────────────┈❖
+┌┤「 EPHOTO 」
+│└─────────────┈❖
 │⭔ ${prefix}ffcover
 │⭔ ${prefix}crossfire
 │⭔ ${prefix}galaxy
@@ -6702,8 +6631,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}realvintage 
 │⭔ ${prefix}codwarzone 
 │⭔ ${prefix}valorantbanner
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -6743,11 +6671,12 @@ ${ucapanWaktu}
                      }
             break
 case 'gamemenu': case 'menugame': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -6756,20 +6685,16 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Game Menu*
-│
+└┬─────────────┈❖
+┌┤「 GAME 」
+│└─────────────┈❖
 │⭔ ${prefix}delttt
 │⭔ ${prefix}tictactoe
 │⭔ ${prefix}family100
 │⭔ ${prefix}tebak [option]
 │⭔ ${prefix}math [mode]
 │⭔ ${prefix}suitpvp [@tag]
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -6809,11 +6734,12 @@ ${ucapanWaktu}
                      }
             break
 case 'primbonmenu': case 'menuprimbon': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -6822,12 +6748,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Prombon Menu*
-│
+└┬─────────────┈❖
+┌┤「 PRIMBON 」
+│└─────────────┈❖
 │⭔ ${prefix}nomorhoki
 │⭔ ${prefix}artimimpi
 │⭔ ${prefix}artinama
@@ -6858,8 +6781,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}masasubur
 │⭔ ${prefix}zodiak
 │⭔ ${prefix}shio
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -6899,11 +6821,12 @@ ${ucapanWaktu}
                      }
             break
 case 'convertmenu': case 'menuconvert': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -6912,12 +6835,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Convert Menu*
-│
+└┬─────────────┈❖
+┌┤「 CONVERT 」
+│└─────────────┈❖
 │⭔ ${prefix}ssweb
 │⭔ ${prefix}removebg
 │⭔ ${prefix}nulis
@@ -6969,10 +6889,12 @@ ${ucapanWaktu}
                      }
             break
 case 'mainmenu': case 'menumain': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -6981,12 +6903,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Main Menu*
-│
+└┬─────────────┈❖
+┌┤「 MAIN 」
+│└─────────────┈❖
 │⭔ ${prefix}limituser
 │⭔ ${prefix}ping
 │⭔ ${prefix}owner
@@ -7000,9 +6919,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}listgc
 │⭔ ${prefix}listonline
 │⭔ ${prefix}speedtest
+│⭔ ${prefix}request
 │⭔ ${prefix}report [bug]
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -7042,11 +6961,12 @@ ${ucapanWaktu}
                      }
             break
 case 'databasemenu': case 'menudatabase': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -7055,12 +6975,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Database Menu*
-│
+└┬─────────────┈❖
+┌┤「 DATABASE 」
+│└─────────────┈❖
 │⭔ ${prefix}setcmd
 │⭔ ${prefix}listcmd
 │⭔ ${prefix}delcmd
@@ -7069,8 +6986,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}listmsg
 │⭔ ${prefix}getmsg
 │⭔ ${prefix}delmsg
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -7110,11 +7026,12 @@ ${ucapanWaktu}
                      }
             break
 case 'anonymousmenu': case 'menuanonymous': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -7123,19 +7040,15 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Anonymous Menu*
-│
+└┬─────────────┈❖
+┌┤「 ANONYMOUS 」
+│└─────────────┈❖
 │⭔ ${prefix}anonymous
 │⭔ ${prefix}start
 │⭔ ${prefix}next
 │⭔ ${prefix}keluar
 │⭔ ${prefix}sendkontak
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -7175,11 +7088,12 @@ ${ucapanWaktu}
                      }
             break
 case 'islamicmenu': case 'menuislamic': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -7188,12 +7102,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Islamic Menu*
-│
+└┬─────────────┈❖
+┌┤「 ISLAMIC 」
+│└─────────────┈❖
 │⭔ ${prefix}jadwalsholat
 │⭔ ${prefix}iqra
 │⭔ ${prefix}hadist
@@ -7210,8 +7121,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}audio8
 │⭔ ${prefix}audio9
 │⭔ ${prefix}audio10
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -7251,11 +7161,12 @@ ${ucapanWaktu}
                      }
             break
 case 'kerangmenu': case 'menukerang': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -7264,12 +7175,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Kerang Menu*
-│
+└┬─────────────┈❖
+┌┤「 KERANG 」
+│└─────────────┈❖
 │⭔ ${prefix}apakah
 │⭔ ${prefix}bisakah
 │⭔ ${prefix}bagaimanakah
@@ -7289,8 +7197,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}holoh
 │⭔ ${prefix}jadian
 │⭔ ${prefix}jodohku
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -7330,11 +7237,12 @@ ${ucapanWaktu}
                      }
             break
 case 'voicemenu': case 'menuvoice': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -7343,12 +7251,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Voice Changer*
-│
+└┬─────────────┈❖
+┌┤「 VOICE CHANGER 」
+│└─────────────┈❖
 │⭔ ${prefix}bass
 │⭔ ${prefix}blown
 │⭔ ${prefix}deep
@@ -7360,8 +7265,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}robot
 │⭔ ${prefix}slow
 │⭔ ${prefix}tupai
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -7401,11 +7305,12 @@ ${ucapanWaktu}
                      }
             break
 case 'stalkmenu': case 'menustalk': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -7414,19 +7319,15 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Stalk Menu*
-│
+└┬─────────────┈❖
+┌┤「 STALK 」
+│└─────────────┈❖
 │⭔ ${prefix}githubstalk
 │⭔ ${prefix}stalkig
 │⭔ ${prefix}stalktiktok
 │⭔ ${prefix}twitterstalk
 │⭔ ${prefix}stalk [option] [query]
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -7466,11 +7367,12 @@ ${ucapanWaktu}
                      }
             break
 case 'ownermenu': case 'menuowner': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -7479,12 +7381,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Owner Menu*
-│
+└┬─────────────┈❖
+┌┤「 OWNER 」
+│└─────────────┈❖
 │⭔ ${prefix}react
 │⭔ ${prefix}setexif
 │⭔ ${prefix}chat [option]
@@ -7497,8 +7396,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}bcallmedia
 │⭔ ${prefix}setppbot [image]
 │⭔ ${prefix}setmenu [option]
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -7538,11 +7436,12 @@ ${ucapanWaktu}
                      }
             break
 case 'webzonemenu': case 'menuwebzone': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -7551,12 +7450,9 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Webzone Menu*
-│
+└┬─────────────┈❖
+┌┤「 WEBZONE 」
+│└─────────────┈❖
 │⭔ ${prefix}playstore
 │⭔ ${prefix}gsmarena
 │⭔ ${prefix}jadwalbioskop
@@ -7565,8 +7461,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}wattpad
 │⭔ ${prefix}webtoons
 │⭔ ${prefix}drakor
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -7606,22 +7501,22 @@ ${ucapanWaktu}
                      }
             break
             case 'list': case 'menu': case 'help': case '?': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-Saya ${global.namabot}, Bot Ini Adalah Beta Multi-Device WhatsApp.
-Jika Kamu Menemukan Semacam Bug Atau Kesalahan Mohon Dimaklumi Dulu Ya, Lapor Owner Agar Segera Di Perbaiki🙏
-
-
-• Library : *Baileys-MD*.
-• Prefix : ( ${prefix} )
-• Waktu Server : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}
-• Tanggal Server : ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}
-• Menuju idul Adha :
-•  ${menuju}
-• Wib : ${wib}
-• Wita : ${wita}
-• Wit : ${wit}`
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
+│• Library : *Baileys-MD*.
+│• Prefix : ( ${prefix} )
+│• Waktu Server : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}
+│• Tanggal Server : ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}
+│• Menuju idul Adha :
+│   ${menuju}
+│• Wib : ${wib}
+│• Wita : ${wita}
+│• Wit : ${wit}
+└──────────────┈❖`
                 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
@@ -7662,11 +7557,12 @@ Jika Kamu Menemukan Semacam Bug Atau Kesalahan Mohon Dimaklumi Dulu Ya, Lapor Ow
             }
 break
             	case 'allmenu': case 'menuall': {
-                anu = `Haii Kak ${pushname}
-${ucapanWaktu}
-
-┌──⭓ 「 INFO BOT 」⭓
-│
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
 │ Prefix : ( ${prefix} )
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
@@ -7675,22 +7571,17 @@ ${ucapanWaktu}
 │ Lib : Baileys-md
 │ Menuju idul Adha :
 │  ${menuju}
-│
-└───────⭓
-
-
-┌──⭓ *Anonymous Menu*
-│
+└┬─────────────┈❖
+┌┤「 ANONYMOUS 」
+│└─────────────┈❖
 │⭔ ${prefix}anonymous
 │⭔ ${prefix}start
 │⭔ ${prefix}next
 │⭔ ${prefix}keluar
 │⭔ ${prefix}sendkontak
-│
-└───────⭓
-
-┌──⭓ *Anime Menu*
-│
+└┬─────────────┈❖
+┌┤「 ANIME 」
+│└─────────────┈❖
 │⭔ ${prefix}couple
 │⭔ ${prefix}waifu
 │⭔ ${prefix}husbu
@@ -7710,11 +7601,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}raiden
 │⭔ ${prefix}calliope
 │⭔ ${prefix}kitagawa
-│
-└───────⭓
-
-┌──⭓ *Asupan Menu*
-│
+└┬─────────────┈❖
+┌┤「 ASUPAN 」
+│└─────────────┈❖
 │⭔ ${prefix}random
 │⭔ ${prefix}santuy
 │⭔ ${prefix}ukhty
@@ -7728,11 +7617,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}china
 │⭔ ${prefix}korea
 │⭔ ${prefix}jepang
-│
-└───────⭓
-
-┌──⭓ *Convert Menu*
-│
+└┬─────────────┈❖
+┌┤「 CONVERT 」
+│└─────────────┈❖
 │⭔ ${prefix}ssweb
 │⭔ ${prefix}removebg
 │⭔ ${prefix}nulis
@@ -7743,11 +7630,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}tovn
 │⭔ ${prefix}tomp3
 │⭔ ${prefix}toaudio
-│
-└───────⭓
-
-┌──⭓ *Downloader Menu*
-│
+└┬─────────────┈❖
+┌┤「 DOWNLOADER 」
+│└─────────────┈❖
 │⭔ ${prefix}tiktoknowm [url]
 │⭔ ${prefix}tiktokwm [url]
 │⭔ ${prefix}tiktokmp3 [url]
@@ -7763,11 +7648,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}umma [url]
 │⭔ ${prefix}joox [query]
 │⭔ ${prefix}soundcloud [url]
-│
-└───────⭓
-
-┌──⭓ *Database Menu*
-│
+└┬─────────────┈❖
+┌┤「 DATABASE 」
+│└─────────────┈❖
 │⭔ ${prefix}setcmd
 │⭔ ${prefix}listcmd
 │⭔ ${prefix}delcmd
@@ -7776,11 +7659,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}listmsg
 │⭔ ${prefix}getmsg
 │⭔ ${prefix}delmsg
-│
-└───────⭓
-
-┌──⭓ *Ephoto Menu*
-│
+└┬─────────────┈❖
+┌┤「 EPHOTO 」
+│└─────────────┈❖
 │⭔ ${prefix}ffcover
 │⭔ ${prefix}crossfire
 │⭔ ${prefix}galaxy
@@ -7832,11 +7713,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}realvintage 
 │⭔ ${prefix}codwarzone 
 │⭔ ${prefix}valorantbanner
-│
-└───────⭓
-
-┌──⭓ *Group Menu*
-│
+└┬─────────────┈❖
+┌┤「 GROUP 」
+│└─────────────┈❖
 │⭔ ${prefix}groupbot
 │⭔ ${prefix}linkgroup
 │⭔ ${prefix}ephemeral [option]
@@ -7860,22 +7739,18 @@ ${ucapanWaktu}
 │⭔ ${prefix}upvote
 │⭔ ${prefix}cekvote
 │⭔ ${prefix}hapusvote
-│
-└───────⭓
-
-┌──⭓ *Game Menu*
-│
+└┬─────────────┈❖
+┌┤「 GAME 」
+│└─────────────┈❖
 │⭔ ${prefix}delttt
 │⭔ ${prefix}tictactoe
 │⭔ ${prefix}family100
 │⭔ ${prefix}tebak [option]
 │⭔ ${prefix}math [mode]
 │⭔ ${prefix}suitpvp [@tag]
-│
-└───────⭓
-
-┌──⭓ *Islamic Menu*
-│
+└┬─────────────┈❖
+┌┤「 ISLAMIC 」
+│└─────────────┈❖
 │⭔ ${prefix}iqra
 │⭔ ${prefix}hadist
 │⭔ ${prefix}alquran
@@ -7891,11 +7766,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}audio8
 │⭔ ${prefix}audio9
 │⭔ ${prefix}audio10
-│
-└───────⭓
-
-┌──⭓ *Kerang Menu*
-│
+└┬─────────────┈❖
+┌┤「 KERANG 」
+│└─────────────┈❖
 │⭔ ${prefix}apakah
 │⭔ ${prefix}bisakah
 │⭔ ${prefix}bagaimanakah
@@ -7915,20 +7788,16 @@ ${ucapanWaktu}
 │⭔ ${prefix}holoh
 │⭔ ${prefix}jadian
 │⭔ ${prefix}jodohku
-│
-└───────⭓
-
-┌──⭓ *Meme Menu*
-│
+└┬─────────────┈❖
+┌┤「 MEME 」
+│└─────────────┈❖
 │⭔ ${prefix}meme
 │⭔ ${prefix}memeindo
 │⭔ ${prefix}darkjokes
 │⭔ ${prefix}darkmeme
-│
-└───────⭓
-
-┌──⭓ *Main Menu*
-│
+└┬─────────────┈❖
+┌┤「 MAIN 」
+│└─────────────┈❖
 │⭔ ${prefix}limituser
 │⭔ ${prefix}ping
 │⭔ ${prefix}owner
@@ -7942,12 +7811,11 @@ ${ucapanWaktu}
 │⭔ ${prefix}listgc
 │⭔ ${prefix}listonline
 │⭔ ${prefix}speedtest
+│⭔ ${prefix}request
 │⭔ ${prefix}report [bug]
-│
-└───────⭓
-
-┌──⭓ *Nsfw Menu*
-│
+└┬─────────────┈❖
+┌┤「 NSFW 」
+│└─────────────┈❖
 │⭔ ${prefix}ahegao
 │⭔ ${prefix}ass
 │⭔ ${prefix}bdsm
@@ -7970,11 +7838,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}yuri
 │⭔ ${prefix}zettairyouiki
 │⭔ Noted : Stay Halal Brother >_<
-│
-└───────⭓
-
-┌──⭓ *Owner Menu*
-│
+└┬─────────────┈❖
+┌┤「 OWNER 」
+│└─────────────┈❖
 │⭔ ${prefix}react
 │⭔ ${prefix}setexif
 │⭔ ${prefix}chat [option]
@@ -7986,11 +7852,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}bcall [text]
 │⭔ ${prefix}bcallmedia
 │⭔ ${prefix}setppbot [image]
-│
-└───────⭓
-
-┌──⭓ *Primbon Menu*
-│
+└┬─────────────┈❖
+┌┤「 PRIMBON 」
+│└─────────────┈❖
 │⭔ ${prefix}nomorhoki
 │⭔ ${prefix}artimimpi
 │⭔ ${prefix}artinama
@@ -8021,11 +7885,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}masasubur
 │⭔ ${prefix}zodiak
 │⭔ ${prefix}shio
-│
-└───────⭓
-
-┌──⭓ *Photo Maker Menu*
-│
+└┬─────────────┈❖
+┌┤「 PHOTO MAKER 」
+│└─────────────┈❖
 │⭔ ${prefix}1917 
 │⭔ ${prefix}3d-crack-text-effect-online 
 │⭔ ${prefix}3d-underwater 
@@ -8075,11 +7937,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}balloons-cards
 │⭔ ${prefix}balloons-love
 │⭔ ${prefix}bats-halloween
-│
-└───────⭓
-
-┌──⭓ *Photo Oxy Menu*
-│
+└┬─────────────┈❖
+┌┤「 PHOTO OXY 」
+│└─────────────┈❖
 │⭔ ${prefix}shadow 
 │⭔ ${prefix}cup 
 │⭔ ${prefix}cup1 
@@ -8095,11 +7955,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}fallleaves 
 │⭔ ${prefix}flamming
 │⭔ ${prefix}harrypotter
-│
-└───────⭓
-
-┌──⭓ *Quotes Menu*
-│
+└┬─────────────┈❖
+┌┤「 QUOTES 」
+│└─────────────┈❖
 │⭔ ${prefix}quotesanime
 │⭔ ${prefix}animequotes
 │⭔ ${prefix}motivasi
@@ -8117,11 +7975,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}puisi
 │⭔ ${prefix}pantun
 │⭔ ${prefix}cerpen
-│
-└───────⭓
-
-┌──⭓ *Rpg Menu*
-│
+└┬─────────────┈❖
+┌┤「 RPG 」
+│└─────────────┈❖
 │⭔ ${prefix}hunt
 │⭔ ${prefix}mining
 │⭔ ${prefix}heal
@@ -8130,11 +7986,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}leaderboard
 │⭔ ${prefix}buy [option]
 │⭔ ${prefix}sell [option]
-│
-└───────⭓
-
-┌──⭓ *Random Menu*
-│
+└┬─────────────┈❖
+┌┤「 RANDOM 」
+│└─────────────┈❖
 │⭔ ${prefix}simih
 │⭔ ${prefix}apikey
 │⭔ ${prefix}coffe
@@ -8142,11 +7996,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}ebinary
 │⭔ ${prefix}dbinary
 │⭔ ${prefix}styletext
-│
-└───────⭓
-
-┌──⭓ *Sticker Menu*
-│
+└┬─────────────┈❖
+┌┤「 STICKER 」
+│└─────────────┈❖
 │⭔ ${prefix}sticker
 │⭔ ${prefix}attp
 │⭔ ${prefix}ttp
@@ -8157,13 +8009,11 @@ ${ucapanWaktu}
 │⭔ ${prefix}dadu
 │⭔ ${prefix}amongus
 │⭔ ${prefix}gawrgura
-│⭔ ${prefix}dogestick
+│⭔ ${prefix}anjing
 │⭔ ${prefix}bucinstick
-│
-└───────⭓
-
-┌──⭓ *Search Menu*
-│
+└┬─────────────┈❖
+┌┤「 SEARCH 」
+│└─────────────┈❖
 │⭔ ${prefix}anime [query]
 │⭔ ${prefix}manga [query]
 │⭔ ${prefix}karaktersearch [query]
@@ -8177,21 +8027,17 @@ ${ucapanWaktu}
 │⭔ ${prefix}ytsearch [query]
 │⭔ ${prefix}ringtone [query]
 │⭔ ${prefix}groupwhatsapp
-│
-└───────⭓
-
-┌──⭓ *Stalk Menu*
-│
+└┬─────────────┈❖
+┌┤「 STALK 」
+│└─────────────┈❖
 │⭔ ${prefix}githubstalk
 │⭔ ${prefix}stalkig
 │⭔ ${prefix}stalktiktok
 │⭔ ${prefix}twitterstalk
 │⭔ ${prefix}stalk [option] [query]
-│
-└───────⭓
-
-┌──⭓ *Sticker Efek Menu*
-│
+└┬─────────────┈❖
+┌┤「 STICKER EFEK 」
+│└─────────────┈❖
 │⭔ ${prefix}wasted
 │⭔ ${prefix}fisheye
 │⭔ ${prefix}pixelate
@@ -8229,11 +8075,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}rip
 │⭔ ${prefix}sepia
 │⭔ ${prefix}wanted
-│
-└───────⭓
-
-┌──⭓ *Sertifikat Menu*
-│
+└┬─────────────┈❖
+┌┤「 SERTIFIKAT 」
+│└─────────────┈❖
 │⭔ ${prefix}toloserti 
 │⭔ ${prefix}fuckboy
 │⭔ ${prefix}fuckgirl
@@ -8243,11 +8087,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}badboy
 │⭔ ${prefix}badgirl
 │⭔ ${prefix}pacarserti
-│
-└───────⭓
-
-┌──⭓ *Text Pro Menu*
-│
+└┬─────────────┈❖
+┌┤「 TEXT PRO 」
+│└─────────────┈❖
 │⭔ ${prefix}3dchristmas
 │⭔ ${prefix}3ddeepsea
 │⭔ ${prefix}americanflag
@@ -8327,11 +8169,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}brokentext 
 │⭔ ${prefix}bulb-effect 
 │⭔ ${prefix}bubble-effect 
-│
-└───────⭓
-
-┌──⭓ *Voice Changer*
-│
+└┬─────────────┈❖
+┌┤「 VOICE CHANGER 」
+│└─────────────┈❖
 │⭔ ${prefix}bass
 │⭔ ${prefix}blown
 │⭔ ${prefix}deep
@@ -8343,11 +8183,9 @@ ${ucapanWaktu}
 │⭔ ${prefix}robot
 │⭔ ${prefix}slow
 │⭔ ${prefix}tupai
-│
-└───────⭓
-
-┌──⭓ *Webzone Menu*
-│
+└┬─────────────┈❖
+┌┤「 WEBZONE 」
+│└─────────────┈❖
 │⭔ ${prefix}playstore
 │⭔ ${prefix}gsmarena
 │⭔ ${prefix}jadwalbioskop
@@ -8356,8 +8194,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}wattpad
 │⭔ ${prefix}webtoons
 │⭔ ${prefix}drakor
-│
-└───────⭓`
+└──────────────┈❖`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
