@@ -3413,11 +3413,47 @@ db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 // Sticker Gif/Biasa
-case 'patrick': case 'dadu': case 'amongus': case 'gawrgura': case 'anjing': case 'bucinstick': {
+case 'dadu': case 'amongus': {
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let anu = await getBuffer(`https://api.lolhuman.xyz/api/sticker/${command}?apikey=GuaAbuzz17`)
-hisoka.sendMessage(m.chat, { sticker: anu, caption: `Nih  Kak` }, { quoted: ftroli})
+hisoka.sendMessage(m.chat, { sticker: anu, caption: `Nih  Kak` }, { quoted: m})
+}
+break
+case 'gura':
+case 'gawrgura': {
+var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/gura')
+var wifegerak = ano.split('\n')
+var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+encmedia = await kagura.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+await fs.unlinkSync(encmedia)
+}
+break
+case 'doge':
+case 'dogestick': {
+var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/anjing')
+var wifegerak = ano.split('\n')
+var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+encmedia = await kagura.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+await fs.unlinkSync(encmedia)
+}
+break
+case 'bucinstick':
+case 'bucin' : {
+var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/bucin')
+var wifegerak = ano.split('\n')
+var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+encmedia = await kagura.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+await fs.unlinkSync(encmedia)
+}
+break
+case 'patrik':
+case 'patrick': {
+var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/patrik')
+var wifegerak = ano.split('\n')
+var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+encmedia = await kagura.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+await fs.unlinkSync(encmedia)
 }
 break
 // Sertifikat Tanah Rumah Lu akaoakka
@@ -4856,7 +4892,7 @@ m.reply(`Berhasil Dilaporkan Ke Owner!`)
                     }
                     break
             case 'anime':{
-                if (!text) return m.reply(`What Anime Are You Looking For??`)
+                if (!text) return m.reply(`Anime apa yang kamu cari??`)
                 await m.reply(mess.wait)
                 xfarr.Anime(q).then(async data => {
                     let txt = `*-------「 ANIME-SEARCH 」-------*\n\n`
@@ -5192,6 +5228,7 @@ case 'sewa': case 'sewabot': {
 │⭔ On 24 Jam
 │⭔ Run Dirpd/Heroku/Oktote
 │⭔ Anti Delay
+│⭔ Anti Virtex
 │⭔ Antilink WA/TT/YT
 │⭔ Welcome Image
 │⭔ Left
@@ -5555,7 +5592,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}dadu
 │⭔ ${prefix}amongus
 │⭔ ${prefix}gawrgura
-│⭔ ${prefix}anjing
+│⭔ ${prefix}dogestick
 │⭔ ${prefix}bucinstick
 │
 └───────⭓`
@@ -8120,7 +8157,7 @@ ${ucapanWaktu}
 │⭔ ${prefix}dadu
 │⭔ ${prefix}amongus
 │⭔ ${prefix}gawrgura
-│⭔ ${prefix}anjing
+│⭔ ${prefix}dogestick
 │⭔ ${prefix}bucinstick
 │
 └───────⭓
