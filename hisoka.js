@@ -643,7 +643,7 @@ case 'leaderboard':case 'lb':{
 case 'mining':case 'mine':{
 if (q.includes('--help')) return m.reply(examkosong) 
   if (!isInventory){ addInventori(m.sender) }
-  if (isCekDarah < 1) return m.reply(`You're Tired!, Try To Heal Using Potions`) 
+  if (isCekDarah < 1) return m.reply(`Kamu Lelah!, Coba Sembuhkan Menggunakan Ramuan`) 
   let besi = [1,2,5,0,3,0,1,1,4,1,5,0,0]
   let emas = [0,1,2,3,0,0,0,1,1,0,0,2]
   let emerald = [0,0,1,0,0,1,0,2,1,0,0,1]
@@ -666,7 +666,7 @@ if (q.includes('--help')) return m.reply(examkosong)
       buttons: buttons,
       headerType: 4
      }
-     hisoka.sendMessage(from, buttonMessage, { quoted: m })
+     hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
    
    }, 7000)  
   setTimeout( () => {
@@ -683,11 +683,11 @@ if (q.includes('--help')) return m.reply(examkosong)
  if (!isInventoriBuruan){ addInventoriBuruan(m.sender) } 
  if (!isInventoryMonay){ addInventoriMonay(m.sender) }
  if (!isInventory){ addInventori(m.sender) }
- if (!q) return m.reply(`Mau beli apa?\n\n1.potion\n2.baitfood\n3.limit\n\nExample: ${prefix + command} baitfood`)
+ if (!q) return m.reply(`Mau beli apa?\n\n1.potion\n2.baitfood\n3.limit\n\nContoh: ${prefix + command} baitfood`)
  var anu = args[1]
   if (args[0] === 'potion'){
   let noh = 100000 * anu
- if (!args[1]) return m.reply(`Example : ${prefix + command} potion 2\n 1 Potion = 100000 Money`)
+ if (!args[1]) return m.reply(`Contoh : ${prefix + command} potion 2\n 1 Potion = 100000 Money`)
  if (isMonay < noh) return m.reply('Sisa Uang Anda Tidak Cukup Untuk Pembelian Ini')
  kurangMonay(m.sender, noh)
  var apalu = anu * 1
@@ -697,7 +697,7 @@ if (q.includes('--help')) return m.reply(examkosong)
   }, 2000) 
  } else if (args[0] === 'baitfood'){
   let noh = 5000 * anu
- if (!args[1]) return m.reply(`Example : ${prefix + command} baitfood 2\n 1 Bait Food = 2500 Money`)
+ if (!args[1]) return m.reply(`Contoh : ${prefix + command} baitfood 2\n 1 Bait Food = 2500 Money`)
  if (isMonay < noh) return m.reply('Sisa Uang Anda Tidak Cukup Untuk Pembelian Ini')
  kurangMonay(m.sender, noh)
  var apalu = anu * 1
@@ -707,7 +707,7 @@ if (q.includes('--help')) return m.reply(examkosong)
   }, 2000) 
   } else if (args[0] === 'limit'){
   let noh = 35000 * anu
- if (!args[1]) return m.reply(`Example : ${prefix + command} limit 2\n 1 Limit = 35000 Money`)
+ if (!args[1]) return m.reply(`Contoh : ${prefix + command} limit 2\n 1 Limit = 35000 Money`)
  if (isMonay < noh) return m.reply('Sisa Uang Anda Tidak Cukup Untuk Pembelian Ini')
  kurangMonay(m.sender, noh)
  var apalu = anu * 1
@@ -719,14 +719,15 @@ if (q.includes('--help')) return m.reply(examkosong)
   }
   break
 case 'sell':case 'jual':{
- if (!q) return  m.reply(`Mau Jual Apa?\nExample : ${prefix + command} ikan 2`)
+ if (!q) return  m.reply(`Mau Jual Apa?\nContoh : ${prefix + command} ikan 2`)
  if (!isInventoriBuruan){ addInventoriBuruan(m.sender) } 
  if (!isInventoryMonay){ addInventoriMonay(m.sender) }
  if (!isInventory){ addInventori(m.sender) }
+ if (!q) return m.reply(`Mau beli apa?\n\n1.ikan\n2.ayam\n3.kelinci\n4.domba\n5.sapi\n6.gajah\n7.iron\n8.gold\n9.emerald\n\nContoh: ${prefix + command} ikan`)
  var anu = args[1]
  if (args[0] === 'ikan'){
  if (isIkan < anu) return m.reply(`Anda Tidak Memiliki Cukup Ikan Untuk Transaksi Ini`)
- if (!args[1]) return m.reply(`Example : ${prefix + command} ikan 2\n 1 Ikan = 1500 Money`)
+ if (!args[1]) return m.reply(`Contoh : ${prefix + command} ikan 2\n 1 Ikan = 1500 Money`)
  kurangIkan(m.sender, anu)
  let monaynya = 1500 * anu
  addMonay(m.sender, monaynya)
@@ -735,7 +736,7 @@ case 'sell':case 'jual':{
   }, 2000) 
  } else if (args[0] === 'ayam'){
  if (isAyam < anu) return m.reply(`Anda Tidak Memiliki Cukup Ayam Untuk Transaksi Ini`)
- if (!args[1]) return m.reply(`Example : ${prefix + command} ayam 2\n 1 Ayam = 2500 Money`)
+ if (!args[1]) return m.reply(`Contoh : ${prefix + command} ayam 2\n 1 Ayam = 2500 Money`)
  kurangAyam(m.sender, anu)
  let monaynya = 2500 * anu
  addMonay(m.sender, monaynya)
@@ -744,7 +745,7 @@ case 'sell':case 'jual':{
   }, 2000) 
  } else if (args[0] === 'kelinci'){
  if (isKelinci < anu) return m.reply(`Anda Tidak Memiliki Cukup Kelinci Untuk Transaksi Ini`)
- if (!args[1]) return m.reply(`Example : ${prefix + command} kelinci 2\n 1 Kelinci = 3000 Money`)
+ if (!args[1]) return m.reply(`Contoh : ${prefix + command} kelinci 2\n 1 Kelinci = 3000 Money`)
  kurangKelinci(m.sender, anu)
  let monaynya = 3000 * anu
  addMonay(m.sender, monaynya)
@@ -753,7 +754,7 @@ case 'sell':case 'jual':{
   }, 2000) 
  } else if (args[0] === 'domba'){
  if (isDomba < anu) return m.reply(`Anda Tidak Memiliki Cukup Domba Untuk Transaksi Ini`)
- if (!args[1]) return m.reply(`Example : ${prefix + command} domba 2\n 1 Domba = 5000 money`)
+ if (!args[1]) return m.reply(`Contoh : ${prefix + command} domba 2\n 1 Domba = 5000 money`)
  kurangDomba(m.sender, anu)
  let monaynya = 5000 * anu
  addMonay(m.sender, monaynya)
@@ -762,7 +763,7 @@ case 'sell':case 'jual':{
   }, 2000) 
  } else if (args[0] === 'sapi'){
  if (isSapi < anu) return m.reply(`Anda Tidak Memiliki Cukup Sapi Untuk Transaksi Ini`)
- if (!args[1]) return m.reply(`Example : ${prefix + command} sapi 2\n 1 Sapi = 10000 Money`)
+ if (!args[1]) return m.reply(`Contoh : ${prefix + command} sapi 2\n 1 Sapi = 10000 Money`)
  kurangSapi(m.sender, anu)
  let monaynya = 10000 * anu
  addMonay(m.sender, monaynya)
@@ -771,7 +772,7 @@ case 'sell':case 'jual':{
   }, 2000) 
  } else if (args[0] === 'gajah'){
  if (isGajah < anu) return m.reply(`Anda Tidak Memiliki Cukup Gajah Untuk Transaksi Ini`)
- if (!args[1]) return m.reply(`Example : ${prefix + command} gajah 2\n 1 Gajah = 15000 Money`)
+ if (!args[1]) return m.reply(`Contoh : ${prefix + command} gajah 2\n 1 Gajah = 15000 Money`)
  kurangGajah(m.sender, anu)
  let monaynya = 15000 * anu
  addMonay(m.sender, monaynya)
@@ -780,7 +781,7 @@ case 'sell':case 'jual':{
   }, 2000) 
  } else if (args[0] === 'iron'){
  if (isBesi < anu) return m.reply(`Anda Tidak Memiliki Cukup Iron Untuk Transaksi Ini`)
- if (!args[1]) return m.reply(`Example : ${prefix + command} iron 2\n 1 Iron = 15000 Money`)
+ if (!args[1]) return m.reply(`Contoh : ${prefix + command} iron 2\n 1 Iron = 15000 Money`)
  kurangBesi(m.sender, anu)
  let monaynya = 16000 * anu
  addMonay(m.sender, monaynya)
@@ -789,7 +790,7 @@ case 'sell':case 'jual':{
   }, 2000) 
  } else if (args[0] === 'gold'){
  if (isEmas < anu) return m.reply(`Anda Tidak Memiliki Cukup Gold Untuk Transaksi Ini`)
- if (!args[1]) return m.reply(`Example : ${prefix + command} gold 2\n 1 Gold = 50000 Money`)
+ if (!args[1]) return m.reply(`Contoh : ${prefix + command} gold 2\n 1 Gold = 50000 Money`)
  kurangEmas(m.sender, anu)
  let monaynya = 50000 * anu
  addMonay(m.sender, monaynya)
@@ -798,7 +799,7 @@ case 'sell':case 'jual':{
   }, 2000) 
  } else if (args[0] === 'emerald'){
  if (isEmerald < anu) return m.reply(`Anda Tidak Memiliki Cukup Emerald Untuk Transaksi Ini`)
- if (!args[1]) return m.reply(`Example : ${prefix + command} emerald 2\n 1 Emerald = 100000 Money`)
+ if (!args[1]) return m.reply(`Contoh : ${prefix + command} emerald 2\n 1 Emerald = 100000 Money`)
  kurangEmerald(m.sender, anu)
  let monaynya = 100000 * anu
  addMonay(m.sender, monaynya)
@@ -882,7 +883,7 @@ if (q.includes('--help')) return m.reply(examkosong)
       buttons: buttons,
       headerType: 4
      }
-     hisoka.sendMessage(from, buttonMessage, { quoted: m })      
+     hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })      
   }, 5000)  
  setTimeout( () => {
   m.reply(`@${m.sender.split("@")[0]} Mulai Berburu Di ${lokasinya}`)     
@@ -2283,7 +2284,7 @@ break
          }
          break
            case 'ttpcustom':{
-	if (!text) return reply(`Example : ${prefix + command} color|text`)
+	if (!text) return reply(`Contoh : ${prefix + command} color|text`)
 	clr = text.split('|')[0] ? text.split('|')[0] : '-'
 	tek = text.split('|')[1] ? text.split('|')[1] : '-'
            await hisoka.sendMedia(m.chat, `https://hardianto.xyz/api/ttpcustom?text=${tek}&color=${clr}&apikey=hardianto`, m, {assticker: true})
