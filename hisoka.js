@@ -175,15 +175,15 @@ const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid"
                 if (typeof chats !== 'object') global.db.chats[m.chat] = {}
                 if (chats) {
                 if (!('mute' in chats)) chats.mute = false
-                if (!('antilink' in chats)) chats.antilink = false
-                if (!('antiyt' in chats)) chats.antiyt = false
-                if (!('antitiktok' in chats)) chats.antilink = false
+                if (!('antilinkwa' in chats)) chats.antilinkwa = false
+                if (!('antilinkyt' in chats)) chats.antilinkyt = false
+                if (!('antilinktt' in chats)) chats.antilinktt = false
                 if (!('antivirtex' in chats)) chats.antivirtex = true
              } else global.db.chats[m.chat] = {
                 mute: false,
-                antilink: false,
-                antiyt: false,
-                antitiktok: false,
+                antilinkwa: false,
+                antilinkyt: false,
+                antilinktt: false,
                 antivirtex: true,
         }
 		
@@ -192,16 +192,16 @@ const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid"
 	    if (setting) {
 		if (!isNumber(setting.status)) setting.status = 0
 		if (!('autobio' in setting)) setting.autobio = false
-		if (!('templateImage' in setting)) setting.templateImage = true
+		if (!('templateImage' in setting)) setting.templateImage = false
 		if (!('templateVideo' in setting)) setting.templateVideo = false
-		if (!('templateGif' in setting)) setting.templateGif = false
+		if (!('templateGif' in setting)) setting.templateGif = true
 		if (!('templateMsg' in setting)) setting.templateMsg = false	
 	    } else global.db.settings[botNumber] = {
 		status: 0,
 		autobio: false,
-		templateImage: true,
+		templateImage: false,
 		templateVideo: false,
-		templateGif: false,
+		templateGif: true,
 		templateMsg: false,
 	    }
 	    
@@ -363,7 +363,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
 	}
 	    
         //Anti Link
-        if (db.chats[m.chat].antilink) {
+        if (db.chats[m.chat].antilinkwa) {
         if (budy.match(`chat.whatsapp.com`)) {
         m.reply(`「 ANTI LINK WHATSAPP 」\n\nKamu terdeteksi mengirim link group, maaf kamu akan di kick !`)
         if (!isBotAdmins) return m.reply(`Ehh bot gak admin T_T`)
@@ -377,7 +377,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
         }
         }
          //Anti Link YouTube
-        if (db.chats[m.chat].antiyt) {
+        if (db.chats[m.chat].antilinkyt) {
         if (budy.match(`https://youtu.be`)) {
         m.reply(`「 ANTI LINK YOUTUBE 」\n\nKamu terdeteksi mengirim link YouTube, maaf kamu akan di kick !`)
         if (!isBotAdmins) return m.reply(`Ehh bot gak admin T_T`)
@@ -387,7 +387,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
         }
         }
         //Anti Link Tiktok
-        if (db.chats[m.chat].antitiktok) {
+        if (db.chats[m.chat].antilinktt) {
         if (budy.match(`https://vt.tiktok.com`)) {
         m.reply(`「 ANTI LINK TIKTOK 」\n\nKamu terdeteksi mengirim link TikTok, maaf kamu akan di kick !`)
         if (!isBotAdmins) return m.reply(`Ehh bot gak admin T_T`)
@@ -1004,7 +1004,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
   m.reply(`Sama Sama Kak ${pushname} ☺`)
   break
   case 'p':
-  m.reply(`Bisa Sopan Dikit Gak Kak?`)
+  m.reply(`Ketik menu Untuk Melihat List Menu Bot`)
   break
   case 'sayang':
   m.reply(`Cwek/Cwok`)
@@ -1424,7 +1424,7 @@ hisoka.sendMessage(m.chat, { text: `Pertanyaan : ${q}\nJawaban : ${ya}` }, { quo
 case 'rate':
  
 				if (!q) return m.reply(`Penggunaan ${command} text\n\nContoh : ${command} Gambar aku`)
-					const ra = ['5', '10', '15' ,'20', '25','30','35','40','45','50','55','60','65','70','75','80','85','90','100']
+					const ra = ['5', '10', '15' ,'20', '25','30','35','40','45','50','55','60','65','70','75','80','85','90','95','100']
 					const te = ra[Math.floor(Math.random() * ra.length)]
 hisoka.sendMessage(m.chat, { text: `Rate : ${q}\nJawaban : *${te}%*` }, { quoted: ftroli })
 
@@ -1433,7 +1433,7 @@ case 'gantengcek':
   case 'cekganteng':
    
 				if (!q) return m.reply(`Penggunaan ${command} Nama\n\nContoh : ${command} GuaAbuzz`)
-					const gan = ['5', '10', '15' ,'20', '25','30','35','40','45','50','55','60','65','70','75','80','85','90','100']
+					const gan = ['5', '10', '15' ,'20', '25','30','35','40','45','50','55','60','65','70','75','80','85','90','95','100']
 					const teng = gan[Math.floor(Math.random() * gan.length)]
 hisoka.sendMessage(m.chat, { text: `Nama : ${q}\nJawaban : *${teng}%*` }, { quoted: ftroli })
 
@@ -1442,7 +1442,7 @@ case 'cantikcek':
   case 'cekcantik':
    
 				if (!q) return m.reply(`Penggunaan ${command} Nama\n\nContoh : ${command} Asuna`)
-					const can = ['5', '10', '15' ,'20', '25','30','35','40','45','50','55','60','65','70','75','80','85','90','100']
+					const can = ['5', '10', '15' ,'20', '25','30','35','40','45','50','55','60','65','70','75','80','85','90','95','100']
 					const tik = can[Math.floor(Math.random() * can.length)]
 hisoka.sendMessage(m.chat, { text: `Nama : ${q}\nJawaban : *${tik}%*` }, { quoted: ftroli })
 
@@ -1454,14 +1454,14 @@ case 'sangecek':
         case 'lesbicek':
           case 'ceklesbi':
 				if (!q) return m.reply(`Penggunaan ${command} Nama\n\nContoh : ${command} ${pushname}`)
-					const sangeh = ['5', '10', '15','20', '25','30','35','40','45','50','55','60','65','70','75','80','85','90','100']
+					const sangeh = ['5', '10', '15','20', '25','30','35','40','45','50','55','60','65','70','75','80','85','90','95','100']
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
 hisoka.sendMessage(m.chat, { text: `Nama : ${q}\nJawaban : *${sange}%*` }, { quoted: ftroli })
 
 					break
 case 'kapankah':
 				if (!q) return m.reply(`Penggunaan ${command} Pertanyaan\n\nContoh : ${command} Saya Mati`)
-					const kapan = ['5 Hari Lagi', '10 Hari Lagi', '15 Hari Lagi','20 Hari Lagi', '25 Hari Lagi','30 Hari Lagi','35 Hari Lagi','40 Hari Lagi','45 Hari Lagi','50 Hari Lagi','55 Hari Lagi','60 Hari Lagi','65 Hari Lagi','70 Hari Lagi','75 Hari Lagi','80 Hari Lagi','85 Hari Lagi','90 Hari Lagi','100 Hari Lagi','5 Bulan Lagi', '10 Bulan Lagi', '15 Bulan Lagi','20 Bulan Lagi', '25 Bulan Lagi','30 Bulan Lagi','35 Bulan Lagi','40 Bulan Lagi','45 Bulan Lagi','50 Bulan Lagi','55 Bulan Lagi','60 Bulan Lagi','65 Bulan Lagi','70 Bulan Lagi','75 Bulan Lagi','80 Bulan Lagi','85 Bulan Lagi','90 Bulan Lagi','100 Bulan Lagi','1 Tahun Lagi','2 Tahun Lagi','3 Tahun Lagi','4 Tahun Lagi','5 Tahun Lagi','Besok','Lusa',`Abis Command Ini Juga Lu ${q}`]
+					const kapan = ['5 Hari Lagi', '10 Hari Lagi', '15 Hari Lagi','20 Hari Lagi', '25 Hari Lagi','30 Hari Lagi','35 Hari Lagi','40 Hari Lagi','45 Hari Lagi','50 Hari Lagi','55 Hari Lagi','60 Hari Lagi','65 Hari Lagi','70 Hari Lagi','75 Hari Lagi','80 Hari Lagi','85 Hari Lagi','90 Hari Lagi','95 Hari Lagi','100 Hari Lagi','5 Bulan Lagi', '10 Bulan Lagi', '15 Bulan Lagi','20 Bulan Lagi', '25 Bulan Lagi','30 Bulan Lagi','35 Bulan Lagi','40 Bulan Lagi','45 Bulan Lagi','50 Bulan Lagi','55 Bulan Lagi','60 Bulan Lagi','65 Bulan Lagi','70 Bulan Lagi','75 Bulan Lagi','80 Bulan Lagi','85 Bulan Lagi','90 Bulan Lagi','95 Bulan Lagi','100 Bulan Lagi','1 Tahun Lagi','2 Tahun Lagi','3 Tahun Lagi','4 Tahun Lagi','5 Tahun Lagi','Besok','Lusa',`Abis Command Ini Juga Lu ${q}`]
 					const kapankah = kapan[Math.floor(Math.random() * kapan.length)]
 hisoka.sendMessage(m.chat, { text: `Pertanyaan : ${q}\nJawaban : *${kapankah}*` }, { quoted: ftroli })
 					break
@@ -1471,7 +1471,7 @@ case 'wangy':
               awikwok = `${qq} ${qq} ${qq} ❤️ ❤️ ❤️ WANGY WANGY WANGY WANGY HU HA HU HA HU HA, aaaah baunya rambut ${qq} wangyy aku mau nyiumin aroma wangynya ${qq} AAAAAAAAH ~ Rambutnya.... aaah rambutnya juga pengen aku elus-elus ~~ AAAAAH ${qq} keluar pertama kali di anime juga manis ❤️ ❤️ ❤️ banget AAAAAAAAH ${qq} AAAAA LUCCUUUUUUUUUUUUUUU............ ${qq} AAAAAAAAAAAAAAAAAAAAGH ❤️ ❤️ ❤️apa ? ${qq} itu gak nyata ? Cuma HALU katamu ? nggak, ngak ngak ngak ngak NGAAAAAAAAK GUA GAK PERCAYA ITU DIA NYATA NGAAAAAAAAAAAAAAAAAK PEDULI BANGSAAAAAT !! GUA GAK PEDULI SAMA KENYATAAN POKOKNYA GAK PEDULI. ❤️ ❤️ ❤️ ${qq} gw ... ${qq} di laptop ngeliatin gw, ${qq} .. kamu percaya sama aku ? aaaaaaaaaaah syukur ${q} aku gak mau merelakan ${qq} aaaaaah ❤️ ❤️ ❤️ YEAAAAAAAAAAAH GUA MASIH PUNYA ${qq} SENDIRI PUN NGGAK SAMA AAAAAAAAAAAAAAH`
              m.reply(awikwok)
               break
-case 'cekmati':
+             case 'cekmati':
               if (!q) return m.reply(`Invalid!\n\nYg mau di cek siapa kontol?`)
               predea = await axios.get(`https://api.agify.io/?name=${q}`)
               m.reply(`Nama : ${predea.data.name}\n*Mati Pada Umur :* ${predea.data.age} Tahun.\n\n_Cepet Cepet Tobat Bro Soalnya Mati ga ada yang tau_`)
@@ -1759,43 +1759,43 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
             hisoka.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: ftroli })
             }
             break
-             case 'antilink': {
+             case 'antilinkwa': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
                 if (args[0] === "on") {
-                if (db.chats[m.chat].antilink) return m.reply(`Sudah Aktif Sebelumnya`)
-                db.chats[m.chat].antilink = true
-                m.reply(`Antilink Aktif !`)
+                if (db.chats[m.chat].antilinkwa) return m.reply(`Sudah Aktif Sebelumnya`)
+                db.chats[m.chat].antilinkwa = true
+                m.reply(`Antilink Group WhatsApp Aktif !`)
                 } else if (args[0] === "off") {
                 if (!db.chats[m.chat].antilink) return m.reply(`Sudah Nonaktif Sebelumnya`)
                 db.chats[m.chat].antilink = false
-                m.reply(`Antilink Nonaktif !`)
+                m.reply(`Antilink Group WhatsApp Nonaktif !`)
                 } else {
                  let buttons = [
-                        { buttonId: 'antilink on', buttonText: { displayText: 'On' }, type: 1 },
-                        { buttonId: 'antilink off', buttonText: { displayText: 'Off' }, type: 1 }
+                        { buttonId: 'antilinkwa on', buttonText: { displayText: 'On' }, type: 1 },
+                        { buttonId: 'antilinkwa off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, `Mode Antilink`, hisoka.user.name, ftroli)
+                    await hisoka.sendButtonText(m.chat, buttons, `Mode Antilink Group WhatsApp`, hisoka.user.name, ftroli)
                 }
              }
              break
-             case 'antiyt': {
+             case 'antilinkyt': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
                 if (args[0] === "on") {
-                if (db.chats[m.chat].antiyt) return m.reply(`Sudah Aktif Sebelumnya`)
-                db.chats[m.chat].antiyt = true
+                if (db.chats[m.chat].antilinkyt) return m.reply(`Sudah Aktif Sebelumnya`)
+                db.chats[m.chat].antilinkyt = true
                 m.reply(`Antilink YouTube Aktif !`)
                 } else if (args[0] === "off") {
-                if (!db.chats[m.chat].antiyt) return m.reply(`Sudah Nonaktif Sebelumnya`)
-                db.chats[m.chat].antiyt = false
+                if (!db.chats[m.chat].antilinkyt) return m.reply(`Sudah Nonaktif Sebelumnya`)
+                db.chats[m.chat].antilinkyt = false
                 m.reply(`Antilink YouTube Nonaktif !`)
                 } else {
                  let buttons = [
-                        { buttonId: 'antiyt on', buttonText: { displayText: 'On' }, type: 1 },
-                        { buttonId: 'antiyt off', buttonText: { displayText: 'Off' }, type: 1 }
+                        { buttonId: 'antilinkyt on', buttonText: { displayText: 'On' }, type: 1 },
+                        { buttonId: 'antilinkyt off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
                     await hisoka.sendButtonText(m.chat, buttons, `Mode Antilink YouTube`, hisoka.user.name, ftroli)
                 }
@@ -1806,12 +1806,12 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
                 if (args[0] === "on") {
-                if (db.chats[m.chat].antitiktok) return m.reply(`Sudah Aktif Sebelumnya`)
-                db.chats[m.chat].antitiktok = true
+                if (db.chats[m.chat].antilinktt) return m.reply(`Sudah Aktif Sebelumnya`)
+                db.chats[m.chat].antilinktt = true
                 m.reply(`Antilink TikTok Aktif !`)
                 } else if (args[0] === "off") {
-                if (!db.chats[m.chat].antitiktok) return m.reply(`Sudah Nonaktif Sebelumnya`)
-                db.chats[m.chat].antitiktok = false
+                if (!db.chats[m.chat].antilinktt) return m.reply(`Sudah Nonaktif Sebelumnya`)
+                db.chats[m.chat].antilinktt = false
                 m.reply(`Antilink TikTok Nonaktif !`)
                 } else {
                  let buttons = [
@@ -5344,7 +5344,7 @@ case 'groupmenu': case 'menugroup': {
 │⭔ ${prefix}vote [text]
 │⭔ ${prefix}mute [on/off]
 │⭔ ${prefix}antilink [on/off]
-│⭔ ${prefix}antiyt [on/off]
+│⭔ ${prefix}antilinkyt [on/off]
 │⭔ ${prefix}antilinktt [on/off]
 │⭔ ${prefix}devote
 │⭔ ${prefix}upvote
@@ -7733,8 +7733,8 @@ break
 │⭔ ${prefix}demote @user
 │⭔ ${prefix}vote [text]
 │⭔ ${prefix}mute [on/off]
-│⭔ ${prefix}antilink [on/off]
-│⭔ ${prefix}antiyt [on/off]
+│⭔ ${prefix}antilinkwa [on/off]
+│⭔ ${prefix}antilinkyt [on/off]
 │⭔ ${prefix}antilinktt [on/off]
 │⭔ ${prefix}devote
 │⭔ ${prefix}upvote
