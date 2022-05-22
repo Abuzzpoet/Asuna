@@ -57,12 +57,13 @@ const ikan = ['🐟','🐠','🐡']
 // read database
 global.db = JSON.parse(fs.readFileSync('./src/database.json'))
 if (global.db) global.db = {
-    sticker: {},
-    database: {},
-    game: {},
-    others: {},
     users: {},
     chats: {},
+    database: {},
+    game: {},
+    settings: {},
+    others: {},
+    sticker: {},
     ...(global.db || {})
 }
 let tebaklagu = db.game.tebaklagu = []
@@ -76,7 +77,6 @@ let tebakkalimat = db.game.kalimat = []
 let tebaklirik = db.game.lirik = []
 let tebaktebakan = db.game.tebakan = []
 let vote = db.others.vote = []
-
 
 moment.tz.setDefault("Asia/Jakarta").locale("id")
 
@@ -192,16 +192,16 @@ const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid"
 	    if (setting) {
 		if (!isNumber(setting.status)) setting.status = 0
 		if (!('autobio' in setting)) setting.autobio = false
-		if (!('templateImage' in setting)) setting.templateImage = false
+		if (!('templateImage' in setting)) setting.templateImage = true
 		if (!('templateVideo' in setting)) setting.templateVideo = false
-		if (!('templateGif' in setting)) setting.templateGif = true
+		if (!('templateGif' in setting)) setting.templateGif = false
 		if (!('templateMsg' in setting)) setting.templateMsg = false	
 	    } else global.db.settings[botNumber] = {
 		status: 0,
 		autobio: false,
-		templateImage: false,
+		templateImage: true,
 		templateVideo: false,
-		templateGif: true,
+		templateGif: false,
 		templateMsg: false,
 	    }
 	    
