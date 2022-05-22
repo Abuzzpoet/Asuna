@@ -5083,7 +5083,7 @@ let capt = `⭔ Title: ${judul}
             break
             case 'setmenu': {
             if (!isCreator) throw mess.owner
-            let setbot = db.data.settings[botNumber]
+            let setbot = db.settings[botNumber]
                if (args[0] === 'templateImage'){
                 setbot.templateImage = true
                 setbot.templateVideo = false
@@ -8057,7 +8057,7 @@ ${ucapanWaktu}
                                     id: 'sewabot'
                                 }
                             }]
-                         let setbot = db.settings[botNumber]
+                         let setbot = dbsettings[botNumber]
                         if (setbot.templateImage) {
                         hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.allmenu, btn)
                         } else if (setbot.templateGif) {
