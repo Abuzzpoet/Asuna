@@ -8314,13 +8314,6 @@ hisoka.sendMessage(m.chat, {text: 'Ada Apa Ya? Kenapa Tag Owner Ku?'}, {quoted: 
         m.reply(util.format(err))
     }
 }
-        if (budy.includes('6281374208316')) {  
-hisoka.sendMessage(m.chat, {text: 'Kenapa Kak? Ada Salahkan ${global.namabot}'}, {quoted: ftroli})
-	  }
-    } catch (err) {
-        m.reply(util.format(err))
-    }
-}
 
 
 let file = require.resolve(__filename)
