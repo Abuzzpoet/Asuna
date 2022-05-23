@@ -1651,7 +1651,7 @@ db.users[m.sender].limit -= 1 // -1 limit
             break
             case 'leave': {
                 if (!isCreator) throw mess.owner
-                await hisoka.groupLeave(m.chat).then((res) => m.reply('Sayonara 👋\nSulit Di Kontrol Semoga Hari Kalian Mengontol').catch((err) => m.reply(jsonformat(err)))
+                await hisoka.groupLeave(m.chat).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
             }
             break
             case 'setexif': {
