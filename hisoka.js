@@ -2233,7 +2233,7 @@ break
   for (let e of anu) {
   let metadata = await hisoka.groupMetadata(e)
   tekslistgc += `📛 *Nama :* ${metadata.subject}\n`
-  tekslistgc += `👤 *Owner Grup :* @${metadata.owner.split('@')[0]}\n`
+  tekslistgc += `👤 *Owner Grup :* ${metadata.owner !== undefined ? '@' + metadata.owner.split`@`[0] : 'Tidak diketahui'}\n`
   tekslistgc += `🌱 *ID :* ${metadata.id}\n`
   tekslistgc += `⏳ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n`
   tekslistgc += `👥 *Member :* ${metadata.participants.length}\n\n`
