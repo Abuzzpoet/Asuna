@@ -8226,9 +8226,6 @@ break
                      }
             break
             default:
-            if (budy.startsWith(`${prefix}`) && isCmd) {
-				m.reply(`Command ${prefix + command} belum tersedia, silahkan request ke owner dengan ketik _${prefix}request_ [text] atau tunggu update selanjutnya !`)
-			}
 			if (budy.startsWith('Bot')) {
 				m.reply('Ya ada apa kak?')
 			}
@@ -8246,9 +8243,6 @@ break
 			}
 			if (budy.startsWith('Assalam')) {
 				m.reply('Waalaikumsalam, Apa ada yang dapat saya bantu?')
-			}
-			if (budy.startsWith(`[botNumber]`)) {
-				m.reply('Kenapa kak?')
 			}
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return m.reply(mess.owner)
@@ -8314,7 +8308,10 @@ break
 		}
         }
         if (budy.includes('6289636827082')) {  
-hisoka.sendMessage(m.chat, {text: 'Ada apa ya? Kenapa tag owner ku?'}, {quoted: ftroli})
+hisoka.sendMessage(m.chat, {text: 'Ada Apa Ya?, Kenapa Tag Owner Ku?'}, {quoted: ftroli})
+	  }	     
+	    if (budy.includes('6281374208316')) {  
+hisoka.sendMessage(m.chat, {text: 'Kenapa Kak?, Ada Salah Asuna?'}, {quoted: ftroli})
 	  }	     
     } catch (err) {
         m.reply(util.format(err))
