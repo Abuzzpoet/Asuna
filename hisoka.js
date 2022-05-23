@@ -997,23 +997,11 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             }
             break
-  case 'assalamualaikum':
-  m.reply(`وَبَرَكَاتُهُ اللهِ وَرَحْمَةُ السَّلاَمُ وَعَلَيْكُمُْه\nLatin :\nWa ‘alaikumus salam wa rahmatullahi wabarakatuhُ`)
-  break
   case 'makasih': case 'thx': case 'tq': case 'mksh': case 'terimakasih':
   m.reply(`Sama Sama Kak ${pushname} ☺`)
   break
   case 'p':
   m.reply(`Ketik menu Untuk Melihat List Menu Bot`)
-  break
-  case 'sayang':
-  m.reply(`Cwek/Cwok`)
-  break
-  case 'cwek': case 'cewek':
-  m.reply(`Ya Knp Sayang?`)
-  break
-  case 'cwok': case 'cowok':
-  m.reply(`Owh Cwok, Ada Apa Bang?`)
   break
 case 'tqtt': case 'tqto': case 'thanksto': {
                 anu = `
@@ -2284,7 +2272,7 @@ break
          }
          break
            case 'ttpcustom':{
-	if (!text) return reply(`Contoh : ${prefix + command} color|text`)
+	if (!text) return m.reply(`Contoh : ${prefix + command} color|text`)
 	clr = text.split('|')[0] ? text.split('|')[0] : '-'
 	tek = text.split('|')[1] ? text.split('|')[1] : '-'
            await hisoka.sendMedia(m.chat, `https://hardianto.xyz/api/ttpcustom?text=${tek}&color=${clr}&apikey=hardianto`, m, {assticker: true})
@@ -5147,18 +5135,21 @@ case 'rules': {
 └┬─────────────┈❖
 ┌┤「 SNK 」
 │└─────────────┈❖
-│1. Data Whatsapp Anda Akan Kami Simpan Di Server Kami Selama BOT Aktif
+│1. Data Whatsapp Anda Akan Kami
+│     Simpan Di Server Kami Selama BOT Aktif
 │2. Data Anda Akan Di Hapus Ketika BOT OFF
-│3. Kami Tidak Menyimpan Gambar/Video/File/Audio/Dokumen Yang Anda Kirim
-│4. Kami Tidak Pernah Meminta Anda Untuk Memberikan Informasi Pribadi
+│3. Kami Tidak Menyimpan
+│     Gambar/Video/File/Audio/Dokumen Yang Anda Kirim
+│4. Kami Tidak Pernah Meminta Anda
+│     Untuk Memberikan Informasi Pribadi
 │5. Jika Menemukan BUG/ERROR Silahkan REPORT!
 └┬─────────────┈❖
 ┌┤「 ATTENTION 」
 │└─────────────┈❖
 │*KONSEKUENSI BILA MELANGGAR RULES*
-│- Bot Akan Memblokir Nomor Anda.
-│- Anda Tidak Akan Bisa Mengakses Bot Lagi.
-│- Mengeksploitasi Terhadap bot.
+│1. Bot Akan Memblokir Nomor Anda.
+│2. Anda Tidak Akan Bisa Mengakses Bot Lagi.
+│3. Mengeksploitasi Terhadap bot.
 │Sanksi: *PERMANENT BLOCK*
 └──────────────┈❖`
                 let btn = [{
@@ -5206,7 +5197,7 @@ case 'sewa': case 'sewabot': {
 │⭔ Welcome Image
 │⭔ Left
 └┬─────────────┈❖
-┌┤「 KEUNTUNGAN 」
+┌┤「 SISTEM 」
 │└─────────────┈❖
 │⭔ Kirim » Bukti Pembayaran » Bot Join
 └──────────────┈❖`
@@ -8235,6 +8226,30 @@ break
                      }
             break
             default:
+            if (budy.startsWith(`${prefix}`) && isCmd) {
+				m.reply(`Command ${prefix + command} belum tersedia, silahkan request ke owner dengan ketik _${prefix}request_ [text] atau tunggu update selanjutnya !`)
+			}
+			if (budy.startsWith('Bot')) {
+				m.reply('Ya ada apa kak?')
+			}
+			if (budy.startsWith('Hi')) {
+				m.reply('Hi, Apa ada yang dapat saya bantu?')
+			}
+			if (budy.startsWith('Hai')) {
+				m.reply('Hai, Apa ada yang dapat saya bantu?')
+			}
+			if (budy.startsWith('Halo')) {
+				m.reply('Halo, Apa ada yang dapat saya bantu?')
+			}
+			if (budy.startsWith('Hello')) {
+				m.reply('Hello, Apa ada yang dapat saya bantu?')
+			}
+			if (budy.startsWith('Assalam')) {
+				m.reply('Waalaikumsalam, Apa ada yang dapat saya bantu?')
+			}
+			if (budy.startsWith(`[botNumber]`)) {
+				m.reply('Kenapa kak?')
+			}
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return m.reply(mess.owner)
                     function Return(sul) {
@@ -8299,7 +8314,7 @@ break
 		}
         }
         if (budy.includes('6289636827082')) {  
-hisoka.sendMessage(m.chat, {text: 'Ada Apa Ya Tags Owner Saya'}, {quoted: ftroli})
+hisoka.sendMessage(m.chat, {text: 'Ada apa ya? Kenapa tag owner ku?'}, {quoted: ftroli})
 	  }	     
     } catch (err) {
         m.reply(util.format(err))
