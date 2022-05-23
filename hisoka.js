@@ -5163,21 +5163,25 @@ case 'rules': {
 └┬─────────────┈❖
 ┌┤「 RULES BOT 」
 │└─────────────┈❖
-│1. Tolong Gunakan Delay 5 Detik Untuk Menggukan BOT
+│1. Tolong Gunakan Delay 5 Detik
+│     Untuk Menggukan BOT.
 │2. Gunakan Dengan Bijak.
-│3. Don't Call Bot 
-│4. Don't Spam Bot
+│3. Don't Call Bot.
+│4. Don't Spam Bot.
 └┬─────────────┈❖
 ┌┤「 SNK 」
 │└─────────────┈❖
 │1. Data Whatsapp Anda Akan Kami
-│     Simpan Di Server Kami Selama BOT Aktif
-│2. Data Anda Akan Di Hapus Ketika BOT OFF
+│     Simpan Di Server Kami
+│       Selama BOT Aktif.
+│2. Data Anda Akan Di Hapus Ketika BOT OFF.
 │3. Kami Tidak Menyimpan
-│     Gambar/Video/File/Audio/Dokumen Yang Anda Kirim
+│     Gambar/Video/File/Audio/Dokumen
+│       Yang Anda Kirim.
 │4. Kami Tidak Pernah Meminta Anda
-│     Untuk Memberikan Informasi Pribadi
-│5. Jika Menemukan BUG/ERROR Silahkan REPORT!
+│     Untuk Memberikan Informasi Pribadi.
+│5. Jika Menemukan BUG/ERROR
+│     Silahkan REPORT!.
 └┬─────────────┈❖
 ┌┤「 ATTENTION 」
 │└─────────────┈❖
