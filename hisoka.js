@@ -1340,7 +1340,7 @@ https://github.com/DikaArdnt/Hisoka-Morou
 
 🌱 Recode By : GuaAbuzz
 Mau Sc/Script Gua?
-Ya Beli Lah Cuma 35k No Enc`
+Ya Beli Lah Cuma 20k No Enc`
                 let button = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
