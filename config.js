@@ -18,7 +18,7 @@ global.APIKeys = {
 }
 
 // Other
-global.namabot = 'AsunaChan'
+global.namabot = 'AsunaChanV10'
 global.namaowner = 'GuaAbuzz'
 global.owner = ['6289636827082']
 global.premium = ['6289636827082']

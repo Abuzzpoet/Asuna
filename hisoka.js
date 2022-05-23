@@ -5108,16 +5108,16 @@ let capt = `⭔ Title: ${judul}
                 } else {
                 let sections = [
                 {
-                title: "CHANGE MENU BOT",
+                title: "GANTI MENU BOT",
                 rows: [
-                {title: "Template Image", rowId: `setmenu templateImage`, description: `Change menu bot to Template Image`},
-                {title: "Template Video", rowId: `setmenu templateVideo`, description: `Change menu bot to Template Video`},
-                {title: "Template Gif", rowId: `setmenu templateGif`, description: `Change menu bot to Template Gif`},
-                {title: "Template Message", rowId: `setmenu templateMessage`, description: `Change menu bot to Template Message`}
+                {title: "Template Image", rowId: `setmenu templateImage`, description: `Ubah Menu Bot Menjadi Gambar`},
+                {title: "Template Video", rowId: `setmenu templateVideo`, description: `Ubah Menu Bot Menjadi Video`},
+                {title: "Template Gif", rowId: `setmenu templateGif`, description: `Ubah Menu Bot Menjadi Gif`},
+                {title: "Template Message", rowId: `setmenu templateMessage`, description: `Ubah Menu Bot Menjadi Pesan`}
                 ]
                 },
                 ]
-                hisoka.sendListMsg(m.chat, `Please select the menu you want to change!`, hisoka.user.name, `Hello Owner !`, `Click Here`, sections, m)
+                hisoka.sendListMsg(m.chat, `Silakan pilih menu yang ingin Anda ubah!`, hisoka.user.name, `Hello Owner !`, `Klik disini`, sections, m)
                 }
             }
             break
@@ -8308,11 +8308,15 @@ break
 		}
         }
         if (budy.includes('6289636827082')) {  
-hisoka.sendMessage(m.chat, {text: 'Ada Apa Ya?, Kenapa Tag Owner Ku?'}, {quoted: ftroli})
-	  }	     
-	    if (budy.includes('6281374208316')) {  
-hisoka.sendMessage(m.chat, {text: 'Kenapa Kak?, Ada Salah Asuna?'}, {quoted: ftroli})
-	  }	     
+hisoka.sendMessage(m.chat, {text: 'Ada Apa Ya? Kenapa Tag Owner Ku?'}, {quoted: ftroli})
+	  }
+    } catch (err) {
+        m.reply(util.format(err))
+    }
+}
+        if (budy.includes('6281374208316')) {  
+hisoka.sendMessage(m.chat, {text: 'Kenapa Kak? Ada Salahkan ${global.namabot}'}, {quoted: ftroli})
+	  }
     } catch (err) {
         m.reply(util.format(err))
     }
