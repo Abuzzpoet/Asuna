@@ -6938,7 +6938,7 @@ case 'mainmenu': case 'menumain': {
 │⭔ ${prefix}owner
 │⭔ ${prefix}donasi
 │⭔ ${prefix}menu / ${prefix}help / ${prefix}?
-│⭔ ${prefix}delete / ${prefix}del ${prefix}d
+│⭔ ${prefix}delete / ${prefix}del / ${prefix}d
 │⭔ ${prefix}infochat
 │⭔ ${prefix}quoted
 │⭔ ${prefix}groupbot
@@ -7830,7 +7830,7 @@ break
 │⭔ ${prefix}owner
 │⭔ ${prefix}donasi
 │⭔ ${prefix}menu / ${prefix}help / ${prefix}?
-│⭔ ${prefix}delete / ${prefix}del ${prefix}d
+│⭔ ${prefix}delete / ${prefix}del / ${prefix}d
 │⭔ ${prefix}infochat
 │⭔ ${prefix}quoted
 │⭔ ${prefix}groupbot
