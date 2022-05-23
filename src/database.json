@@ -5,10 +5,10 @@
       "afkReason": "",
       "limit": "Infinity"
     },
-    "6289520353160@s.whatsapp.net": {
+    "6281374208316@s.whatsapp.net": {
       "afkTime": -1,
       "afkReason": "",
-      "limit": 20
+      "limit": "Infinity"
     }
   },
   "chats": {
@@ -19,7 +19,7 @@
       "antilinktt": false,
       "antivirtex": true
     },
-    "6282180749950-1622470886@g.us": {
+    "6281374208316@s.whatsapp.net": {
       "mute": false,
       "antilinkwa": false,
       "antilinkyt": false,
