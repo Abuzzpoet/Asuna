@@ -997,9 +997,32 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             }
             break
-  case 'makasih': case 'thx': case 'tq': case 'mksh': case 'terimakasih':
-  m.reply(`Sama Sama Kak ${pushname} ☺`)
+  //Salam
+  case 'Assalamualaikum': case 'assalamualaikum': case 'Assalamualaikum Wr. Wb':
+  m.reply(`Waalaikumsalam Kak ${pushname} 🙏`)
   break
+  case 'Shalom': case 'Salam Sejahtera': case 'shalom': case 'salam sejahtera': case 'Salam sejahtera':
+  m.reply(`Salam Sejahtera Juga Untukmu Kak ${pushname} 🙏`)
+  break
+  case 'Om Swastyastu': case 'om swastyastu': case 'Om swastyastu':
+  m.reply(`Om Santi, Santi, Santi, Om Kak ${pushname} 🙏`)
+  break
+  case 'Namo Buddhaya': case 'Namo buddhaya': case 'namo buddhaya':
+  m.reply(`Nammo Buddhaya Juga Kak ${pushname} 🙏`)
+  break
+  case 'Wie De Dong Tian': case 'Wie de dong tian': case 'wie de dong tian':
+  m.reply(`Xian You Yi De Kak ${pushname} 🙏`)
+  break
+    
+  //Thx
+  case 'thanks': case 'makasih': case 'thx': case 'tengkiyu': case 'terima kasih': case 'Terima Kasih': case 'Terima kasih':
+  m.reply(`Sama-Sama Kak ${pushname}`)
+  break
+    
+  //Case Cek Prefix
+  case 'cekpref': case 'cekprefix':
+  m.reply('Bot Ini Menggunakan Multi Prefix Dan No Prefix')
+  break  
   case 'p':
   m.reply(`Ketik menu Untuk Melihat List Menu Bot`)
   break
@@ -1628,7 +1651,7 @@ db.users[m.sender].limit -= 1 // -1 limit
             break
             case 'leave': {
                 if (!isCreator) throw mess.owner
-                await hisoka.groupLeave(m.chat).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+                await hisoka.groupLeave(m.chat).then((res) => m.reply('Sayonara 👋\nSulit Di Kontrol Semoga Hari Kalian Mengontol').catch((err) => m.reply(jsonformat(err)))
             }
             break
             case 'setexif': {
@@ -1708,7 +1731,7 @@ break
                 await hisoka.groupUpdateDescription(m.chat, text).then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
             }
             break
-case 'setpp': case 'setppbot':
+          case 'setpp': case 'setppbot':
                 let mediaa = await hisoka.downloadAndSaveMediaMessage(quoted)
                 let jimp_1 = require('jimp')
                 let jimp = await jimp_1.read(mediaa)
@@ -2189,31 +2212,43 @@ break
             }
 	    break
             case 'listpc': {
-                 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
-                 let teks = `⬣ *LIST PERSONAL CHAT*\n\nTotal Chat : ${anu.length} Chat\n\n`
-                 for (let i of anu) {
-                     let nama = store.messages[i].array[0].pushName
-                     teks += `⬡ *Nama :* ${nama}\n⬡ *User :* @${i.split('@')[0]}\n⬡ *Chat :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
-                 }
-                 hisoka.sendTextWithMentions(m.chat, teks, m)
-             }
-             break
-                case 'listgc': {
-                 let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-                 let teks = `⬣ *LIST GROUP CHAT*\n\nTotal Group : ${anu.length} Group\n\n`
-                 for (let i of anu) {
-                     let metadata = await hisoka.groupMetadata(i)
-                     teks += `⬡ *Nama :* ${metadata.subject}\n⬡ *Owner :* @${metadata.owner.split('@')[0]}\n⬡ *ID :* ${metadata.id}\n⬡ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n⬡ *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
-                 }
-                 hisoka.sendTextWithMentions(m.chat, teks, m)
-             }
-             break
-             case 'listonline': case 'liston': {
-                    let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
-                    let online = [...Object.keys(store.presences[id]), botNumber]
-                    hisoka.sendText(m.chat, 'List Online:\n\n' + online.map(v => '⭔ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
-             }
-             break
+  if (!isCreator) return m.reply(mess.owner)
+  let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
+  let tekslist = `*🔒 LIST PERSONAL CHAT*\n\n`
+  tekslist += `*📱 Total Chat :* ${anu.length} Chat\n\n`
+  for (let i of anu) {
+  let nama = store.messages[i].array[0].pushName
+  tekslist += `📛 *Nama :* ${nama}\n`
+  tekslist += `👤 *User :* @${i.split('@')[0]}\n`
+  tekslist += `🔗 *Link Chat :* https://wa.me/${i.split('@')[0]}\n\n`
+  tekslist += `──────────────────────\n\n`
+  }
+  hisoka.sendTextWithMentions(m.chat, tekslist, m)
+  }
+  break
+  case 'listgc': {
+  let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
+  let tekslistgc = `👥 *LIST GROUP CHAT*\n\n`
+  tekslistgc += `📱 Total Group : ${anu.length} Group\n\n`
+  for (let e of anu) {
+  let metadata = await hisoka.groupMetadata(e)
+  tekslistgc += `📛 *Nama :* ${metadata.subject}\n`
+  tekslistgc += `👤 *Owner Grup :* @${metadata.owner.split('@')[0]}\n`
+  tekslistgc += `🌱 *ID :* ${metadata.id}\n`
+  tekslistgc += `⏳ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n`
+  tekslistgc += `👥 *Member :* ${metadata.participants.length}\n\n`
+  tekslistgc += `──────────────────────\n\n`
+  }
+  hisoka.sendTextWithMentions(m.chat, tekslistgc, m)
+  }
+  break
+  case 'listonline': case 'liston': {
+  if(!m.isGroup) m.reply(mess.group)
+  let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
+  let online = [...Object.keys(store.presences[id]), botNumber]
+  hisoka.sendText(m.chat, '⏰ List Online:\n\n' + online.map(v => '🌱 @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+  }
+  break
             case 'sticker': case 'stiker': case 's': case 'stickergif': case 'sgif': {
             if (!quoted) throw `Balas Video/Image Dengan Caption ${prefix + command}`
             m.reply(mess.wait)
@@ -4747,15 +4782,15 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 break
             }
             case 'public': {
-                if (!isCreator) throw mess.owner
+                if (!isCreator && !m.key.fromMe) throw mess.owner
                 hisoka.public = true
-                m.reply('Sukse Change To Public Usage')
+                m.reply('Sukses Mengubah Mode Bot Menjadi Publik')
             }
             break
             case 'self': {
-                if (!isCreator) throw mess.owner
+                if (!isCreator && !m.key.fromMe) throw mess.owner
                 hisoka.public = false
-                m.reply('Sukses Change To Self Usage')
+                m.reply('Sukses Mengubah Mode Bot Menjadi Self')
             }
             break
             case 'apikey':
@@ -8240,9 +8275,6 @@ break
 			}
 			if (budy.startsWith('Hello')) {
 				m.reply('Hello, Apa ada yang dapat saya bantu?')
-			}
-			if (budy.startsWith('Assalam')) {
-				m.reply('Waalaikumsalam, Apa ada yang dapat saya bantu?')
 			}
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return m.reply(mess.owner)
