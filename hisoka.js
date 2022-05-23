@@ -1341,7 +1341,7 @@ https://github.com/DikaArdnt/Hisoka-Morou
 🌱 Recode By : GuaAbuzz
 Mau Sc/Script Gua?
 Ya Beli Lah Cuma 20k No Enc`
-                let button = [{
+                let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
                                     url: global.myweb
@@ -1367,8 +1367,17 @@ Ya Beli Lah Cuma 20k No Enc`
                                     id: 'owner'
                                 }
                             }]
-                hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, button)
-            }
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
             break
              case 'tes': case 'test': case 'jaringan': case 'lag': {
                 m.reply('Pending Ya Kak?')
