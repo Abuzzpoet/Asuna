@@ -666,7 +666,7 @@ if (q.includes('--help')) return m.reply(examkosong)
       buttons: buttons,
       headerType: 4
      }
-     hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
+     hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })
    
    }, 7000)  
   setTimeout( () => {
@@ -883,7 +883,7 @@ if (q.includes('--help')) return m.reply(examkosong)
       buttons: buttons,
       headerType: 4
      }
-     hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })      
+     hisoka.sendMessage(m.chat, buttonMessage, { quoted: ftroli })      
   }, 5000)  
  setTimeout( () => {
   m.reply(`@${m.sender.split("@")[0]} Mulai Berburu 🏹 Di ${lokasinya}`)     
@@ -4916,7 +4916,7 @@ m.reply(`Berhasil Dilaporkan Ke Owner!`)
                                 }
 					}
 				]
-				await hisoka.send5ButLoc(from, txt , footer, gam, { userJid: m.chat, quoted: m })
+				await hisoka.send5ButLoc(from, txt , footer, gam, { userJid: m.chat, quoted: ftroli })
                 })
                 .catch((err) => {
                     m.reply(mess.error)
@@ -4961,7 +4961,7 @@ m.reply(`Berhasil Dilaporkan Ke Owner!`)
                                 }
 					}
 				]
-				await hisoka.send5ButLoc(from, txt , footer, gam, but, { userJid: m.chat, quoted: m })
+				await hisoka.send5ButLoc(from, txt , footer, gam, but, { userJid: m.chat, quoted: ftroli })
                 })
                 .catch((err) => {
                     m.reply(mess.error)
@@ -5006,7 +5006,7 @@ m.reply(`Berhasil Dilaporkan Ke Owner!`)
                                 }
 					}
 				]
-				await hisoka.send5ButLoc(from, txt , footer,gam, but , { userJid: m.chat, quoted: m })
+				await hisoka.send5ButLoc(from, txt , footer,gam, but , { userJid: m.chat, quoted: ftroli })
                 })
                 .catch((err) => {
                     m.reply(mess.error)
