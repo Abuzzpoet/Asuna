@@ -1339,6 +1339,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 https://github.com/DikaArdnt/Hisoka-Morou
 
 🌱 Recode By : GuaAbuzz
+${global.github}
 Mau Sc/Script Gua?
 Ya Beli Lah Cuma 20k No Enc`
                 let btn = [{
