@@ -4900,8 +4900,8 @@ m.reply(`Berhasil Dilaporkan Ke Owner!`)
                 xfarr.Anime(q).then(async data => {
                     let txt = `*-------「 ANIME-SEARCH 」-------*\n\n`
                     for (let i of data) {
-                        txt += `*Title :* ${i.judul}\n`
-                        txt += `*Url :* ${i.link}\n-----------------------------------------------------\n`
+                        txt += `*📫 Title :* ${i.judul}\n`
+                        txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
                     }
                     let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
                     var but = [
@@ -4939,14 +4939,14 @@ m.reply(`Berhasil Dilaporkan Ke Owner!`)
                 })
                 }
             break
-            case 'charasearch':case 'karaktersearch':{
+            case 'character': case 'karakter': {
                 if (!text) return m.reply(`Karakter Anime Apa yang Anda Cari??`)
                 await m.reply(mess.wait)
                 xfarr.Character(q).then(async data => {
                     let txt = `*---「 CHARACTER-SEARCH 」---*\n\n`
                     for (let i of data) {
-                        txt += `*Character :* ${i.character}\n`
-                        txt += `*Url :* ${i.link}\n-----------------------------------------------------\n`
+                        txt += `*📫 Character :* ${i.character}\n`
+                        txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
                     }
                     let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
                     var but = [
@@ -4990,8 +4990,8 @@ m.reply(`Berhasil Dilaporkan Ke Owner!`)
                 xfarr.Manga(`${text}`).then(async data => {
                     let txt = `*------「 MANGA-SEARCH 」------*\n\n`
                     for (let i of data) {
-                         txt += `*Title :* ${i.judul}\n`
-                         txt += `*Url :* ${i.link}\n-----------------------------------------------------\n`
+                         txt += `*📫 Title :* ${i.judul}\n`
+                         txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
                     }
                     let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
                     var but = [
@@ -5527,7 +5527,7 @@ case 'searchmenu': case 'menusearch': {
 │└─────────────┈❖
 │⭔ ${prefix}anime [query]
 │⭔ ${prefix}manga [query]
-│⭔ ${prefix}karaktersearch [query]
+│⭔ ${prefix}character [query]
 │⭔ ${prefix}play [query]
 │⭔ ${prefix}yts [query]
 │⭔ ${prefix}google [query]
@@ -8059,7 +8059,7 @@ break
 │└─────────────┈❖
 │⭔ ${prefix}anime [query]
 │⭔ ${prefix}manga [query]
-│⭔ ${prefix}karaktersearch [query]
+│⭔ ${prefix}character [query]
 │⭔ ${prefix}play [query]
 │⭔ ${prefix}yts [query]
 │⭔ ${prefix}google [query]
