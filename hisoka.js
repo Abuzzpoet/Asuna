@@ -2315,13 +2315,6 @@ break
 
          }
          break
-           case 'ttpcustom':{
-	if (!text) return m.reply(`Contoh : ${prefix + command} color|text`)
-	clr = text.split('|')[0] ? text.split('|')[0] : '-'
-	tek = text.split('|')[1] ? text.split('|')[1] : '-'
-           await hisoka.sendMedia(m.chat, `https://hardianto.xyz/api/ttpcustom?text=${tek}&color=${clr}&apikey=hardianto`, m, {assticker: true})
-	}
-break
 	       case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stikermeme': {
 	        let respond = `Kirim/reply image/sticker dengan caption ${prefix + command} text1|text2`
 	        if (!/image/.test(mime)) throw respond
@@ -4603,7 +4596,7 @@ let buttons = [
                 if (!m.quoted.fileSha256) throw 'SHA256 Hash Missing'
                 if (!text) throw `Untuk Command Apa?`
                 let hash = m.quoted.fileSha256.toString('base64')
-                if (global.db.sticker[hash] && global.db.sticker[hash].locked) throw 'You have no permission to change this sticker command'
+                if (global.db.sticker[hash] && global.db.sticker[hash].locked) throw 'Anda tidak memiliki izin untuk mengubah perintah stiker ini'
                 global.db.sticker[hash] = {
                     text,
                     mentionedJid: m.mentionedJid,
@@ -4617,7 +4610,7 @@ let buttons = [
             case 'delcmd': {
                 let hash = m.quoted.fileSha256.toString('base64')
                 if (!hash) throw `Tidak ada hash`
-                if (global.db.sticker[hash] && global.db.sticker[hash].locked) throw 'You have no permission to delete this sticker command'              
+                if (global.db.sticker[hash] && global.db.sticker[hash].locked) throw 'Anda tidak memiliki izin untuk menghapus perintah stiker ini'              
                 delete global.db.sticker[hash]
                 m.reply(`Done!`)
             }
@@ -5591,7 +5584,6 @@ case 'stickermenu': case 'menusticker': {
 │⭔ ${prefix}sticker
 │⭔ ${prefix}attp
 │⭔ ${prefix}ttp
-│⭔ ${prefix}ttpcustom [color|text]
 │⭔ ${prefix}emojimix
 │⭔ ${prefix}emojimix2
 │⭔ ${prefix}patrick
@@ -6959,7 +6951,7 @@ case 'mainmenu': case 'menumain': {
 │⭔ ${prefix}listgc
 │⭔ ${prefix}listonline
 │⭔ ${prefix}speedtest
-│⭔ ${prefix}request
+│⭔ ${prefix}request [req]
 │⭔ ${prefix}report [bug]
 └──────────────┈❖`
                 let btn = [{
@@ -7851,7 +7843,7 @@ break
 │⭔ ${prefix}listgc
 │⭔ ${prefix}listonline
 │⭔ ${prefix}speedtest
-│⭔ ${prefix}request
+│⭔ ${prefix}request [req]
 │⭔ ${prefix}report [bug]
 └┬─────────────┈❖
 ┌┤「 NSFW 」
@@ -8042,7 +8034,6 @@ break
 │⭔ ${prefix}sticker
 │⭔ ${prefix}attp
 │⭔ ${prefix}ttp
-│⭔ ${prefix}ttpcustom [color|text]
 │⭔ ${prefix}emojimix
 │⭔ ${prefix}emojimix2
 │⭔ ${prefix}patrick
@@ -8289,6 +8280,12 @@ break
 			if (budy.startsWith('Hello')) {
 				m.reply('Hello, Apa ada yang dapat saya bantu?')
 			}
+			if (budy.startsWith('6289636827082')) {
+				m.reply('Ada Apa Ya? Kenapa Tag Owner Ku?')
+			}
+			if (budy.startsWith('089636827082')) {
+				m.reply('Ada Apa Ya? Kenapa Tag Owner Ku?')
+			}
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return m.reply(mess.owner)
                     function Return(sul) {
@@ -8352,9 +8349,8 @@ break
 		    hisoka.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
 		}
         }
-        if (budy.includes('6289636827082')) {  
-hisoka.sendMessage(m.chat, {text: 'Ada Apa Ya? Kenapa Tag Owner Ku?'}, {quoted: ftroli})
-	  }
+        
+        
     } catch (err) {
         m.reply(util.format(err))
     }
