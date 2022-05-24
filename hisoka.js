@@ -283,7 +283,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklagu[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak lagu', buttonText: { displayText: 'Tebak Lagu' }, type: 1 }], `🎮 Tebak Lagu 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, ${global.namabot}, m)
+                await hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak lagu', buttonText: { displayText: 'Tebak Lagu' }, type: 1 }], `🎮 Tebak Lagu 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, m)
                 delete tebaklagu[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -301,7 +301,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakgambar[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], `🎮 Tebak Gambar 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, ${global.namabot}, m)
+                await hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], `🎮 Tebak Gambar 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, m)
                 delete tebakgambar[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -310,7 +310,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkata[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], `🎮 Tebak Kata 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, ${global.namabot}, m)
+                await hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], `🎮 Tebak Kata 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, m)
                 delete tebakkata[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -320,7 +320,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             jawaban = caklontong[m.sender.split('@')[0]]
 	    deskripsi = caklontong_desk[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak lontong', buttonText: { displayText: 'Tebak Lontong' }, type: 1 }], `🎮 Cak Lontong 🎮\n\nJawaban Benar 🎉\n*${deskripsi}*\n\nIngin bermain lagi? tekan button dibawah`, ${global.namabot}, m)
+                await hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak lontong', buttonText: { displayText: 'Tebak Lontong' }, type: 1 }], `🎮 Cak Lontong 🎮\n\nJawaban Benar 🎉\n*${deskripsi}*\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, m)
                 delete caklontong[m.sender.split('@')[0]]
 		delete caklontong_desk[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
@@ -330,7 +330,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkalimat[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], `🎮 Tebak Kalimat 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, ${global.namabot}, m)
+                await hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], `🎮 Tebak Kalimat 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, m)
                 delete tebakkalimat[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -339,7 +339,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklirik[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], `🎮 Tebak Lirik 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, ${global.namabot}, m)
+                await hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], `🎮 Tebak Lirik 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, m)
                 delete tebaklirik[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -348,7 +348,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaktebakan[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak tebakan', buttonText: { displayText: 'Tebak Tebakan' }, type: 1 }], `🎮 Tebak Tebakan 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, ${global.namabot}, m)
+                await hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak tebakan', buttonText: { displayText: 'Tebak Tebakan' }, type: 1 }], `🎮 Tebak Tebakan 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, m)
                 delete tebaktebakan[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -357,7 +357,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
 	    let setting = global.db.settings[botNumber]
 	    if (new Date() * 1 - setting.status > 1000) {
 		let uptime = await runtime(process.uptime())
-		await hisoka.setStatus(`🤖 ${global.namabot} | ⏳ Runtime : ${runtime(uptime)}`)
+		await hisoka.setStatus(`🤖 hisoka.user.name | ⏳ Runtime : ${runtime(uptime)}`)
 		setting.status = new Date() * 1
 	    }
 	}
@@ -1076,13 +1076,13 @@ case 'tqtt': case 'tqto': case 'thanksto': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -1111,7 +1111,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}
+│ Name : hisoka.user.name
 │ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ Platform : ${os.platform()}
@@ -1370,13 +1370,13 @@ Ya Beli Lah Cuma 20k No Enc`
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -1516,7 +1516,7 @@ case 'wangy':
                     await sleep(60000)
                     if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Jawaban: " + result.jawaban)
-                    hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak lagu', buttonText: { displayText: 'Tebak Lagu' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebaklagu[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, ${global.namabot}, m)
+                    hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak lagu', buttonText: { displayText: 'Tebak Lagu' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebaklagu[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, m)
                     delete tebaklagu[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'gambar') {
@@ -1529,7 +1529,7 @@ case 'wangy':
                     await sleep(60000)
                     if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Jawaban: " + result.jawaban)
-                    hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebakgambar[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, ${global.namabot}, m)
+                    hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebakgambar[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, m)
                     delete tebakgambar[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'kata') {
@@ -1542,7 +1542,7 @@ case 'wangy':
                     await sleep(60000)
                     if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Jawaban: " + result.jawaban)
-                    hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebakkata[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, ${global.namabot}, m)
+                    hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebakkata[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, m)
                     delete tebakkata[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'kalimat') {
@@ -1555,7 +1555,7 @@ case 'wangy':
                     await sleep(60000)
                     if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Jawaban: " + result.jawaban)
-                    hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebakkalimat[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, ${global.namabot}, m)
+                    hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebakkalimat[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, m)
                     delete tebakkalimat[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'lirik') {
@@ -1568,7 +1568,7 @@ case 'wangy':
                     await sleep(60000)
                     if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Jawaban: " + result.jawaban)
-                    hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebaklirik[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, ${global.namabot}, m)
+                    hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebaklirik[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, m)
                     delete tebaklirik[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'lontong') {
@@ -1582,7 +1582,7 @@ case 'wangy':
                     await sleep(60000)
                     if (caklontong.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Jawaban: " + result.jawaban)
-                    hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak lontong', buttonText: { displayText: 'Tebak Lontong' }, type: 1 }], `Waktu Habis\nJawaban:  ${caklontong[m.sender.split('@')[0]]}\nDeskripsi : ${caklontong_desk[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, ${global.namabot}, m)
+                    hisoka.sendButtonText(m.chat, [{ buttonId: 'tebak lontong', buttonText: { displayText: 'Tebak Lontong' }, type: 1 }], `Waktu Habis\nJawaban:  ${caklontong[m.sender.split('@')[0]]}\nDeskripsi : ${caklontong_desk[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, m)
                     delete caklontong[m.sender.split('@')[0]]
 		    delete caklontong_desk[m.sender.split('@')[0]]
                     }
@@ -1619,7 +1619,7 @@ db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
                         { buttonId: 'jodohku', buttonText: { displayText: 'Jodohku' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, jawab, ${global.namabot}, m, {mentions: ments})
+                    await hisoka.sendButtonText(m.chat, buttons, jawab, hisoka.user.name, m, {mentions: ments})
             }
             break
             case 'jadian': {
@@ -1636,7 +1636,7 @@ db.users[m.sender].limit -= 1 // -1 limit
             let buttons = [
                         { buttonId: 'jadian', buttonText: { displayText: 'Jodohku' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, jawab, ${global.namabot}, m, {mentions: menst})
+                    await hisoka.sendButtonText(m.chat, buttons, jawab, hisoka.user.name, m, {mentions: menst})
             }
             break
             case 'react': {
@@ -1797,7 +1797,7 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
                         { buttonId: 'antilinkwa on', buttonText: { displayText: 'On' }, type: 1 },
                         { buttonId: 'antilinkwa off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, `Mode Antilink Group WhatsApp`, ${global.namabot}, ftroli)
+                    await hisoka.sendButtonText(m.chat, buttons, `Mode Antilink Group WhatsApp`, hisoka.user.name, ftroli)
                 }
              }
              break
@@ -1818,7 +1818,7 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
                         { buttonId: 'antilinkyt on', buttonText: { displayText: 'On' }, type: 1 },
                         { buttonId: 'antilinkyt off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, `Mode Antilink YouTube`, ${global.namabot}, ftroli)
+                    await hisoka.sendButtonText(m.chat, buttons, `Mode Antilink YouTube`, hisoka.user.name, ftroli)
                 }
              }
              break
@@ -1839,7 +1839,7 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
                         { buttonId: 'antilinktt on', buttonText: { displayText: 'On' }, type: 1 },
                         { buttonId: 'antilinktt off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, `Mode Antilink TikTok`, ${global.namabot}, ftroli)
+                    await hisoka.sendButtonText(m.chat, buttons, `Mode Antilink TikTok`, hisoka.user.name, ftroli)
                 }
              }
              break
@@ -1850,17 +1850,17 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
                 if (args[0] === "on") {
                 if (db.chats[m.chat].mute) return m.reply(`Sudah Aktif Sebelumnya`)
                 db.chats[m.chat].mute = true
-                m.reply(`${global.namabot} telah di mute di group ini !`)
+                m.reply(`hisoka.user.name telah di mute di group ini !`)
                 } else if (args[0] === "off") {
                 if (!db.chats[m.chat].mute) return m.reply(`Sudah Tidak Aktif Sebelumnya`)
                 db.chats[m.chat].mute = false
-                m.reply(`${global.namabot} telah di unmute di group ini !`)
+                m.reply(`hisoka.user.name telah di unmute di group ini !`)
                 } else {
                  let buttons = [
                         { buttonId: 'mute on', buttonText: { displayText: 'On' }, type: 1 },
                         { buttonId: 'mute off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, `Mute Bot`, ${global.namabot}, ftroli)
+                    await hisoka.sendButtonText(m.chat, buttons, `Mute Bot`, hisoka.user.name, ftroli)
                 }
              }
              break
@@ -1913,7 +1913,7 @@ let buttonsVote = [
 
             let buttonMessageVote = {
                 text: teks_vote,
-                footer: ${global.namabot},
+                footer: hisoka.user.name,
                 buttons: buttonsVote,
                 headerType: 1
             }
@@ -1954,7 +1954,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 
             let buttonMessageUpvote = {
                 text: teks_vote,
-                footer: ${global.namabot},
+                footer: hisoka.user.name,
                 buttons: buttonsUpvote,
                 headerType: 1,
                 mentions: menvote
@@ -1996,7 +1996,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 
             let buttonMessageDevote = {
                 text: teks_vote,
-                footer: ${global.namabot},
+                footer: hisoka.user.name,
                 buttons: buttonsDevote,
                 headerType: 1,
                 mentions: menvote
@@ -2053,7 +2053,7 @@ break
                         { buttonId: 'group open', buttonText: { displayText: 'Open' }, type: 1 },
                         { buttonId: 'group close', buttonText: { displayText: 'Close' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, `Mode Group`, ${global.namabot}, m)
+                    await hisoka.sendButtonText(m.chat, buttons, `Mode Group`, hisoka.user.name, m)
 
              }
             }
@@ -2071,7 +2071,7 @@ break
                         { buttonId: 'editinfo open', buttonText: { displayText: 'Open' }, type: 1 },
                         { buttonId: 'editinfo close', buttonText: { displayText: 'Close' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, `Mode Edit Info`, ${global.namabot}, m)
+                    await hisoka.sendButtonText(m.chat, buttons, `Mode Edit Info`, hisoka.user.name, m)
 
             }
             }
@@ -2138,7 +2138,7 @@ break
                                 }
                             }]
                       let txt = `「 Broadcast Bot 」\n\n${text}`
-                      hisoka.send5ButImg(i, txt, ${global.namabot}, global.thumb, btn)
+                      hisoka.send5ButImg(i, txt, hisoka.user.name, global.thumb, btn)
                     }
                 m.reply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
             }
@@ -2177,7 +2177,7 @@ break
                                 }
                             }]
                       let txt = `「 Broadcast Bot 」\n\n${text}`
-                      hisoka.send5ButImg(yoi, txt, ${global.namabot}, global.thumb, btn)
+                      hisoka.send5ButImg(yoi, txt, hisoka.user.name, global.thumb, btn)
 		}
 		m.reply('Sukses Broadcast')
             }
@@ -2358,7 +2358,7 @@ break
 
                 buf = await getBuffer(y.avatar_url)
 
-                hisoka.send5ButImg(m.chat, teks, `© ${global.namabot}`, buf, ghs)
+                hisoka.send5ButImg(m.chat, teks, `© hisoka.user.name`, buf, ghs)
                 }
           break
 case 'igstalk': case 'stalkig': {
@@ -2483,7 +2483,7 @@ break
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
-            hisoka.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By ${global.namabot}.mp3`}, { quoted : m })
+            hisoka.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By hisoka.user.name.mp3`}, { quoted : m })
             }
             break
             case 'tovn': case 'toptt': {
@@ -2650,7 +2650,7 @@ break
                     caption: `*-------「 GIMAGE SEARCH 」-------*
 🤠 *Query* : ${text}
 🔗 *Media Url* : ${images}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2682,7 +2682,7 @@ db.users[m.sender].limit -= 2 // -2 limit
 ⭔ Channel : ${anu.author.url}
 ⭔ Description : ${anu.description}
 ⭔ Url : ${anu.url}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2757,7 +2757,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/random/waifu?apikey=GuaAbuzz17' },
                     caption: `Random Image Waifu`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2773,7 +2773,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/random/husbu?apikey=GuaAbuzz17' },
                     caption: `Random Image Husbu`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2789,7 +2789,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/random/neko?apikey=GuaAbuzz17' },
                     caption: `Random Image Neko`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2805,7 +2805,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/random/shinobu?apikey=GuaAbuzz17' },
                     caption: `Random Image Shinobu`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2821,7 +2821,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/random/megumin?apikey=GuaAbuzz17' },
                     caption: `Random Image Megumin`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2837,7 +2837,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/random/uniform?apikey=GuaAbuzz17' },
                     caption: `Random Image Uniform`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2853,7 +2853,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/random/maid?apikey=GuaAbuzz17' },
                     caption: `Random Image Maid`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2869,7 +2869,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/random/marin-kitagawa?apikey=GuaAbuzz17' },
                     caption: `Random Image Marin Kitagawa`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2885,7 +2885,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/random/mori-calliope?apikey=GuaAbuzz17' },
                     caption: `Random Image Mori Calliope`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2901,7 +2901,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/random/raiden-shogun?apikey=GuaAbuzz17' },
                     caption: `Random Image Raiden Shogun`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2917,7 +2917,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/random/oppai?apikey=GuaAbuzz17' },
                     caption: `Random Image Oppai`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2933,7 +2933,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/random/selfies?apikey=GuaAbuzz17' },
                     caption: `Random Image Selfies`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2949,7 +2949,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://api.zacros.my.id/randomimg/cosplay' },
                     caption: `Random Image Cosplay`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2965,7 +2965,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://api.zacros.my.id/randomimg/loli' },
                     caption: `Random Image Loli`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2981,7 +2981,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://api.lolhuman.xyz/api/random/elf?apikey=GuaAbuzz17' },
                     caption: `Random Image Elf`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -2997,7 +2997,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://api.lolhuman.xyz/api/random/sagiri?apikey=GuaAbuzz17' },
                     caption: `Random Image Sagiri`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3013,7 +3013,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://api.lolhuman.xyz/api/random/elaina?apikey=GuaAbuzz17' },
                     caption: `Random Image Elaina`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3029,7 +3029,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://api.lolhuman.xyz/api/random/kanna?apikey=GuaAbuzz17' },
                     caption: `Random Image Kanna`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3046,7 +3046,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/ahegao?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3062,7 +3062,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/ass?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3078,7 +3078,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/bdsm?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3094,7 +3094,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/blowjob?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3110,7 +3110,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/cuckold?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3126,7 +3126,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/cum?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3142,7 +3142,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/ero?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3158,7 +3158,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/fendom?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3174,7 +3174,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/foot?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3190,7 +3190,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/gangbang?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3206,7 +3206,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/glasses?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3222,7 +3222,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/hentai?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3238,7 +3238,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/jahy?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3254,7 +3254,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/masturbation?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3270,7 +3270,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/orgy?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3286,7 +3286,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/panties?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3302,7 +3302,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/pussy?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3318,7 +3318,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/tentacles?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3334,7 +3334,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/thighs?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3350,7 +3350,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/yuri?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3366,7 +3366,7 @@ db.users[m.sender].limit -= 2 // -2 limit
                 let buttonMessage = {
                     image: { url: 'https://zenzapis.xyz/api/morensfw/zettairyouiki?apikey=GuaAbuzz17' },
                     caption: `Astaghfirullah Tobat Kak`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3383,7 +3383,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://api.zacros.my.id/randomimg/meme' },
                     caption: `Random Image Meme`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3399,7 +3399,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://api.zacros.my.id/randomimg/darkjokes' },
                     caption: `Random Image Darkjokes`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3415,7 +3415,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://hardianto.xyz/api/darkmeme?apikey=hardianto' },
                     caption: `Random Image Darkmeme`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3431,7 +3431,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://api.lolhuman.xyz/api/meme/memeindo?apikey=GuaAbuzz17' },
                     caption: `Random Image Memeindo`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3493,7 +3493,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: 'https://coffee.alexflipnote.dev/random' },
                     caption: `☕ Random Coffe`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3511,7 +3511,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: result.image[0] },
                     caption: `⭔ Title : ${result.title}\n⭔ Category : ${result.type}\n⭔ Detail : ${result.source}\n⭔ Media Url : ${result.image[2] || result.image[1] || result.image[0]}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -3529,7 +3529,7 @@ db.users[m.sender].limit -= 1 // -1 limit
                 let buttonMessage = {
                     image: { url: result.image },
                     caption: `⭔ Title : ${result.title}\n⭔ Source : ${result.source}\n⭔ Media Url : ${result.image}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4120,7 +4120,7 @@ break
 ⭔ Url : ${anu.media[0]}
 Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan command ytmp3/ytmp4 dengan url diatas
 `,
-			footer: ${global.namabot},
+			footer: hisoka.user.name,
 			buttons,
 			headerType: 4
 		    }
@@ -4331,7 +4331,7 @@ let buttons = [
                 let buttonMessage = {
                     image: { url: 'https://api.zacros.my.id/asupan/hijaber' },
                     caption: `Random ${command}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4347,7 +4347,7 @@ let buttons = [
                 let buttonMessage = {
                     image: { url: 'https://api.zacros.my.id/asupan/cecan' },
                     caption: `Random ${command}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4363,7 +4363,7 @@ let buttons = [
                 let buttonMessage = {
                     image: { url: 'https://api.zacros.my.id/asupan/indonesia' },
                     caption: `Random ${command}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4379,7 +4379,7 @@ let buttons = [
                 let buttonMessage = {
                     image: { url: 'https://api.zacros.my.id/asupan/vietnam' },
                     caption: `Random ${command}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4395,7 +4395,7 @@ let buttons = [
                 let buttonMessage = {
                     image: { url: 'https://api.zacros.my.id/asupan/thailand' },
                     caption: `Random ${command}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4411,7 +4411,7 @@ let buttons = [
                 let buttonMessage = {
                     image: { url: 'https://api.zacros.my.id/asupan/korea' },
                     caption: `Random ${command}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4427,7 +4427,7 @@ let buttons = [
                 let buttonMessage = {
                     image: { url: 'https://api.zacros.my.id/asupan/china' },
                     caption: `Random ${command}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4443,7 +4443,7 @@ let buttons = [
                 let buttonMessage = {
                     image: { url: 'https://api.zacros.my.id/asupan/japan' },
                     caption: `Random ${command}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4459,7 +4459,7 @@ let buttons = [
                 let buttonMessage = {
                     image: { url: 'https://api.zacros.my.id/asupan/malaysia' },
                     caption: `Random ${command}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4475,7 +4475,7 @@ let buttons = [
                 let buttonMessage = {
                     video: { url: 'https://api.zacros.my.id/asupan/santuy' },
                     caption: `Random ${command}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4491,7 +4491,7 @@ let buttons = [
                 let buttonMessage = {
                     video: { url: 'https://api.zacros.my.id/asupan/ukhty' },
                     caption: `Random Ukhty`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4507,7 +4507,7 @@ let buttons = [
                 let buttonMessage = {
                     video: { url: 'https://api.zacros.my.id/asupan/random' },
                     caption: `Random Video Asupan`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4523,7 +4523,7 @@ let buttons = [
                 let buttonMessage = {
                     video: { url: 'https://recoders-area.caliph.repl.co/api/lolivid' },
                     caption: `Random ${command}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4554,7 +4554,7 @@ let buttons = [
                 let buttonMessage = {
                     video: { url: 'https://api.lolhuman.xyz/api/asupan?apikey=GuaAbuzz17' },
                     caption: `Random ${command}`,
-                    footer: ${global.namabot},
+                    footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
@@ -4679,7 +4679,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 				let buttons = [
                     { buttonId: 'start', buttonText: { displayText: 'Start' }, type: 1 }
                 ]
-                hisoka.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await hisoka.getName(m.sender)} Welcome To Anonymous Chat\n\nKlik Button Dibawah Ini Untuk Mencari Partner\`\`\``, ${global.namabot}, m)
+                hisoka.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await hisoka.getName(m.sender)} Welcome To Anonymous Chat\n\nKlik Button Dibawah Ini Untuk Mencari Partner\`\`\``, hisoka.user.name, m)
             }
 			break
             case 'keluar': case 'leave': {
@@ -4706,7 +4706,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                     let buttons = [
                         { buttonId: 'keluar', buttonText: { displayText: 'Stop' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, `\`\`\`Kamu Masih Berada Di dalam Sesi Anonymous, Tekan Button Dibawah Ini Untuk Menghentikan Sesi Anonymous Anda\`\`\``, ${global.namabot}, m)
+                    await hisoka.sendButtonText(m.chat, buttons, `\`\`\`Kamu Masih Berada Di dalam Sesi Anonymous, Tekan Button Dibawah Ini Untuk Menghentikan Sesi Anonymous Anda\`\`\``, hisoka.user.name, m)
                     throw false
                 }
                 let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender))
@@ -4715,10 +4715,10 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                         { buttonId: 'next', buttonText: { displayText: 'Skip' }, type: 1 },
                         { buttonId: 'keluar', buttonText: { displayText: 'Stop' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(room.a, buttons, `\`\`\`Berhasil Menemukan Partner, sekarang kamu dapat mengirim pesan\`\`\``, ${global.namabot}, m)
+                    await hisoka.sendButtonText(room.a, buttons, `\`\`\`Berhasil Menemukan Partner, sekarang kamu dapat mengirim pesan\`\`\``, hisoka.user.name, m)
                     room.b = m.sender
                     room.state = 'CHATTING'
-                    await hisoka.sendButtonText(room.b, buttons, `\`\`\`Berhasil Menemukan Partner, sekarang kamu dapat mengirim pesan\`\`\``, ${global.namabot}, m)
+                    await hisoka.sendButtonText(room.b, buttons, `\`\`\`Berhasil Menemukan Partner, sekarang kamu dapat mengirim pesan\`\`\``, hisoka.user.name, m)
                 } else {
                     let id = + new Date
                     this.anonymous[id] = {
@@ -4736,7 +4736,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                     let buttons = [
                         { buttonId: 'keluar', buttonText: { displayText: 'Stop' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, `\`\`\`Mohon Tunggu Sedang Mencari Partner\`\`\``, ${global.namabot}, m)
+                    await hisoka.sendButtonText(m.chat, buttons, `\`\`\`Mohon Tunggu Sedang Mencari Partner\`\`\``, hisoka.user.name, m)
                 }
                 break
             }
@@ -4760,10 +4760,10 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                         { buttonId: 'next', buttonText: { displayText: 'Skip' }, type: 1 },
                         { buttonId: 'keluar', buttonText: { displayText: 'Stop' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(room.a, buttons, `\`\`\`Berhasil Menemukan Partner, sekarang kamu dapat mengirim pesan\`\`\``, ${global.namabot}, m)
+                    await hisoka.sendButtonText(room.a, buttons, `\`\`\`Berhasil Menemukan Partner, sekarang kamu dapat mengirim pesan\`\`\``, hisoka.user.name, m)
                     room.b = m.sender
                     room.state = 'CHATTING'
-                    await hisoka.sendButtonText(room.b, buttons, `\`\`\`Berhasil Menemukan Partner, sekarang kamu dapat mengirim pesan\`\`\``, ${global.namabot}, m)
+                    await hisoka.sendButtonText(room.b, buttons, `\`\`\`Berhasil Menemukan Partner, sekarang kamu dapat mengirim pesan\`\`\``, hisoka.user.name, m)
                 } else {
                     let id = + new Date
                     this.anonymous[id] = {
@@ -4781,7 +4781,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                     let buttons = [
                         { buttonId: 'keluar', buttonText: { displayText: 'Stop' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, `\`\`\`Mohon Tunggu Sedang Mencari Partner\`\`\``, ${global.namabot}, m)
+                    await hisoka.sendButtonText(m.chat, buttons, `\`\`\`Mohon Tunggu Sedang Mencari Partner\`\`\``, hisoka.user.name, m)
                 }
                 break
             }
@@ -4798,7 +4798,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
             break
             case 'apikey':
-            m.reply(`Apikey Yang Dipake Oleh Bot ${global.namabot}\n⬣ https://zenzapis.xyz [Sewa]\n⬣ https://api.lolhuman.xyz [Sewa]\n⬣ https://hardianto.xyz [Gratis]\n⬣ https://api.zacros.my.id [Gratis]`)
+            m.reply(`Apikey Yang Dipake Oleh Bot hisoka.user.name\n⬣ https://zenzapis.xyz [Sewa]\n⬣ https://api.lolhuman.xyz [Sewa]\n⬣ https://hardianto.xyz [Gratis]\n⬣ https://api.zacros.my.id [Gratis]`)
             break
             case 'ping': case 'botstatus': case 'statusbot': case 'infobot': {
   let timestamp = speed()
@@ -4807,7 +4807,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
   oldd = performance.now()
   let txtping = `*⍢⃝🤖 I N F O  B O T*\n\n`
   txtping += `*👤 Owner Name :* ${global.namaowner}\n`
-  txtping += `*🕊️ Nama Bot :* ${global.namabot}\n`
+  txtping += `*🕊️ Nama Bot :* hisoka.user.name\n`
   txtping += `*🔗 No. Owner :* wa.me/${global.owner}\n\n`
   txtping += `*⍢⃝👾 I N F O  S T A T I S T I K*\n\n`
   txtping += `*🗃️ Lib :* Baileys Multi Device\n`
@@ -4849,13 +4849,13 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, txtping, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, txtping, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, txtping, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, txtping, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, txtping, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, txtping, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, txtping, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, txtping, hisoka.user.name, btn)
                         }
                      }
             break
@@ -5168,7 +5168,7 @@ let capt = `⭔ Title: ${judul}
                 ]
                 },
                 ]
-                hisoka.sendListMsg(m.chat, `Silakan pilih menu yang ingin Anda ubah!`, ${global.namabot}, `Hello Owner !`, `Klik disini`, sections, m)
+                hisoka.sendListMsg(m.chat, `Silakan pilih menu yang ingin Anda ubah!`, hisoka.user.name, `Hello Owner !`, `Klik disini`, sections, m)
                 }
             }
             break
@@ -5215,13 +5215,13 @@ case 'rules': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -5284,13 +5284,13 @@ case 'sewa': case 'sewabot': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -5345,13 +5345,13 @@ case 'donasi': case 'donate': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -5363,7 +5363,7 @@ case 'groupmenu': case 'menugroup': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5425,13 +5425,13 @@ case 'groupmenu': case 'menugroup': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -5443,7 +5443,7 @@ case 'downloadmenu': case 'menudownload': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5497,13 +5497,13 @@ case 'downloadmenu': case 'menudownload': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -5515,7 +5515,7 @@ case 'searchmenu': case 'menusearch': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5567,13 +5567,13 @@ case 'searchmenu': case 'menusearch': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -5585,7 +5585,7 @@ case 'stickermenu': case 'menusticker': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5635,13 +5635,13 @@ case 'stickermenu': case 'menusticker': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -5653,7 +5653,7 @@ case 'animemenu': case 'menuanime': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5711,13 +5711,13 @@ case 'animemenu': case 'menuanime': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -5729,7 +5729,7 @@ case 'nsfwmenu': case 'menunsfw': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5790,13 +5790,13 @@ case 'nsfwmenu': case 'menunsfw': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -5808,7 +5808,7 @@ case 'asupanmenu': case 'menuasupan': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5860,13 +5860,13 @@ case 'asupanmenu': case 'menuasupan': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -5878,7 +5878,7 @@ case 'quotesmenu': case 'menuquotes': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5934,13 +5934,13 @@ case 'quotesmenu': case 'menuquotes': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -5952,7 +5952,7 @@ case 'mememenu': case 'menumeme': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5995,13 +5995,13 @@ case 'mememenu': case 'menumeme': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -6013,7 +6013,7 @@ case 'randommenu': case 'menurandom': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6059,13 +6059,13 @@ case 'randommenu': case 'menurandom': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -6077,7 +6077,7 @@ case 'rpgmenu': case 'menurpg': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6124,13 +6124,13 @@ case 'rpgmenu': case 'menurpg': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -6142,7 +6142,7 @@ case 'sertifikatmenu': case 'menusertifikat': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6190,13 +6190,13 @@ case 'sertifikatmenu': case 'menusertifikat': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -6208,7 +6208,7 @@ case 'textpromenu': case 'menutextpro': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6326,13 +6326,13 @@ case 'textpromenu': case 'menutextpro': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -6344,7 +6344,7 @@ case 'photooxymenu': case 'menuphotooxy': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6398,13 +6398,13 @@ case 'photooxymenu': case 'menuphotooxy': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -6416,7 +6416,7 @@ case 'photomakermenu': case 'menuphotomaker': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6504,13 +6504,13 @@ case 'photomakermenu': case 'menuphotomaker': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -6522,7 +6522,7 @@ case 'stickerefekmenu': case 'menustickerefek': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6598,13 +6598,13 @@ case 'stickerefekmenu': case 'menustickerefek': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -6616,7 +6616,7 @@ case 'ephotomenu': case 'menuephoto': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6706,13 +6706,13 @@ case 'ephotomenu': case 'menuephoto': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -6724,7 +6724,7 @@ case 'gamemenu': case 'menugame': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6769,13 +6769,13 @@ case 'gamemenu': case 'menugame': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -6787,7 +6787,7 @@ case 'primbonmenu': case 'menuprimbon': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6856,13 +6856,13 @@ case 'primbonmenu': case 'menuprimbon': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -6874,7 +6874,7 @@ case 'convertmenu': case 'menuconvert': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6924,13 +6924,13 @@ case 'convertmenu': case 'menuconvert': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -6942,7 +6942,7 @@ case 'mainmenu': case 'menumain': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6995,13 +6995,13 @@ case 'mainmenu': case 'menumain': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -7013,7 +7013,7 @@ case 'databasemenu': case 'menudatabase': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7060,13 +7060,13 @@ case 'databasemenu': case 'menudatabase': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -7078,7 +7078,7 @@ case 'anonymousmenu': case 'menuanonymous': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7122,13 +7122,13 @@ case 'anonymousmenu': case 'menuanonymous': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -7140,7 +7140,7 @@ case 'islamicmenu': case 'menuislamic': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7195,13 +7195,13 @@ case 'islamicmenu': case 'menuislamic': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -7213,7 +7213,7 @@ case 'kerangmenu': case 'menukerang': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7271,13 +7271,13 @@ case 'kerangmenu': case 'menukerang': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -7289,7 +7289,7 @@ case 'voicemenu': case 'menuvoice': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7339,13 +7339,13 @@ case 'voicemenu': case 'menuvoice': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -7357,7 +7357,7 @@ case 'stalkmenu': case 'menustalk': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7401,13 +7401,13 @@ case 'stalkmenu': case 'menustalk': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -7419,7 +7419,7 @@ case 'ownermenu': case 'menuowner': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7470,13 +7470,13 @@ case 'ownermenu': case 'menuowner': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -7488,7 +7488,7 @@ case 'webzonemenu': case 'menuwebzone': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7535,13 +7535,13 @@ case 'webzonemenu': case 'menuwebzone': {
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
@@ -7568,7 +7568,7 @@ case 'webzonemenu': case 'menuwebzone': {
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./storage/menu/hisoka.jpg')},
-                            hydratedFooterText: `© ${global.namabot}`,
+                            hydratedFooterText: `© hisoka.user.name`,
                             hydratedButtons: [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -7609,7 +7609,7 @@ break
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -8266,13 +8266,13 @@ break
                             }]
                          let setbot = db.settings[botNumber]
                         if (setbot.templateImage) {
-                        hisoka.send5ButImg(m.chat, anu, ${global.namabot}, global.thumb, btn)
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                         } else if (setbot.templateGif) {
-                        hisoka.send5ButGif(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateVid) {
-                        hisoka.send5ButVid(m.chat, anu, ${global.namabot}, global.visoka, btn)
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
                         } else if (setbot.templateMsg) {
-                        hisoka.send5ButMsg(m.chat, anu, ${global.namabot}, btn)
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
                         }
                      }
             break
