@@ -22,6 +22,7 @@ global.namabot = 'AsunaChanV10'
 global.namaowner = 'GuaAbuzz'
 global.owner = ['6289636827082']
 global.premium = ['6289636827082']
+global.github = 'https://github.com/Abuzzpoet'
 global.myweb = 'https://tiktok.com/@guaabuzz'
 global.footer = 'GuaAbuzz | © 2022'
 global.sc = 'Bikin Sendiri Bang :)'

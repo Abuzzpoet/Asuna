@@ -400,7 +400,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
         if (db.chats[m.chat].antivirtex) {
 		if (budy.length > 3500) {
     	m.reply(`「 ANTI VIRTEX 」\n\nKamu terdeteksi mengirim Virtex, maaf kamu akan di kick !`)
-        if (!isBotAdmins) return reply(`Ehh bot gak admin T_T`)
+        if (!isBotAdmins) return m.reply(`Ehh bot gak admin T_T`)
         hisoka.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
@@ -4592,38 +4592,39 @@ let buttons = [
                 }
                 break
             case 'setcmd': {
-                if (!m.quoted) throw 'Reply Pesan!'
-                if (!m.quoted.fileSha256) throw 'SHA256 Hash Missing'
-                if (!text) throw `Untuk Command Apa?`
-                let hash = m.quoted.fileSha256.toString('base64')
-                if (global.db.sticker[hash] && global.db.sticker[hash].locked) throw 'Anda tidak memiliki izin untuk mengubah perintah stiker ini'
-                global.db.sticker[hash] = {
-                    text,
-                    mentionedJid: m.mentionedJid,
-                    creator: m.sender,
-                    at: + new Date,
-                    locked: false,
-                }
-                m.reply(`Done!`)
-            }
-            break
+  if (!m.quoted) throw 'Reply Pesan!'
+  if (!m.quoted.fileSha256) throw 'SHA256 Hash Tidak Ditemukan ❎'
+  if (!text) throw `Untuk Command Apa?`
+  let hash = m.quoted.fileSha256.toString('base64')
+  if (global.db.sticker[hash] && global.db.sticker[hash].locked) throw 'Anda Tidak Diizinkan Untuk Mengubah Perintah Stiker Ini ❎'
+  global.db.sticker[hash] = {
+  text,
+  mentionedJid: m.mentionedJid,
+  creator: m.sender,
+  at: + new Date,
+  locked: false,
+  }
+  m.reply(mess.done)
+  }
+  break
             case 'delcmd': {
-                let hash = m.quoted.fileSha256.toString('base64')
-                if (!hash) throw `Tidak ada hash`
-                if (global.db.sticker[hash] && global.db.sticker[hash].locked) throw 'Anda tidak memiliki izin untuk menghapus perintah stiker ini'              
-                delete global.db.sticker[hash]
-                m.reply(`Done!`)
-            }
-            break
+  let hash = m.quoted.fileSha256.toString('base64')
+  if (!hash) throw `Tidak ada hash`
+  if (global.db.sticker[hash] && global.db.sticker[hash].locked) throw 'Anda Tidak Diizinkan Untuk Mengubah Perintah Stiker Ini ❎'     
+  delete global.db.sticker[hash]
+  m.reply(mess.done)
+  }
+  break
             case 'listcmd': {
-                let teks = `
-*List Hash*
-Info: *bold* hash is Locked
+  let teks = `*List Hash 🚀*
+Info: *bold* hash is Locked 🔒
+
+*Hash ☕ :*
 ${Object.entries(global.db.sticker).map(([key, value], index) => `${index + 1}. ${value.locked ? `*${key}*` : key} : ${value.text}`).join('\n')}
 `.trim()
-                hisoka.sendText(m.chat, teks, m, { mentions: Object.values(global.db.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
-            }
-            break
+  hisoka.sendText(m.chat, teks, m, { mentions: Object.values(global.db.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
+  }
+  break
             case 'lockcmd': {
                 if (!isCreator) throw mess.owner
                 if (!m.quoted) throw 'Reply Pesan!'
@@ -4655,15 +4656,15 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
             break
             case 'listmsg': {
-                let msgs = JSON.parse(fs.readFileSync('./src/database.json'))
-	        let seplit = Object.entries(global.db.database).map(([nama, isi]) => { return { nama, ...isi } })
-		let teks = '「 LIST DATABASE 」\n\n'
-		for (let i of seplit) {
-		    teks += `⬡ *Name :* ${i.nama}\n⬡ *Type :* ${getContentType(i.message).replace(/Message/i, '')}\n────────────────────────\n\n`
-	        }
-	        m.reply(teks)
-	    }
-	    break
+  let msgs = JSON.parse(fs.readFileSync('./src/database.json'))
+  let seplit = Object.entries(global.db.database).map(([nama, isi]) => { return { nama, ...isi } })
+  let teks = 'LIST DATABASE 📂\n\n'
+  for (let i of seplit) {
+  teks += `📛 *Name :* ${i.nama}\n🚀 *Type :* ${getContentType(i.message).replace(/Message/i, '')}\n────────────────────────\n\n`
+  }
+  m.reply(teks)
+  }
+  break
             case 'delmsg': case 'deletemsg': {
 	        let msgs = global.db.database
 	        if (!(text.toLowerCase() in msgs)) return m.reply(`'${text}' tidak terdaftar didalam list pesan`)
@@ -4798,52 +4799,64 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             case 'apikey':
             m.reply(`Apikey Yang Dipake Oleh Bot ${global.namabot}\n⬣ https://zenzapis.xyz [Sewa]\n⬣ https://api.lolhuman.xyz [Sewa]\n⬣ https://hardianto.xyz [Gratis]\n⬣ https://api.zacros.my.id [Gratis]`)
             break
-            case 'ping': case 'botstatus': case 'statusbot': {
-                const used = process.memoryUsage()
-                const cpus = os.cpus().map(cpu => {
-                    cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
-			        return cpu
-                })
-                const cpu = cpus.reduce((last, cpu, _, { length }) => {
-                    last.total += cpu.total
-                    last.speed += cpu.speed / length
-                    last.times.user += cpu.times.user
-                    last.times.nice += cpu.times.nice
-                    last.times.sys += cpu.times.sys
-                    last.times.idle += cpu.times.idle
-                    last.times.irq += cpu.times.irq
-                    return last
-                }, {
-                    speed: 0,
-                    total: 0,
-                    times: {
-			            user: 0,
-			            nice: 0,
-			            sys: 0,
-			            idle: 0,
-			            irq: 0
-                }
-                })
-                let timestamp = speed()
-                let latensi = speed() - timestamp
-                neww = performance.now()
-                oldd = performance.now()
-                respon = `
-Kecepatan Respon ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
-
-💻 Info Server
-RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
-
-_NodeJS Memory Usaage_
-${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
-
-${cpus[0] ? `_Total CPU Usage_
-${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
-_CPU Core(s) Usage (${cpus.length} Core CPU)_
-${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
-                `.trim()
-                m.reply(respon)
-            }
+            case 'ping': case 'botstatus': case 'statusbot': case 'infobot': {
+  let timestamp = speed()
+  let latensi = speed() - timestamp
+  neww = performance.now()
+  oldd = performance.now()
+  let txtping = `*⍢⃝🤖 I N F O  B O T*\n\n`
+  txtping += `*👤 Owner Name :* ${global.namaowner}\n`
+  txtping += `*🕊️ Nama Bot :* ${global.namabot}\n`
+  txtping += `*🔗 No. Owner :* wa.me/${global.owner}\n\n`
+  txtping += `*⍢⃝👾 I N F O  S T A T I S T I K*\n\n`
+  txtping += `*🗃️ Lib :* Baileys Multi Device\n`
+  txtping += `*🆎 Tipe :* Nodejs\n`
+  txtping += `*📈 STATUS BOT :* ONLINE\n`
+  txtping += `*⚡ Speed :* ${latensi.toFixed(4)} Second\n`
+  txtping += `*⏰ Runtime :* ${runtime(process.uptime())}\n`
+  txtping += `*💻 RAM Server :* ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}\n\n`
+  txtping += `*⍢⃝🤝 C O N N E C T  W I T H  M E*\n\n`
+  txtping += `*🎗️ Github :* ${global.github}\n`
+  txtping += `*🎗️ TikTok :* ${global.myweb}\n`
+  txtping += `*🎗️ WhatsApp :* wa.me/${global.owner}\n`
+  .trim()
+                let btn = [{
+                                urlButton: {
+                                    displayText: 'TikTok Creator',
+                                    url: global.myweb
+                                }
+                            }, {
+                                callButton: {
+                                    displayText: 'Number Phone Owner',
+                                    phoneNumber: global.owner[0]
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Rules',
+                                    id: 'rules'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Donasi',
+                                    id: 'donasi'
+                                }  
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Sewabot',
+                                    id: 'sewabot'
+                                }
+                            }]
+                         let setbot = db.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, txtping, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, txtping, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, txtping, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, txtping, hisoka.user.name, btn)
+                        }
+                     }
             break
             case 'speed': case 'speedtest': {
             m.reply('Testing Speed...')
@@ -5582,10 +5595,10 @@ case 'stickermenu': case 'menusticker': {
 ┌┤「 STICKER 」
 │└─────────────┈❖
 │⭔ ${prefix}sticker
-│⭔ ${prefix}attp
-│⭔ ${prefix}ttp
-│⭔ ${prefix}emojimix
-│⭔ ${prefix}emojimix2
+│⭔ ${prefix}attp [teks]
+│⭔ ${prefix}ttp [teks]
+│⭔ ${prefix}emojimix 😎+🤠
+│⭔ ${prefix}emojimix2 😎
 │⭔ ${prefix}patrick
 │⭔ ${prefix}dadu
 │⭔ ${prefix}amongus
@@ -6009,13 +6022,13 @@ case 'randommenu': case 'menurandom': {
 └┬─────────────┈❖
 ┌┤「 RANDOM 」
 │└─────────────┈❖
-│⭔ ${prefix}simih
+│⭔ ${prefix}simih [teks]
 │⭔ ${prefix}apikey
 │⭔ ${prefix}coffe
 │⭔ ${prefix}infogempa
-│⭔ ${prefix}ebinary
-│⭔ ${prefix}dbinary
-│⭔ ${prefix}styletext
+│⭔ ${prefix}ebinary [teks]
+│⭔ ${prefix}dbinary [teks]
+│⭔ ${prefix}styletext [teks]
 └──────────────┈❖`
                 let btn = [{
                                 urlButton: {
@@ -6612,57 +6625,57 @@ case 'ephotomenu': case 'menuephoto': {
 └┬─────────────┈❖
 ┌┤「 EPHOTO 」
 │└─────────────┈❖
-│⭔ ${prefix}ffcover
-│⭔ ${prefix}crossfire
-│⭔ ${prefix}galaxy
-│⭔ ${prefix}glass
-│⭔ ${prefix}neon
-│⭔ ${prefix}beach
-│⭔ ${prefix}blackpink
-│⭔ ${prefix}igcertificate
-│⭔ ${prefix}ytcertificate
-│⭔ ${prefix}wetglass 
-│⭔ ${prefix}multicolor3d 
-│⭔ ${prefix}watercolor 
-│⭔ ${prefix}luxurygold 
-│⭔ ${prefix}galaxywallpaper 
-│⭔ ${prefix}lighttext 
-│⭔ ${prefix}beautifulflower 
-│⭔ ${prefix}royaltext 
-│⭔ ${prefix}heartshaped 
-│⭔ ${prefix}birdhdaycake 
-│⭔ ${prefix}galaxystyle 
-│⭔ ${prefix}hologram3d 
-│⭔ ${prefix}greenneon 
-│⭔ ${prefix}glossychrome 
-│⭔ ${prefix}greenbush 
-│⭔ ${prefix}metallogo 
-│⭔ ${prefix}neoltext 
-│⭔ ${prefix}glittergold 
-│⭔ ${prefix}textcake 
-│⭔ ${prefix}startsnight 
-│⭔ ${prefix}wooden3d 
-│⭔ ${prefix}textbyname 
-│⭔ ${prefix}writegalacy 
-│⭔ ${prefix}galaxybat 
-│⭔ ${prefix}snow3d 
-│⭔ ${prefix}birthdayday 
-│⭔ ${prefix}silverplaybutton 
-│⭔ ${prefix}cartoongravity 
-│⭔ ${prefix}anonymhacker 
-│⭔ ${prefix}mlwall 
-│⭔ ${prefix}pubgmaskot 
-│⭔ ${prefix}aovwall 
-│⭔ ${prefix}logogaming 
-│⭔ ${prefix}fpslogo 
-│⭔ ${prefix}avatarlolnew 
-│⭔ ${prefix}lolbanner 
-│⭔ ${prefix}avatardota 
-│⭔ ${prefix}juventusshirt 
-│⭔ ${prefix}cutegravity 
-│⭔ ${prefix}realvintage 
-│⭔ ${prefix}codwarzone 
-│⭔ ${prefix}valorantbanner
+│⭔ ${prefix}ffcover [teks]
+│⭔ ${prefix}crossfire [teks]
+│⭔ ${prefix}galaxy [teks]
+│⭔ ${prefix}glass [teks]
+│⭔ ${prefix}neon [teks]
+│⭔ ${prefix}beach [teks]
+│⭔ ${prefix}blackpink [teks]
+│⭔ ${prefix}igcertificate [teks]
+│⭔ ${prefix}ytcertificate [teks]
+│⭔ ${prefix}wetglass [teks]
+│⭔ ${prefix}multicolor3d [teks]
+│⭔ ${prefix}watercolor [teks]
+│⭔ ${prefix}luxurygold [teks]
+│⭔ ${prefix}galaxywallpaper [teks]
+│⭔ ${prefix}lighttext [teks]
+│⭔ ${prefix}beautifulflower [teks]
+│⭔ ${prefix}royaltext [teks]
+│⭔ ${prefix}heartshaped [teks]
+│⭔ ${prefix}birdhdaycake [teks]
+│⭔ ${prefix}galaxystyle [teks]
+│⭔ ${prefix}hologram3d [teks]
+│⭔ ${prefix}greenneon [teks]
+│⭔ ${prefix}glossychrome [teks]
+│⭔ ${prefix}greenbush [teks]
+│⭔ ${prefix}metallogo [teks]
+│⭔ ${prefix}neoltext [teks]
+│⭔ ${prefix}glittergold [teks]
+│⭔ ${prefix}textcake [teks]
+│⭔ ${prefix}startsnight [teks]
+│⭔ ${prefix}wooden3d [teks]
+│⭔ ${prefix}textbyname [teks]
+│⭔ ${prefix}writegalacy [teks]
+│⭔ ${prefix}galaxybat [teks]
+│⭔ ${prefix}snow3d [teks]
+│⭔ ${prefix}birthdayday [teks]
+│⭔ ${prefix}silverplaybutton [teks]
+│⭔ ${prefix}cartoongravity [teks]
+│⭔ ${prefix}anonymhacker [teks]
+│⭔ ${prefix}mlwall [teks]
+│⭔ ${prefix}pubgmaskot [teks]
+│⭔ ${prefix}aovwall [teks]
+│⭔ ${prefix}logogaming [teks]
+│⭔ ${prefix}fpslogo [teks]
+│⭔ ${prefix}avatarlolnew [teks]
+│⭔ ${prefix}lolbanner [teks]
+│⭔ ${prefix}avatardota [teks]
+│⭔ ${prefix}juventusshirt [teks]
+│⭔ ${prefix}cutegravity [teks]
+│⭔ ${prefix}realvintage [teks]
+│⭔ ${prefix}codwarzone [teks]
+│⭔ ${prefix}valorantbanner [teks]
 └──────────────┈❖`
                 let btn = [{
                                 urlButton: {
@@ -6870,16 +6883,16 @@ case 'convertmenu': case 'menuconvert': {
 └┬─────────────┈❖
 ┌┤「 CONVERT 」
 │└─────────────┈❖
-│⭔ ${prefix}ssweb
-│⭔ ${prefix}removebg
-│⭔ ${prefix}nulis
-│⭔ ${prefix}toimage
-│⭔ ${prefix}tovideo
-│⭔ ${prefix}togif
-│⭔ ${prefix}tourl
-│⭔ ${prefix}tovn
-│⭔ ${prefix}tomp3
-│⭔ ${prefix}toaudio
+│⭔ ${prefix}ssweb [url]
+│⭔ ${prefix}removebg [image]
+│⭔ ${prefix}nulis [teks]
+│⭔ ${prefix}toimage [reply sticker]
+│⭔ ${prefix}tovideo [reply sticker]
+│⭔ ${prefix}togif [reply sticker]
+│⭔ ${prefix}tourl [image / video]
+│⭔ ${prefix}tovn [reply vn]
+│⭔ ${prefix}tomp3 [reply video]
+│⭔ ${prefix}toaudio [reply video]
 │
 └───────⭓`
                 let btn = [{
@@ -6938,7 +6951,6 @@ case 'mainmenu': case 'menumain': {
 └┬─────────────┈❖
 ┌┤「 MAIN 」
 │└─────────────┈❖
-│⭔ ${prefix}limituser
 │⭔ ${prefix}ping
 │⭔ ${prefix}owner
 │⭔ ${prefix}donasi
@@ -7010,9 +7022,9 @@ case 'databasemenu': case 'menudatabase': {
 └┬─────────────┈❖
 ┌┤「 DATABASE 」
 │└─────────────┈❖
-│⭔ ${prefix}setcmd
+│⭔ ${prefix}setcmd [reply sticker/pesan]
 │⭔ ${prefix}listcmd
-│⭔ ${prefix}delcmd
+│⭔ ${prefix}delcmd [reply sticker/pesan]
 │⭔ ${prefix}lockcmd
 │⭔ ${prefix}addmsg
 │⭔ ${prefix}listmsg
@@ -7210,25 +7222,25 @@ case 'kerangmenu': case 'menukerang': {
 └┬─────────────┈❖
 ┌┤「 KERANG 」
 │└─────────────┈❖
-│⭔ ${prefix}apakah
-│⭔ ${prefix}bisakah
-│⭔ ${prefix}bagaimanakah
-│⭔ ${prefix}rate
-│⭔ ${prefix}kapankah
-│⭔ ${prefix}cekganteng
-│⭔ ${prefix}cekcantik
-│⭔ ${prefix}ceksange
-│⭔ ${prefix}cekgay
-│⭔ ${prefix}ceklesbi
-│⭔ ${prefix}cekmati
-│⭔ ${prefix}wangy
-│⭔ ${prefix}halah
-│⭔ ${prefix}hilih
-│⭔ ${prefix}huluh
-│⭔ ${prefix}heleh
-│⭔ ${prefix}holoh
-│⭔ ${prefix}jadian
-│⭔ ${prefix}jodohku
+│⭔ ${prefix}apakah [teks]
+│⭔ ${prefix}bisakah [teks]
+│⭔ ${prefix}bagaimanakah [teks]
+│⭔ ${prefix}rate [teks]
+│⭔ ${prefix}kapankah [teks]
+│⭔ ${prefix}cekganteng [teks]
+│⭔ ${prefix}cekcantik [teks]
+│⭔ ${prefix}ceksange [teks]
+│⭔ ${prefix}cekgay [teks]
+│⭔ ${prefix}ceklesbi [teks]
+│⭔ ${prefix}cekmati [teks]
+│⭔ ${prefix}wangy [teks]
+│⭔ ${prefix}halah [teks]
+│⭔ ${prefix}hilih [teks]
+│⭔ ${prefix}huluh [teks]
+│⭔ ${prefix}heleh [teks]
+│⭔ ${prefix}holoh [teks]
+│⭔ ${prefix}jadian [teks]
+│⭔ ${prefix}jodohku [teks]
 └──────────────┈❖`
                 let btn = [{
                                 urlButton: {
@@ -7286,17 +7298,17 @@ case 'voicemenu': case 'menuvoice': {
 └┬─────────────┈❖
 ┌┤「 VOICE CHANGER 」
 │└─────────────┈❖
-│⭔ ${prefix}bass
-│⭔ ${prefix}blown
-│⭔ ${prefix}deep
-│⭔ ${prefix}earrape
-│⭔ ${prefix}fast
-│⭔ ${prefix}fat
-│⭔ ${prefix}nightcore
-│⭔ ${prefix}reverse
-│⭔ ${prefix}robot
-│⭔ ${prefix}slow
-│⭔ ${prefix}tupai
+│⭔ ${prefix}bass [reply audio / vn]
+│⭔ ${prefix}blown [reply audio / vn]
+│⭔ ${prefix}deep [reply audio / vn]
+│⭔ ${prefix}earrape [reply audio / vn]
+│⭔ ${prefix}fast [reply audio / vn]
+│⭔ ${prefix}fat [reply audio / vn]
+│⭔ ${prefix}nightcore [reply audio / vn]
+│⭔ ${prefix}reverse [reply audio / vn]
+│⭔ ${prefix}robot [reply audio / vn]
+│⭔ ${prefix}slow [reply audio / vn]
+│⭔ ${prefix}tupai [reply audio / vn]
 └──────────────┈❖`
                 let btn = [{
                                 urlButton: {
@@ -7652,16 +7664,16 @@ break
 └┬─────────────┈❖
 ┌┤「 CONVERT 」
 │└─────────────┈❖
-│⭔ ${prefix}ssweb
-│⭔ ${prefix}removebg
-│⭔ ${prefix}nulis
-│⭔ ${prefix}toimage
-│⭔ ${prefix}tovideo
-│⭔ ${prefix}togif
-│⭔ ${prefix}tourl
-│⭔ ${prefix}tovn
-│⭔ ${prefix}tomp3
-│⭔ ${prefix}toaudio
+│⭔ ${prefix}ssweb [url]
+│⭔ ${prefix}removebg [image]
+│⭔ ${prefix}nulis [teks]
+│⭔ ${prefix}toimage [reply sticker]
+│⭔ ${prefix}tovideo [reply sticker]
+│⭔ ${prefix}togif [reply sticker]
+│⭔ ${prefix}tourl [image / video]
+│⭔ ${prefix}tovn [reply vn]
+│⭔ ${prefix}tomp3 [reply video]
+│⭔ ${prefix}toaudio [reply video]
 └┬─────────────┈❖
 ┌┤「 DOWNLOADER 」
 │└─────────────┈❖
@@ -7683,9 +7695,9 @@ break
 └┬─────────────┈❖
 ┌┤「 DATABASE 」
 │└─────────────┈❖
-│⭔ ${prefix}setcmd
+│⭔ ${prefix}setcmd [reply sticker/pesan]
 │⭔ ${prefix}listcmd
-│⭔ ${prefix}delcmd
+│⭔ ${prefix}delcmd [reply sticker/pesan]
 │⭔ ${prefix}lockcmd
 │⭔ ${prefix}addmsg
 │⭔ ${prefix}listmsg
@@ -7694,57 +7706,57 @@ break
 └┬─────────────┈❖
 ┌┤「 EPHOTO 」
 │└─────────────┈❖
-│⭔ ${prefix}ffcover
-│⭔ ${prefix}crossfire
-│⭔ ${prefix}galaxy
-│⭔ ${prefix}glass
-│⭔ ${prefix}neon
-│⭔ ${prefix}beach
-│⭔ ${prefix}blackpink
-│⭔ ${prefix}igcertificate
-│⭔ ${prefix}ytcertificate
-│⭔ ${prefix}wetglass 
-│⭔ ${prefix}multicolor3d 
-│⭔ ${prefix}watercolor 
-│⭔ ${prefix}luxurygold 
-│⭔ ${prefix}galaxywallpaper 
-│⭔ ${prefix}lighttext 
-│⭔ ${prefix}beautifulflower 
-│⭔ ${prefix}royaltext 
-│⭔ ${prefix}heartshaped 
-│⭔ ${prefix}birdhdaycake 
-│⭔ ${prefix}galaxystyle 
-│⭔ ${prefix}hologram3d 
-│⭔ ${prefix}greenneon 
-│⭔ ${prefix}glossychrome 
-│⭔ ${prefix}greenbush 
-│⭔ ${prefix}metallogo 
-│⭔ ${prefix}neoltext 
-│⭔ ${prefix}glittergold 
-│⭔ ${prefix}textcake 
-│⭔ ${prefix}startsnight 
-│⭔ ${prefix}wooden3d 
-│⭔ ${prefix}textbyname 
-│⭔ ${prefix}writegalacy 
-│⭔ ${prefix}galaxybat 
-│⭔ ${prefix}snow3d 
-│⭔ ${prefix}birthdayday 
-│⭔ ${prefix}silverplaybutton 
-│⭔ ${prefix}cartoongravity 
-│⭔ ${prefix}anonymhacker 
-│⭔ ${prefix}mlwall 
-│⭔ ${prefix}pubgmaskot 
-│⭔ ${prefix}aovwall 
-│⭔ ${prefix}logogaming 
-│⭔ ${prefix}fpslogo 
-│⭔ ${prefix}avatarlolnew 
-│⭔ ${prefix}lolbanner 
-│⭔ ${prefix}avatardota 
-│⭔ ${prefix}juventusshirt 
-│⭔ ${prefix}cutegravity 
-│⭔ ${prefix}realvintage 
-│⭔ ${prefix}codwarzone 
-│⭔ ${prefix}valorantbanner
+│⭔ ${prefix}ffcover [teks]
+│⭔ ${prefix}crossfire [teks]
+│⭔ ${prefix}galaxy [teks]
+│⭔ ${prefix}glass [teks]
+│⭔ ${prefix}neon [teks]
+│⭔ ${prefix}beach [teks]
+│⭔ ${prefix}blackpink [teks]
+│⭔ ${prefix}igcertificate [teks]
+│⭔ ${prefix}ytcertificate [teks]
+│⭔ ${prefix}wetglass [teks]
+│⭔ ${prefix}multicolor3d [teks]
+│⭔ ${prefix}watercolor [teks]
+│⭔ ${prefix}luxurygold [teks]
+│⭔ ${prefix}galaxywallpaper [teks]
+│⭔ ${prefix}lighttext [teks]
+│⭔ ${prefix}beautifulflower [teks]
+│⭔ ${prefix}royaltext [teks]
+│⭔ ${prefix}heartshaped [teks]
+│⭔ ${prefix}birdhdaycake [teks]
+│⭔ ${prefix}galaxystyle [teks]
+│⭔ ${prefix}hologram3d [teks]
+│⭔ ${prefix}greenneon [teks]
+│⭔ ${prefix}glossychrome [teks]
+│⭔ ${prefix}greenbush [teks]
+│⭔ ${prefix}metallogo [teks]
+│⭔ ${prefix}neoltext [teks]
+│⭔ ${prefix}glittergold [teks]
+│⭔ ${prefix}textcake [teks]
+│⭔ ${prefix}startsnight [teks]
+│⭔ ${prefix}wooden3d [teks]
+│⭔ ${prefix}textbyname [teks]
+│⭔ ${prefix}writegalacy [teks]
+│⭔ ${prefix}galaxybat [teks]
+│⭔ ${prefix}snow3d [teks]
+│⭔ ${prefix}birthdayday [teks]
+│⭔ ${prefix}silverplaybutton [teks]
+│⭔ ${prefix}cartoongravity [teks]
+│⭔ ${prefix}anonymhacker [teks]
+│⭔ ${prefix}mlwall [teks]
+│⭔ ${prefix}pubgmaskot [teks]
+│⭔ ${prefix}aovwall [teks]
+│⭔ ${prefix}logogaming [teks]
+│⭔ ${prefix}fpslogo [teks]
+│⭔ ${prefix}avatarlolnew [teks]
+│⭔ ${prefix}lolbanner [teks]
+│⭔ ${prefix}avatardota [teks]
+│⭔ ${prefix}juventusshirt [teks]
+│⭔ ${prefix}cutegravity [teks]
+│⭔ ${prefix}realvintage [teks]
+│⭔ ${prefix}codwarzone [teks]
+│⭔ ${prefix}valorantbanner [teks]
 └┬─────────────┈❖
 ┌┤「 GROUP 」
 │└─────────────┈❖
@@ -7801,25 +7813,25 @@ break
 └┬─────────────┈❖
 ┌┤「 KERANG 」
 │└─────────────┈❖
-│⭔ ${prefix}apakah
-│⭔ ${prefix}bisakah
-│⭔ ${prefix}bagaimanakah
-│⭔ ${prefix}rate
-│⭔ ${prefix}kapankah
-│⭔ ${prefix}cekganteng
-│⭔ ${prefix}cekcantik
-│⭔ ${prefix}ceksange
-│⭔ ${prefix}cekgay
-│⭔ ${prefix}ceklesbi
-│⭔ ${prefix}cekmati
-│⭔ ${prefix}wangy
-│⭔ ${prefix}halah
-│⭔ ${prefix}hilih
-│⭔ ${prefix}huluh
-│⭔ ${prefix}heleh
-│⭔ ${prefix}holoh
-│⭔ ${prefix}jadian
-│⭔ ${prefix}jodohku
+│⭔ ${prefix}apakah [teks]
+│⭔ ${prefix}bisakah [teks]
+│⭔ ${prefix}bagaimanakah [teks]
+│⭔ ${prefix}rate [teks]
+│⭔ ${prefix}kapankah [teks]
+│⭔ ${prefix}cekganteng [teks]
+│⭔ ${prefix}cekcantik [teks]
+│⭔ ${prefix}ceksange [teks]
+│⭔ ${prefix}cekgay [teks]
+│⭔ ${prefix}ceklesbi [teks]
+│⭔ ${prefix}cekmati [teks]
+│⭔ ${prefix}wangy [teks]
+│⭔ ${prefix}halah [teks]
+│⭔ ${prefix}hilih [teks]
+│⭔ ${prefix}huluh [teks]
+│⭔ ${prefix}heleh [teks]
+│⭔ ${prefix}holoh [teks]
+│⭔ ${prefix}jadian [teks]
+│⭔ ${prefix}jodohku [teks]
 └┬─────────────┈❖
 ┌┤「 MEME 」
 │└─────────────┈❖
@@ -7830,7 +7842,6 @@ break
 └┬─────────────┈❖
 ┌┤「 MAIN 」
 │└─────────────┈❖
-│⭔ ${prefix}limituser
 │⭔ ${prefix}ping
 │⭔ ${prefix}owner
 │⭔ ${prefix}donasi
@@ -7874,7 +7885,7 @@ break
 ┌┤「 OWNER 」
 │└─────────────┈❖
 │⭔ ${prefix}react [emoji]
-│⭔ ${prefix}setexif
+│⭔ ${prefix}setexif [packname|author]
 │⭔ ${prefix}chat [option]
 │⭔ ${prefix}join [link]
 │⭔ ${prefix}leave
@@ -7882,7 +7893,7 @@ break
 │⭔ ${prefix}unblock @user
 │⭔ ${prefix}bcgroup [text]
 │⭔ ${prefix}bcall [text]
-│⭔ ${prefix}bcallmedia
+│⭔ ${prefix}bcallmedia  [image / video]
 │⭔ ${prefix}setppbot [image]
 └┬─────────────┈❖
 ┌┤「 PRIMBON 」
@@ -8021,21 +8032,21 @@ break
 └┬─────────────┈❖
 ┌┤「 RANDOM 」
 │└─────────────┈❖
-│⭔ ${prefix}simih
+│⭔ ${prefix}simih [teks]
 │⭔ ${prefix}apikey
 │⭔ ${prefix}coffe
 │⭔ ${prefix}infogempa
-│⭔ ${prefix}ebinary
-│⭔ ${prefix}dbinary
-│⭔ ${prefix}styletext
+│⭔ ${prefix}ebinary [teks]
+│⭔ ${prefix}dbinary [teks]
+│⭔ ${prefix}styletext [teks]
 └┬─────────────┈❖
 ┌┤「 STICKER 」
 │└─────────────┈❖
 │⭔ ${prefix}sticker
-│⭔ ${prefix}attp
-│⭔ ${prefix}ttp
-│⭔ ${prefix}emojimix
-│⭔ ${prefix}emojimix2
+│⭔ ${prefix}attp [teks]
+│⭔ ${prefix}ttp [teks]
+│⭔ ${prefix}emojimix 😎+🤠
+│⭔ ${prefix}emojimix2 😎
 │⭔ ${prefix}patrick
 │⭔ ${prefix}dadu
 │⭔ ${prefix}amongus
@@ -8203,17 +8214,17 @@ break
 └┬─────────────┈❖
 ┌┤「 VOICE CHANGER 」
 │└─────────────┈❖
-│⭔ ${prefix}bass
-│⭔ ${prefix}blown
-│⭔ ${prefix}deep
-│⭔ ${prefix}earrape
-│⭔ ${prefix}fast
-│⭔ ${prefix}fat
-│⭔ ${prefix}nightcore
-│⭔ ${prefix}reverse
-│⭔ ${prefix}robot
-│⭔ ${prefix}slow
-│⭔ ${prefix}tupai
+│⭔ ${prefix}bass [reply audio / vn]
+│⭔ ${prefix}blown [reply audio / vn]
+│⭔ ${prefix}deep [reply audio / vn]
+│⭔ ${prefix}earrape [reply audio / vn]
+│⭔ ${prefix}fast [reply audio / vn]
+│⭔ ${prefix}fat [reply audio / vn]
+│⭔ ${prefix}nightcore [reply audio / vn]
+│⭔ ${prefix}reverse [reply audio / vn]
+│⭔ ${prefix}robot [reply audio / vn]
+│⭔ ${prefix}slow [reply audio / vn]
+│⭔ ${prefix}tupai [reply audio / vn]
 └┬─────────────┈❖
 ┌┤「 WEBZONE 」
 │└─────────────┈❖
