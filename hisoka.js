@@ -8280,12 +8280,6 @@ break
 			if (budy.startsWith('Hello')) {
 				m.reply('Hello, Apa ada yang dapat saya bantu?')
 			}
-			if (budy.startsWith('6289636827082')) {
-				m.reply('Ada Apa Ya? Kenapa Tag Owner Ku?')
-			}
-			if (budy.startsWith('089636827082')) {
-				m.reply('Ada Apa Ya? Kenapa Tag Owner Ku?')
-			}
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return m.reply(mess.owner)
                     function Return(sul) {
