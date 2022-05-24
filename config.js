@@ -14,11 +14,11 @@ global.APIs = {
 
 // Apikey Website Api
 global.APIKeys = {
-	'https://zenzapis.xyz': 'GuaAbuzz17',
+	'https://zenzapis.xyz': 'GuaAbuzz17', // Pake Apikey Ini Aja Gratis Kok
 }
 
 // Other
-global.namabot = 'AsunaChanV10'
+global.namabot = 'AsunaChan'
 global.namaowner = 'GuaAbuzz'
 global.owner = ['6289636827082']
 global.premium = ['6289636827082']

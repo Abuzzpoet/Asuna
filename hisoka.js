@@ -150,7 +150,7 @@ const wita = moment.tz('Asia/Makassar').format('HH : mm : ss')
 
 //━━━━━━━━━━━━━━━[ FAKE ]━━━━━━━━━━━━━━━━━//
 
-const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289636827082-1635036556@g.us"}, "message": {orderMessage: {itemCount: 2022,status: 200, thumbnail: fs.readFileSync('./storage/menu/hisoka.jpg'), surface: 200, message: `Haii Kak ${pushname}\n𝙲𝚖𝚍 ${command}`, orderTitle: 'Please Follow TikTok @GuaAbuzz', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "${global.namaowner}@s.whatsapp.net"}, "message": {orderMessage: {itemCount: 2022,status: 200, thumbnail: fs.readFileSync('./storage/menu/hisoka.jpg'), surface: 200, message: `Haii Kak ${pushname}\n𝙲𝚖𝚍 ${command}`, orderTitle: 'Please Follow TikTok @GuaAbuzz', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
 //END
 		    
         //member
@@ -357,7 +357,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
 	    let setting = global.db.settings[botNumber]
 	    if (new Date() * 1 - setting.status > 1000) {
 		let uptime = await runtime(process.uptime())
-		await hisoka.setStatus(`🤖 ${hisoka.user.name} | ⏳ Runtime : ${runtime(uptime)}`)
+		await hisoka.setStatus(`🤖 hisoka.user.name | ⏳ Runtime : ${runtime(uptime)}`)
 		setting.status = new Date() * 1
 	    }
 	}
@@ -1111,7 +1111,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}
+│ Name : hisoka.user.name
 │ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ Platform : ${os.platform()}
@@ -1850,11 +1850,11 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
                 if (args[0] === "on") {
                 if (db.chats[m.chat].mute) return m.reply(`Sudah Aktif Sebelumnya`)
                 db.chats[m.chat].mute = true
-                m.reply(`${hisoka.user.name} telah di mute di group ini !`)
+                m.reply(`hisoka.user.name telah di mute di group ini !`)
                 } else if (args[0] === "off") {
                 if (!db.chats[m.chat].mute) return m.reply(`Sudah Tidak Aktif Sebelumnya`)
                 db.chats[m.chat].mute = false
-                m.reply(`${hisoka.user.name} telah di unmute di group ini !`)
+                m.reply(`hisoka.user.name telah di unmute di group ini !`)
                 } else {
                  let buttons = [
                         { buttonId: 'mute on', buttonText: { displayText: 'On' }, type: 1 },
@@ -2312,7 +2312,7 @@ break
 	    break
 	       case 'attp': case 'ttp': {
            if (!text) throw `Contoh : ${prefix + command} text`
-           await hisoka.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'hisoka', 'morou', m, {asSticker: true})
+           await hisoka.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'hisoka', 'morou', m,{ packname: global.packname, author: global.author }, {asSticker: true})
 
          }
          break
@@ -2358,7 +2358,7 @@ break
 
                 buf = await getBuffer(y.avatar_url)
 
-                hisoka.send5ButImg(m.chat, teks, `© ${hisoka.user.name}`, buf, ghs)
+                hisoka.send5ButImg(m.chat, teks, `© hisoka.user.name`, buf, ghs)
                 }
           break
 case 'igstalk': case 'stalkig': {
@@ -2483,7 +2483,7 @@ break
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
-            hisoka.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By ${hisoka.user.name}.mp3`}, { quoted : m })
+            hisoka.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By hisoka.user.name.mp3`}, { quoted : m })
             }
             break
             case 'tovn': case 'toptt': {
@@ -3443,7 +3443,7 @@ case 'patrick': case 'dadu': case 'amongus': case 'gawrgura': case 'anjing': cas
 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 db.users[m.sender].limit -= 1 // -1 limit
 let anu = await getBuffer(`https://api.lolhuman.xyz/api/sticker/${command}?apikey=GuaAbuzz17`)
-hisoka.sendMessage(m.chat, { sticker: anu, caption: `Nih  Kak` }, { quoted: m})
+hisoka.sendMessage(m.chat, { packname: global.packname, author: global.author }, { quoted: m})
 }
 break
 // Sertifikat Tanah Rumah Lu akaoakka
@@ -4798,7 +4798,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
             break
             case 'apikey':
-            m.reply(`Apikey Yang Dipake Oleh Bot ${global.namabot}\n⬣ https://zenzapis.xyz [Sewa]\n⬣ https://api.lolhuman.xyz [Sewa]\n⬣ https://hardianto.xyz [Gratis]\n⬣ https://api.zacros.my.id [Gratis]`)
+            m.reply(`Apikey Yang Dipake Oleh Bot hisoka.user.name\n⬣ https://zenzapis.xyz [Sewa]\n⬣ https://api.lolhuman.xyz [Sewa]\n⬣ https://hardianto.xyz [Gratis]\n⬣ https://api.zacros.my.id [Gratis]`)
             break
             case 'ping': case 'botstatus': case 'statusbot': case 'infobot': {
   let timestamp = speed()
@@ -4807,7 +4807,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
   oldd = performance.now()
   let txtping = `*⍢⃝🤖 I N F O  B O T*\n\n`
   txtping += `*👤 Owner Name :* ${global.namaowner}\n`
-  txtping += `*🕊️ Nama Bot :* ${global.namabot}\n`
+  txtping += `*🕊️ Nama Bot :* hisoka.user.name\n`
   txtping += `*🔗 No. Owner :* wa.me/${global.owner}\n\n`
   txtping += `*⍢⃝👾 I N F O  S T A T I S T I K*\n\n`
   txtping += `*🗃️ Lib :* Baileys Multi Device\n`
@@ -4882,14 +4882,14 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             break
             case 'bug':case 'report':{ 
                     	if(!text) return m.reply(`Mau Lapor Apa?\n\nContoh: ${command} Menu Error`)
-                    	hisoka.sendMessage(`6289636827082@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
+                    	hisoka.sendMessage(`${global.namaowner}@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
 m.reply(`Berhasil Dilaporkan Ke Owner\n\nPastikan Bugnya Valid, Jika Anda Bermain-main Dengan Ini, Gunakan Fitur Ini Lagi Dan Lagi Tanpa Alasan, Anda Pasti Akan Diblokir !`)
                     }
                     break
             case 'req':case 'request':{ 
                     	if(!text) return m.reply(`Mau Request Apa?\n\nContoh: ${command} Tambahin Menu Nsfw dong`)
-                    	hisoka.sendMessage(`6289636827082@s.whatsapp.net`, {text: `*Request Feature From:* wa.me/${m.sender.split("@")[0]}
+                    	hisoka.sendMessage(`${global.namaowner}@s.whatsapp.net`, {text: `*Request Feature From:* wa.me/${m.sender.split("@")[0]}
 Request Message: ${text}` })
 m.reply(`Berhasil Dilaporkan Ke Owner!`)
                     }
@@ -5363,7 +5363,7 @@ case 'groupmenu': case 'menugroup': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5443,7 +5443,7 @@ case 'downloadmenu': case 'menudownload': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5515,7 +5515,7 @@ case 'searchmenu': case 'menusearch': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5585,7 +5585,7 @@ case 'stickermenu': case 'menusticker': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5653,7 +5653,7 @@ case 'animemenu': case 'menuanime': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5729,7 +5729,7 @@ case 'nsfwmenu': case 'menunsfw': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5808,7 +5808,7 @@ case 'asupanmenu': case 'menuasupan': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5878,7 +5878,7 @@ case 'quotesmenu': case 'menuquotes': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -5952,7 +5952,7 @@ case 'mememenu': case 'menumeme': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6013,7 +6013,7 @@ case 'randommenu': case 'menurandom': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6077,7 +6077,7 @@ case 'rpgmenu': case 'menurpg': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6142,7 +6142,7 @@ case 'sertifikatmenu': case 'menusertifikat': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6208,7 +6208,7 @@ case 'textpromenu': case 'menutextpro': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6344,7 +6344,7 @@ case 'photooxymenu': case 'menuphotooxy': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6416,7 +6416,7 @@ case 'photomakermenu': case 'menuphotomaker': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6522,7 +6522,7 @@ case 'stickerefekmenu': case 'menustickerefek': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6616,7 +6616,7 @@ case 'ephotomenu': case 'menuephoto': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6724,7 +6724,7 @@ case 'gamemenu': case 'menugame': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6787,7 +6787,7 @@ case 'primbonmenu': case 'menuprimbon': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6874,7 +6874,7 @@ case 'convertmenu': case 'menuconvert': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -6942,7 +6942,7 @@ case 'mainmenu': case 'menumain': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7013,7 +7013,7 @@ case 'databasemenu': case 'menudatabase': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7078,7 +7078,7 @@ case 'anonymousmenu': case 'menuanonymous': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7140,7 +7140,7 @@ case 'islamicmenu': case 'menuislamic': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7213,7 +7213,7 @@ case 'kerangmenu': case 'menukerang': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7289,7 +7289,7 @@ case 'voicemenu': case 'menuvoice': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7357,7 +7357,7 @@ case 'stalkmenu': case 'menustalk': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7419,7 +7419,7 @@ case 'ownermenu': case 'menuowner': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7488,7 +7488,7 @@ case 'webzonemenu': case 'menuwebzone': {
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
@@ -7568,7 +7568,7 @@ case 'webzonemenu': case 'menuwebzone': {
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./storage/menu/hisoka.jpg')},
-                            hydratedFooterText: `© ${global.namabot}`,
+                            hydratedFooterText: `© hisoka.user.name`,
                             hydratedButtons: [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',
@@ -7609,7 +7609,7 @@ break
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
 │ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
+│ Name : hisoka.user.name\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.users).length}
 │ Runtime : ${runtime(process.uptime())}
