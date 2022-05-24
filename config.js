@@ -41,8 +41,7 @@ global.mess = {
     bot: '*Jepang*\n_kono kinō wa , yūzā koyū no botto bangō nomidesu_\n*Indonesia*\n_FITUR INI HANYA KHUSUS PENGGUNA NOMOR BOT!!!_',
     wait: '*Jepang*\n_chotto matte_\n*Indonesia*\n_Tunggu Sebentar_',
     endLimit: 'Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Jam 12',
-    error: 'Fitur sedang error!',
-    apikey: 'Masa Sewa Apikey Habis!',
+    error: 'Fitur Sedang Error!',
 }
     global.limitawal = {
     premium: "Infinity",
