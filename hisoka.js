@@ -7416,7 +7416,7 @@ case 'ownermenu': case 'menuowner': {
 └┬─────────────┈❖
 ┌┤「 OWNER 」
 │└─────────────┈❖
-│⭔ ${prefix}react
+│⭔ ${prefix}react [emoji]
 │⭔ ${prefix}setexif
 │⭔ ${prefix}chat [option]
 │⭔ ${prefix}join [link]
@@ -7873,7 +7873,7 @@ break
 └┬─────────────┈❖
 ┌┤「 OWNER 」
 │└─────────────┈❖
-│⭔ ${prefix}react
+│⭔ ${prefix}react [emoji]
 │⭔ ${prefix}setexif
 │⭔ ${prefix}chat [option]
 │⭔ ${prefix}join [link]
