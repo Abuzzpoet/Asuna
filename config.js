@@ -42,6 +42,7 @@ global.mess = {
     wait: '*Jepang*\n_chotto matte_\n*Indonesia*\n_Tunggu Sebentar_',
     endLimit: 'Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Jam 12',
     error: 'Fitur sedang error!',
+    apikey: 'Masa Sewa Apikey Habis!',
 }
     global.limitawal = {
     premium: "Infinity",
