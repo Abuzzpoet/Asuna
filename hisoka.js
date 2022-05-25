@@ -1029,17 +1029,13 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
   case 'p':
   m.reply(`Ketik menu Untuk Melihat List Menu Bot`)
   break
-  case 'gcbot': case 'groupbot': case 'grupbot': {
-  m.reply(`${global.gcbot}`)
-  break
-
 case 'tqtt': case 'tqto': case 'thanksto': {
                 anu = `
-⭔ Allah SWT.
+⭔ Allah SWT
 ⭔ Ortu Saya.
 ⭔ DikaArdnt (Author).
 ⭔ Sanzy YT.
-⭔ GuaAbuzz (Saya).
+⭔ GuaAbuzz. (Saya)
 ⭔ Fatih A.
 ⭔ Nurutomo.
 ⭔ Mhankbarbar.
@@ -8313,6 +8309,15 @@ break
 			}
 			if (budy.startsWith('Hello')) {
 				m.reply('Hello, Apa ada yang dapat saya bantu?')
+			}
+			if (budy.startsWith('groupbot')) {
+				m.reply('${global.groupbot}')
+			}
+			if (budy.startsWith('grupbot')) {
+				m.reply('${global.groupbot}')
+			}
+			if (budy.startsWith('gcbot')) {
+				m.reply('${global.groupbot}')
 			}
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return m.reply(mess.owner)
