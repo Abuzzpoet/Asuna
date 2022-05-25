@@ -22,30 +22,31 @@ global.APIKeys = {
 }
 
 // Other
-global.namabot = 'AsunaChan'
-global.namaowner = 'GuaAbuzz'
-global.owner = ['6289636827082']
-global.premium = ['6289636827082']
-global.github = 'https://github.com/Abuzzpoet'
-global.myweb = 'https://tiktok.com/@guaabuzz'
-global.footer = 'GuaAbuzz | © 2022'
-global.sc = 'Bikin Sendiri Bang :)'
-global.packname = 'GuaAbuzz'
-global.author = 'WhatsApp Bot'
-global.sessionName = 'session'
-global.prefa = ['','!','.','🐦','🐤','🗿']
-global.sp = '⭔'
+global.namabot = 'AsunaChan' // Nama Bot
+global.namaowner = 'GuaAbuzz' // Nama Owner 
+global.owner = ['6289636827082'] // Nomor Telepon Kalian
+global.premium = ['6289636827082'] // Nomor Yg Mau Jadi Premium
+global.github = 'https://github.com/Abuzzpoet' // Nama Github Kalian
+global.myweb = 'https://tiktok.com/@guaabuzz' // Nama TikTok Kalian Ubah Aja dibagian (@guaabuzz)
+global.footer = 'GuaAbuzz | © 2022' // Nama Owner/Terserah
+global.gopay = 'https://i.ibb.co/dGwfqRT/Gopay.jpg' // Image/Foto Qr Gopay Kalian
+global.dana = 'https://i.ibb.co/MN3mmMB/Dana.jpg' // Image/Goto Qr Dana Kalian
+global.packname = 'GuaAbuzz' // Packname Sticker
+global.author = 'WhatsApp Bot' // Author/Pembuat Sticker
+global.sessionName = 'session' // Jangan Diubah Tar Eror
+global.prefa = ['','!','.','🐦','🐤','🗿'] // Jangan Diubah Tar Eror
+global.sp = '⭔' // Jangan Diubah Tar Eror
 global.mess = {
-    success: '*Jepang*\n_seikō shimashita_\n*Indonesia*\n_Berhasil_',
-    admin: '*Jepang*\n_kono kinō wa , gurūpu kanrisha nomi ga shiyō dekimasu_\n*Indonesia*\n_FITUR INI HANYA BISA DIGUNAKAN OLEH ADMIN GROUP!!!_',
-    botAdmin: '*Jepang*\n_kono kinō wa , botto ga kanrisha ni natta toki ni nomi shiyō dekimasu_\n*Indonesia*\n_FITUR INI HANYA BISA DIGUNAKAN JIKA BOT MENJADI ADMIN!!!_',
-    owner: '*Jepang*\n_kono kinō wa , shoyūsha gurūpu nomi ga shiyō dekimasu_\n*Indonesia*\n_FITUR INI HANYA BISA DIGUNAKAN OLEH PEMILIK BOT!!!_',
-    group: '*Jepang*\n_kono kinō wa gurūpu ni nomi shiyō dekimasu_\n*Indonesia*\n_FITUR INI HANYA BISA DIGUNAKAN UNTUK GRUP!!!_',
-    private: '*Jepang*\n_kono kinō wa , puraibēto chatto de nomi shiyō dekimasu_\n*Indonesia*\n_FITUR INI HANYA BISA DIGUNAKAN UNTUK PRIVATE CHAT!!!_',
-    bot: '*Jepang*\n_kono kinō wa , yūzā koyū no botto bangō nomidesu_\n*Indonesia*\n_FITUR INI HANYA KHUSUS PENGGUNA NOMOR BOT!!!_',
-    wait: '*Jepang*\n_chotto matte_\n*Indonesia*\n_Tunggu Sebentar_',
-    endLimit: 'Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Jam 12',
-    error: 'Fitur sedang error!',
+    success: '*Jepang*\n_seikō shimashita_\n*Indonesia*\n_Berhasil_', // Boleh Kalian Ubah
+    admin: '*Jepang*\n_kono kinō wa , gurūpu kanrisha nomi ga shiyō dekimasu_\n*Indonesia*\n_FITUR INI HANYA BISA DIGUNAKAN OLEH ADMIN GROUP!!!_', // Boleh Kalian Ubah
+    botAdmin: '*Jepang*\n_kono kinō wa , botto ga kanrisha ni natta toki ni nomi shiyō dekimasu_\n*Indonesia*\n_FITUR INI HANYA BISA DIGUNAKAN JIKA BOT MENJADI ADMIN!!!_', // Boleh Kalian Ubah
+    owner: '*Jepang*\n_kono kinō wa , shoyūsha gurūpu nomi ga shiyō dekimasu_\n*Indonesia*\n_FITUR INI HANYA BISA DIGUNAKAN OLEH PEMILIK BOT!!!_', // Boleh Kalian Ubah
+    group: '*Jepang*\n_kono kinō wa gurūpu ni nomi shiyō dekimasu_\n*Indonesia*\n_FITUR INI HANYA BISA DIGUNAKAN UNTUK GRUP!!!_', // Boleh Kalian Ubah
+    private: '*Jepang*\n_kono kinō wa , puraibēto chatto de nomi shiyō dekimasu_\n*Indonesia*\n_FITUR INI HANYA BISA DIGUNAKAN UNTUK PRIVATE CHAT!!!_', // Boleh Kalian Ubah
+    bot: '*Jepang*\n_kono kinō wa , yūzā koyū no botto bangō nomidesu_\n*Indonesia*\n_FITUR INI HANYA KHUSUS PENGGUNA NOMOR BOT!!!_', // Boleh Kalian Ubah
+    wait: '*Jepang*\n_chotto matte_\n*Indonesia*\n_Tunggu Sebentar_', // Boleh Kalian Ubah
+    endLimit: 'Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Jam 12', // Boleh Kalian Ubah
+    error: 'Fitur sedang error!', // Boleh Kalian Ubah
 }
     global.limitawal = {
     premium: "Infinity",
@@ -60,8 +61,8 @@ global.mess = {
    umpanawal: 5,
    potionawal: 1
 }
-global.thumb = fs.readFileSync('./storage/menu/hisoka.jpg')
-global.visoka = { url: 'https://telegra.ph/file/de381b0caeb315a99c68a.mp4' }
+global.thumb = fs.readFileSync('./storage/menu/hisoka.jpg') // Jangan Diubah Ganti Aja Image/Gambar Ya
+global.visoka = { url: 'https://telegra.ph/file/de381b0caeb315a99c68a.mp4' } // Terserah Mau Di Ubah/Kagak
 
 //Ambil dr chika
 global.flaming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
