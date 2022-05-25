@@ -67,7 +67,7 @@ loadDatabase()
 
 // save database every 30seconds
 if (global.db) setInterval(async () => {
-    if (global.db) await global.db.write()
+    if (global.db.data) await global.db.write()
   }, 30 * 1000)
 
 async function startHisoka() {
