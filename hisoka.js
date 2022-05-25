@@ -2079,9 +2079,19 @@ break
             case 'linkgroup': case 'linkgc': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
+                if (!isAdmins) throw mess.admin
                 let response = await hisoka.groupInviteCode(m.chat)
-                hisoka.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\nLink Group : ${groupMetadata.subject}`, m, { detectLink: true })
+                hisoka.sendText(m.chat, `┌────────┈❖\n│「 GROUP 」\n└┬─────────────┈❖\n┌┤「 INFO GROUP 」\n│└─────────────┈❖\n│📛 *Nama :* ${metadata.subject}\n│👤 *Owner Grup :* ${metadata.owner !== undefined ? '@' + metadata.owner.split`@`[0] : 'Tidak diketahui'}\n│⏳ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n│🔗 *Link Chat :* https://chat.whatsapp.com/${response}\n│👥 *Member :* ${metadata.participants.length}\n└──────────────┈❖`, m, { detectLink: true })
             }
+            break
+            case 'revoke':
+            if (!m.isGroup) throw mess.group
+            if (!isBotAdmins) throw mess.botAdmin
+            if (!isAdmins) throw mess.admin
+            await hisoka.groupRevokeInvite(m.chat)
+            .then( res => {
+            m.reply(`Sukses Menyetel Ulang Tautan Undangan Grup ${groupMetadata.subject}`)
+            }).catch((err) => m.reply(jsonformat(err)))
             break
             case 'ephemeral': {
                 if (!m.isGroup) throw mess.group
