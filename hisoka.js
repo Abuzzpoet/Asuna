@@ -2782,11 +2782,12 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let tekslistgc = `👥 *LIST GROUP CHAT*\n\n`
                 tekslistgc += `📱 Total Group : ${anu.length} Group\n\n`
                 for (let e of anu) {
-                    tekslistgc += `📛 *Nama :* ${groupMetadata.subject}\n`
-                    tekslistgc += `👤 *Owner Grup :* ${groupMetadata.owner !== undefined ? '@' + groupMetadata.owner.split`@`[0] : 'Tidak diketahui'}\n`
-                    tekslistgc += `🌱 *ID :* ${groupMetadata.id}\n`
-                    tekslistgc += `⏳ *Dibuat :* ${moment(groupMetadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n`
-                    tekslistgc += `👥 *Member :* ${groupMetadata.participants}\n\n`
+                    let metadata = await hisoka.groupMetadata(e)
+                    tekslistgc += `📛 *Nama :* ${metadata.subject}\n`
+                    tekslistgc += `👤 *Owner Grup :* ${metadata.owner !== undefined ? '@' + metadata.owner.split`@`[0] : 'Tidak diketahui'}\n`
+                    tekslistgc += `🌱 *ID :* ${metadata.id}\n`
+                    tekslistgc += `⏳ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n`
+                    tekslistgc += `👥 *Member :* ${metadata.participants.length}\n\n`
                     tekslistgc += `──────────────────────\n\n`
                 }
                 hisoka.sendTextWithMentions(m.chat, tekslistgc, m)
