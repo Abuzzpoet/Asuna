@@ -1741,14 +1741,15 @@ break
                 await hisoka.groupUpdateDescription(m.chat, text).then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
             }
             break
-          case 'setpp': case 'setppbot':
-                let mediaa = await hisoka.downloadAndSaveMediaMessage(quoted)
-                let jimp_1 = require('jimp')
-                let jimp = await jimp_1.read(mediaa)
-	            jimp.resize(1000, 900, jimp_1.RESIZE_BEZIER)
-                .write('hasil.jpeg')
-                .getBufferAsync(jimp_1.MIME_JPEG)
-                hisoka.updateProfilePicture(botNumber, {url: 'hasil.jpeg' } ).catch((err) => m.reply(err))
+          case 'setpp': case 'setppbot': {
+                if (!isCreator) throw mess.owner
+                if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+                if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+                if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
+                let media = await hisoka.downloadAndSaveMediaMessage(quoted)
+                await hisoka.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
+                m.reply(mess.success)
+                }
                 break
            case 'setppgroup': case 'setppgrup': case 'setppgc': {
                 if (!m.isGroup) throw mess.group
