@@ -2081,11 +2081,9 @@ break
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
                 let response = await hisoka.groupInviteCode(m.chat)
-  let linkgroup = `👥 *INFO LINK GROUP*\n\n`
-  linkgroup += `📛 *Nama :* ${groupMetadata.subject}\n`
-  linkgroup += `👤 *Owner Grup :* ${groupMetadata.owner !== undefined ? '@' + groupMetadata.owner.split`@`[0] : 'Tidak diketahui'}\n`
-  linkgroup += `🔗 *Link Chat :* https://chat.whatsapp.com/${response}\n`
-  linkgroup += `👥 *Member :* ${groupMetadata.participants}\n`
+  hisoka.sendText(m.chat, `👥 *INFO LINK GROUP*\n📛 *Nama :* ${groupMetadata.subject}\n👤 *Owner Grup :* ${groupMetadata.owner !== undefined ? '@' + groupMetadata.owner.split`@`[0] : 'Tidak diketahui'}\n🔗 *Link Chat :* https://chat.whatsapp.com/${response}\n👥 *Member :* ${groupMetadata.participants}\n`, m, { detectLink: true })
+            }
+            break
             }
             break
             case 'revoke':
