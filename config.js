@@ -29,8 +29,6 @@ global.premium = ['6289636827082'] // Nomor Yg Mau Jadi Premium
 global.github = 'https://github.com/Abuzzpoet' // Nama Github Kalian
 global.myweb = 'https://tiktok.com/@guaabuzz' // Nama TikTok Kalian Ubah Aja dibagian (@guaabuzz)
 global.footer = 'GuaAbuzz | © 2022' // Nama Owner/Terserah
-global.gopay = 'https://i.ibb.co/dGwfqRT/Gopay.jpg' // Image/Foto Qr Gopay Kalian
-global.dana = 'https://i.ibb.co/MN3mmMB/Dana.jpg' // Image/Goto Qr Dana Kalian
 global.packname = 'GuaAbuzz' // Packname Sticker
 global.author = 'WhatsApp Bot' // Author/Pembuat Sticker
 global.sessionName = 'session' // Jangan Diubah Tar Eror
@@ -63,6 +61,8 @@ global.mess = {
 }
 global.thumb = fs.readFileSync('./storage/menu/hisoka.jpg') // Jangan Diubah Ganti Aja Image/Gambar Ya
 global.visoka = { url: 'https://telegra.ph/file/de381b0caeb315a99c68a.mp4' } // Terserah Mau Di Ubah/Kagak
+global.gopay = fs.readFileSync('./storage/menu/Gopay.jpg') // Jangan Diubah Ganti Aja Image/Gambar Ya
+global.dana = fs.readFileSync('./storage/menu/Dana.jpg') // Jangan Diubah Ganti Aja Image/Gambar Ya
 
 //Ambil dr chika
 global.flaming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
