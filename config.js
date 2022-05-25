@@ -69,8 +69,6 @@ global.mess = {
 }
 global.thumb = fs.readFileSync('./storage/menu/hisoka.jpg') // Jangan Diubah Ganti Aja Image/Gambar Ya
 global.visoka = { url: 'https://telegra.ph/file/de381b0caeb315a99c68a.mp4' } // Terserah Mau Di Ubah/Kagak
-global.gopay = fs.readFileSync('./storage/menu/Gopay.jpg') // Jangan Diubah Ganti Aja Image/Gambar Ya
-global.dana = fs.readFileSync('./storage/menu/Dana.jpg') // Jangan Diubah Ganti Aja Image/Gambar Ya
 
 //Ambil dr chika
 global.flaming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
