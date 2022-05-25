@@ -2084,8 +2084,6 @@ break
   hisoka.sendText(m.chat, `👥 *INFO LINK GROUP*\n📛 *Nama :* ${groupMetadata.subject}\n👤 *Owner Grup :* ${groupMetadata.owner !== undefined ? '@' + groupMetadata.owner.split`@`[0] : 'Tidak diketahui'}\n🔗 *Link Chat :* https://chat.whatsapp.com/${response}\n👥 *Member :* ${groupMetadata.participants}\n`, m, { detectLink: true })
             }
             break
-            }
-            break
             case 'revoke':
             if (!m.isGroup) throw mess.group
             if (!isBotAdmins) throw mess.botAdmin
