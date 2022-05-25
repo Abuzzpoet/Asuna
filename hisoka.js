@@ -2081,7 +2081,18 @@ break
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
                 let response = await hisoka.groupInviteCode(m.chat)
-                hisoka.sendText(m.chat, `┌────────┈❖\n│「 GROUP 」\n└┬─────────────┈❖\n┌┤「 INFO GROUP 」\n│└─────────────┈❖\n│📛 *Nama :* ${metadata.subject}\n│👤 *Owner Grup :* ${metadata.owner !== undefined ? '@' + metadata.owner.split`@`[0] : 'Tidak diketahui'}\n│⏳ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n│🔗 *Link Chat :* https://chat.whatsapp.com/${response}\n│👥 *Member :* ${metadata.participants.length}\n└──────────────┈❖`, m, { detectLink: true })
+                let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
+  let linkgroup = `👥 *INFO GROUP*\n\n`
+  for (let e of anu) {
+  let metadata = await hisoka.groupMetadata(e)
+  linkgroup += `📛 *Nama :* ${metadata.subject}\n`
+  linkgroup += `👤 *Owner Grup :* ${metadata.owner !== undefined ? '@' + metadata.owner.split`@`[0] : 'Tidak diketahui'}\n`
+  linkgroup += `🌱 *ID :* ${metadata.id}\n`
+  linkgroup += `⏳ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n`
+  linkgroup += `🔗 *Link Chat :* https://chat.whatsapp.com/${response}\n`
+  linkgroup += `👥 *Member :* ${metadata.participants.length}\n`
+  }
+  hisoka.sendTextWithMentions(m.chat, linkgroup, m, { detectLink: true })
             }
             break
             case 'revoke':
@@ -5385,6 +5396,7 @@ case 'groupmenu': case 'menugroup': {
 │└─────────────┈❖
 │⭔ ${prefix}groupbot
 │⭔ ${prefix}linkgroup
+│⭔ ${prefix}revoke
 │⭔ ${prefix}ephemeral [option]
 │⭔ ${prefix}setppgc [image]
 │⭔ ${prefix}setname [text]
@@ -7773,6 +7785,7 @@ break
 │└─────────────┈❖
 │⭔ ${prefix}groupbot
 │⭔ ${prefix}linkgroup
+│⭔ ${prefix}revoke
 │⭔ ${prefix}ephemeral [option]
 │⭔ ${prefix}setppgc [image]
 │⭔ ${prefix}setname [text]
