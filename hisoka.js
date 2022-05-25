@@ -1594,7 +1594,6 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
 https://github.com/DikaArdnt/Hisoka-Morou
 
 🌱 Recode By : GuaAbuzz
-https://github.com/Abuzzpoet/Asuna
 Mau Sc/Script Gua?
 Ya Beli Lah Cuma 20k No Enc
 
