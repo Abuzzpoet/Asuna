@@ -1,6 +1,9 @@
 /**
-   * Create By Dika Ardnt.
-   * Contact Me on wa.me/6289636827082
+   * Base By Dika Ardnt.
+   * Recode By GuaAbuzz
+   * Sc Ya Gua Enc
+   * Harga Sc No Enc 20k
+   * Contact Me On wa.me/6289636827082
    * Follow https://github.com/Abuzzpoet
 */
 
@@ -1026,13 +1029,17 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
   case 'p':
   m.reply(`Ketik menu Untuk Melihat List Menu Bot`)
   break
+  case 'gcbot': case 'groupbot': case 'grupbot': {
+  m.reply(`${global.gcbot}`)
+  break
+
 case 'tqtt': case 'tqto': case 'thanksto': {
                 anu = `
-⭔ Allah SWT
+⭔ Allah SWT.
 ⭔ Ortu Saya.
 ⭔ DikaArdnt (Author).
 ⭔ Sanzy YT.
-⭔ GuaAbuzz. (Saya)
+⭔ GuaAbuzz (Saya).
 ⭔ Fatih A.
 ⭔ Nurutomo.
 ⭔ Mhankbarbar.
@@ -1339,9 +1346,12 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 https://github.com/DikaArdnt/Hisoka-Morou
 
 🌱 Recode By : GuaAbuzz
-${global.github}
+https://github.com/Abuzzpoet/Asuna
 Mau Sc/Script Gua?
-Ya Beli Lah Cuma 20k No Enc`
+Ya Beli Lah Cuma 20k No Enc
+
+Hubungi Dibawah
+http://wa.me/6289636827082`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'TikTok Creator',

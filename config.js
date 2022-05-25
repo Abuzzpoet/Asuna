@@ -1,7 +1,10 @@
 /**
-   * Create By Dika Ardnt.
-   * Contact Me on wa.me/6288292024190
-   * Follow https://github.com/DikaArdnt
+   * Base By Dika Ardnt.
+   * Recode By GuaAbuzz
+   * Sc Ya Gua Enc
+   * Harga Sc No Enc 20k
+   * Contact Me On wa.me/6289636827082
+   * Follow https://github.com/Abuzzpoet
 */
 
 const fs = require('fs')
@@ -24,6 +27,7 @@ global.owner = ['6289636827082']
 global.premium = ['6289636827082']
 global.github = 'https://github.com/Abuzzpoet'
 global.myweb = 'https://tiktok.com/@guaabuzz'
+global.gcbot = 'https://chat.whatsapp.com/BESqnCSWWfq1aTkYiqDrog'
 global.footer = 'GuaAbuzz | © 2022'
 global.sc = 'Bikin Sendiri Bang :)'
 global.packname = 'GuaAbuzz'
@@ -41,7 +45,7 @@ global.mess = {
     bot: '*Jepang*\n_kono kinō wa , yūzā koyū no botto bangō nomidesu_\n*Indonesia*\n_FITUR INI HANYA KHUSUS PENGGUNA NOMOR BOT!!!_',
     wait: '*Jepang*\n_chotto matte_\n*Indonesia*\n_Tunggu Sebentar_',
     endLimit: 'Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Jam 12',
-    error: 'Fitur Sedang Error!',
+    error: 'Fitur sedang error!',
 }
     global.limitawal = {
     premium: "Infinity",

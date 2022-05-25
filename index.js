@@ -1,7 +1,10 @@
 /**
-   * Create By Dika Ardnt.
-   * Contact Me on wa.me/6288292024190
-   * Follow https://github.com/DikaArdnt
+   * Base By Dika Ardnt.
+   * Recode By GuaAbuzz
+   * Sc Ya Gua Enc
+   * Harga Sc No Enc 20k
+   * Contact Me On wa.me/6289636827082
+   * Follow https://github.com/Abuzzpoet
 */
 
 require('./config')
@@ -43,12 +46,12 @@ global.db = new Low(
 )
 global.DATABASE = global.db // Backwards Compatibility
 global.loadDatabase = async function loadDatabase() {
-  if (global.db.READ) return new Promise((resolve) => setInterval(function () { (!global.db.READ ? (clearInterval(this), resolve(global.db.data == null ? global.loadDatabase() : global.db.data)) : null) }, 1 * 1000))
-  if (global.db.data !== null) return
+  if (global.db.READ) return new Promise((resolve) => setInterval(function () { (!global.db.READ ? (clearInterval(this), resolve(global.db == null ? global.loadDatabase() : global.db)) : null) }, 1 * 1000))
+  if (global.db !== null) return
   global.db.READ = true
   await global.db.read()
   global.db.READ = false
-  global.db.data = {
+  global.db = {
     users: {},
     chats: {},
     database: {},
@@ -56,15 +59,15 @@ global.loadDatabase = async function loadDatabase() {
     settings: {},
     others: {},
     sticker: {},
-    ...(global.db.data || {})
+    ...(global.db || {})
   }
-  global.db.chain = _.chain(global.db.data)
+  global.db.chain = _.chain(global.db)
 }
 loadDatabase()
 
 // save database every 30seconds
 if (global.db) setInterval(async () => {
-    if (global.db.data) await global.db.write()
+    if (global.db) await global.db.write()
   }, 30 * 1000)
 
 async function startHisoka() {
