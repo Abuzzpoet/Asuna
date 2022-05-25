@@ -3,6 +3,7 @@
    * Recode By GuaAbuzz
    * Sc Ya Gua Enc
    * Harga Sc No Enc 20k
+   * Kalau Mau Recode, Edit Aja Di confiq.js
    * Contact Me On wa.me/6289636827082
    * Follow https://github.com/Abuzzpoet
 */
@@ -27,7 +28,6 @@ global.owner = ['6289636827082']
 global.premium = ['6289636827082']
 global.github = 'https://github.com/Abuzzpoet'
 global.myweb = 'https://tiktok.com/@guaabuzz'
-global.groupbot = 'https://chat.whatsapp.com/BESqnCSWWfq1aTkYiqDrog'
 global.footer = 'GuaAbuzz | © 2022'
 global.sc = 'Bikin Sendiri Bang :)'
 global.packname = 'GuaAbuzz'
