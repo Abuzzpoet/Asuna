@@ -35,6 +35,7 @@ global.dana = ['6289636827082'] // Nomor Dana Kalian Kalau Ada
 global.ovo = ['-'] // Nomor Ovo Kalian Kalau Ada
 global.saweria = ['https://saweria.co/GuaAbuzz'] // Link Saweria Kalian Kalau Ada
 global.github = 'https://github.com/Abuzzpoet' // Nama Github Kalian
+global.scbot = 'https://github.com/Abuzzpoet/Asuna' //Nama Script Bot Kalian
 global.myweb = 'https://tiktok.com/@guaabuzz' // Nama TikTok Kalian Ubah Aja dibagian (@guaabuzz)
 global.footer = 'GuaAbuzz | © 2022' // Nama Owner/Terserah
 global.packname = 'GuaAbuzz' // Packname Sticker
