@@ -33,6 +33,7 @@ global.smartfren = ['-'] // Nomor Smartfren Kalian Kalau Ada
 global.gopay = ['6289636827082'] // Nomor Gopay Kalian Kalau Ada
 global.dana = ['6289636827082'] // Nomor Dana Kalian Kalau Ada
 global.ovo = ['-'] // Nomor Ovo Kalian Kalau Ada
+global.saweria = ['https://saweria.co/GuaAbuzz'] // Link Saweria Kalian Kalau Ada
 global.github = 'https://github.com/Abuzzpoet' // Nama Github Kalian
 global.myweb = 'https://tiktok.com/@guaabuzz' // Nama TikTok Kalian Ubah Aja dibagian (@guaabuzz)
 global.footer = 'GuaAbuzz | © 2022' // Nama Owner/Terserah
