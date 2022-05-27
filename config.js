@@ -24,9 +24,11 @@ global.APIKeys = {
     'https://zenzapis.xyz': 'GuaAbuzz17',
 }
 
-//—————「 Set Nama Bot & Own 」—————//
+//—————「 Set Nama Bot & Own & Agama 」—————//
+//kok pake agama bang? fitur toleransi bang
 global.namabot = 'AsunaChan'
 global.namaowner = 'GuaAbuzz'
+global.agama = 'Islam'
 
 //—————「 Setting Owner 」—————//
 global.owner = ['6289636827082']
