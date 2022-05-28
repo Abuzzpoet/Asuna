@@ -2900,7 +2900,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     floNime
                 } = require('./lib/uploader')
                 let abeb = await hisoka.downloadAndSaveMediaMessage(quoted)
-                let abe = await TelegraPh(abeb)
+                let abe = await floNime(abeb)
                 let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${util.format(abe)}`
                 let FaTiH = await hisoka.sendImageAsSticker(m.chat, smeme, m, {
                     packname: global.packname,
