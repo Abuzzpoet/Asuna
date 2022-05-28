@@ -53,8 +53,8 @@ global.scbot = 'https://github.com/Abuzzpoet/Asuna'
 global.myweb = 'https://tiktok.com/@guaabuzz'
 
 //—————「 Set Wm 」—————//
-global.packname = 'GuaAbuzz' // Packname Sticker
-global.author = 'WhatsApp Bot' // Author/Pembuat Sticker
+global.packname = 'GuaAbuzz'
+global.author = 'WhatsApp Bot'
 
 //—————「 Set Nama Session 」—————//
 //gausah di apa² in!
@@ -75,12 +75,12 @@ global.mess = {
     admin: 'Perintah Ini Hanya Bisa Digunakan Oleh Admin !',
     botAdmin: 'Perintah Ini Hanya Bisa Digunakan Ketika Bot Menjadi Admin !',
     owner: 'Perintah Ini Hanya Bisa Digunakan Oleh Owner !',
-    group: 'Perintah Ini Hanya Bisa Digunakan Di Group !',
-    private: 'Perintah Ini Hanya Bisa Digunakan Di Private !',
-    bot: 'Fitur Khusus Pengguna Nomor Bot',
-    wait: '⏳ Sedang Di Proses',
-    endLimit: 'Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Jam 12',
-    error: 'Fitur Sedang Error!',
+    group: 'Perintah Ini Hanya Bisa Digunakan Di Group Chat !',
+    private: 'Perintah Ini Hanya Bisa Digunakan Di Private Chat !',
+    bot: 'Fitur Khusus Pengguna Nomor Bot !',
+    wait: '⏳ Sedang Di Proses !',
+    endLimit: 'Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Jam 12 !',
+    error: 'Fitur Sedang Error !',
 }
 
 //—————「 Set Limit 」—————//
