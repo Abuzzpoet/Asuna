@@ -2896,12 +2896,12 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 if (!text) throw respond
                 atas = text.split('|')[0] ? text.split('|')[0] : '-'
                 bawah = text.split('|')[1] ? text.split('|')[1] : '-'
-                let dwnld = await quoted.download()
                 let {
                     floNime
                 } = require('./lib/uploader')
-                let fatGans = await floNime(dwnld)
-                let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${fatGans.result.url}`
+                let abeb = await hisoka.downloadAndSaveMediaMessage(quoted)
+                let abe = await TelegraPh(abeb)
+                let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${util.format(abe)}`
                 let FaTiH = await hisoka.sendImageAsSticker(m.chat, smeme, m, {
                     packname: global.packname,
                     author: global.author
