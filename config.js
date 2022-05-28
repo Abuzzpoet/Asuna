@@ -1,8 +1,6 @@
 /**
  * Base By Dika Ardnt.
  * Recode By GuaAbuzz
- * Sc Ya Gua Enc
- * Harga Sc No Enc 20k
  * Kalau Mau Recode, Edit Aja Di confiq.js
  * Contact Me On wa.me/6289636827082
  * Follow https://github.com/Abuzzpoet
